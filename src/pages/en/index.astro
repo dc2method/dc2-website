@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
+---
+
+<BaseLayout title="DocDriven - Structured LLM Development" lang="en">
+  <div style="position: fixed; top: 1rem; right: 1rem; z-index: 1000;">
+    <LanguageSwitcher />
+  </div>
+  <main style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+    <h1>DocDriven Website V1.0</h1>
+    <p>Site under construction with Astro 4.x</p>
+    <p>Framework: Astro | Performance Target: 98-100 Lighthouse</p>
+    <p style="margin-top: 2rem; padding: 1rem; background: #f0f4f8; border-left: 4px solid #2E86AB;">
+      <strong>i18n Test:</strong> Use the language switcher button in the top right to test bilingual support.
+    </p>
+  </main>
+</BaseLayout>

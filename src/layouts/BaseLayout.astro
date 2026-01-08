@@ -1,4 +1,6 @@
 ---
+import LanguageDetector from '../components/LanguageDetector.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -21,6 +23,7 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <LanguageDetector />
   </head>
   <body>
     <slot />
