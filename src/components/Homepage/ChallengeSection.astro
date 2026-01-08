@@ -1,0 +1,164 @@
+---
+import { getLocale } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+---
+
+<section class="challenge">
+  <div class="challenge-container">
+    <h2 class="challenge-title">
+      {currentLocale === 'fr'
+        ? 'Pourquoi une méthodologie structurée ?'
+        : 'Why a Structured Methodology?'
+      }
+    </h2>
+
+    <div class="challenge-content">
+      <p class="challenge-intro">
+        {currentLocale === 'fr'
+          ? "Les Large Language Models ont démontré des capacités remarquables en génération de code. Cependant, leur adoption en environnement professionnel révèle une limite critique :"
+          : "Large Language Models have demonstrated remarkable capabilities in code generation. However, their adoption in professional environments reveals a critical limitation:"
+        }
+      </p>
+
+      <div class="challenge-problem">
+        <p>
+          {currentLocale === 'fr'
+            ? "Sans cadre méthodologique rigoureux, ils génèrent du code syntaxiquement correct mais architecturalement fragile, créant une dette technique invisible qui ne se manifeste que des mois plus tard."
+            : "Without a rigorous methodological framework, they generate syntactically correct but architecturally fragile code, creating invisible technical debt that only manifests months later."
+          }
+        </p>
+      </div>
+
+      <div class="challenge-points">
+        <div class="challenge-point">
+          <h3>
+            {currentLocale === 'fr' ? 'Le Paradoxe' : 'The Paradox'}
+          </h3>
+          <p>
+            {currentLocale === 'fr'
+              ? "Les LLM apprennent les régularités statistiques du code, pas la compréhension architecturale. Ils excellent dans le 'comment' mais échouent sur le 'pourquoi'."
+              : "LLMs learn statistical regularities of code, not architectural understanding. They excel at 'how' but fail at 'why'."
+            }
+          </p>
+        </div>
+
+        <div class="challenge-point">
+          <h3>
+            {currentLocale === 'fr' ? 'Le Risque' : 'The Risk'}
+          </h3>
+          <p>
+            {currentLocale === 'fr'
+              ? "L'adoption ad-hoc des LLM promet une vélocité sans précédent, mais introduit une zone de risque souvent mal comprise : la dette technique invisible."
+              : "Ad-hoc LLM adoption promises unprecedented velocity, but introduces a poorly understood risk zone: invisible technical debt."
+            }
+          </p>
+        </div>
+
+        <div class="challenge-point">
+          <h3>
+            {currentLocale === 'fr' ? 'La Solution' : 'The Solution'}
+          </h3>
+          <p>
+            {currentLocale === 'fr'
+              ? "DocDriven structure l'adoption des LLM à travers 6 phases où les humains contrôlent les décisions stratégiques, tandis que l'IA accélère l'exécution tactique."
+              : "DocDriven structures LLM adoption through 6 phases where humans control strategic decisions while AI accelerates tactical execution."
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .challenge {
+    background: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .challenge-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .challenge-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-3xl);
+    color: var(--dd-primary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .challenge-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .challenge-intro {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-6);
+    text-align: center;
+  }
+
+  .challenge-problem {
+    background: var(--dd-accent-warning);
+    color: var(--dd-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-10);
+    border-left: 6px solid var(--dd-primary);
+  }
+
+  .challenge-problem p {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .challenge-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .challenge-point {
+    background: var(--dd-neutral-light);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--dd-secondary);
+  }
+
+  .challenge-point h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .challenge-point p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .challenge {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .challenge-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .challenge-points {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

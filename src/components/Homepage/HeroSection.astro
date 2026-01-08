@@ -1,0 +1,162 @@
+---
+import { getLocale, t } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+const methodologyLink = currentLocale === 'fr' ? '/intro' : '/en/intro';
+const architectureLink = currentLocale === 'fr' ? '/phase1-architecture-strategique' : '/en/phase1-architecture-strategique';
+---
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        {currentLocale === 'fr'
+          ? 'DocDriven'
+          : 'DocDriven'
+        }
+      </h1>
+      <p class="hero-tagline">{t('hero.tagline', currentLocale)}</p>
+
+      <p class="hero-message">
+        {t('hero.message', currentLocale)}
+      </p>
+
+      <div class="hero-ctas">
+        <a href={methodologyLink} class="btn btn-primary">
+          {t('hero.cta.primary', currentLocale)}
+        </a>
+        <a href={architectureLink} class="btn btn-secondary">
+          {t('hero.cta.secondary', currentLocale)}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--dd-primary) 0%, var(--dd-neutral-dark) 100%);
+    color: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    color: var(--dd-white);
+    margin-bottom: var(--space-2);
+    letter-spacing: 2px;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-xl);
+    color: var(--dd-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-message {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-10);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--dd-secondary);
+    color: var(--dd-white);
+    border: 2px solid var(--dd-secondary);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    border-color: var(--dd-secondary);
+    color: var(--dd-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 134, 171, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--dd-white);
+    border: 2px solid var(--dd-white);
+  }
+
+  .btn-secondary:hover {
+    background: var(--dd-white);
+    color: var(--dd-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-10) var(--space-4);
+      min-height: 60vh;
+    }
+
+    .hero-title {
+      font-size: var(--font-size-4xl);
+    }
+
+    .hero-tagline {
+      font-size: var(--font-size-lg);
+    }
+
+    .hero-message {
+      font-size: var(--font-size-lg);
+    }
+
+    .hero-ctas {
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

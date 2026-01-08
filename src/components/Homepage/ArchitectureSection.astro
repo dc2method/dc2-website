@@ -1,0 +1,274 @@
+---
+import { getLocale } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+
+const phases = currentLocale === 'fr' ? [
+  {
+    number: 1,
+    name: 'Architecture Stratégique',
+    human: 60,
+    llm: 40,
+    description: 'Définir la vision architecturale, les décisions stratégiques et les contraintes du projet.',
+    link: '/phase1-architecture-strategique'
+  },
+  {
+    number: 2,
+    name: 'Planification Tactique',
+    human: 50,
+    llm: 50,
+    description: 'Décomposer le projet en User Stories et tâches concrètes avec critères de succès.',
+    link: '/phase2-planification-tactique'
+  },
+  {
+    number: 3,
+    name: 'TDD RED',
+    human: 40,
+    llm: 60,
+    description: 'Créer les tests et spécifications exécutables avant toute implémentation.',
+    link: '/phase3-tdd-red'
+  },
+  {
+    number: 4,
+    name: 'TDD GREEN',
+    human: 30,
+    llm: 70,
+    description: 'Implémenter le code minimal pour faire passer les tests sous supervision.',
+    link: '/phase4-tdd-green'
+  },
+  {
+    number: 5,
+    name: 'TDD REFACTOR',
+    human: 40,
+    llm: 60,
+    description: 'Améliorer la qualité du code sans changer son comportement.',
+    link: '/phase5-tdd-refactor'
+  },
+  {
+    number: 6,
+    name: 'Triple Inspection',
+    human: 70,
+    llm: 30,
+    description: 'Validation technique, business et contenu pour garantir la qualité.',
+    link: '/phase6-triple-inspection'
+  }
+] : [
+  {
+    number: 1,
+    name: 'Strategic Architecture',
+    human: 60,
+    llm: 40,
+    description: 'Define architectural vision, strategic decisions and project constraints.',
+    link: '/en/phase1-architecture-strategique'
+  },
+  {
+    number: 2,
+    name: 'Tactical Planning',
+    human: 50,
+    llm: 50,
+    description: 'Break down the project into User Stories and concrete tasks with success criteria.',
+    link: '/en/phase2-planification-tactique'
+  },
+  {
+    number: 3,
+    name: 'TDD RED',
+    human: 40,
+    llm: 60,
+    description: 'Create tests and executable specifications before any implementation.',
+    link: '/en/phase3-tdd-red'
+  },
+  {
+    number: 4,
+    name: 'TDD GREEN',
+    human: 30,
+    llm: 70,
+    description: 'Implement minimal code to pass tests under supervision.',
+    link: '/en/phase4-tdd-green'
+  },
+  {
+    number: 5,
+    name: 'TDD REFACTOR',
+    human: 40,
+    llm: 60,
+    description: 'Improve code quality without changing behavior.',
+    link: '/en/phase5-tdd-refactor'
+  },
+  {
+    number: 6,
+    name: 'Triple Inspection',
+    human: 70,
+    llm: 30,
+    description: 'Technical, business and content validation for quality assurance.',
+    link: '/en/phase6-triple-inspection'
+  }
+];
+---
+
+<section class="architecture">
+  <div class="architecture-container">
+    <h2 class="architecture-title">
+      {currentLocale === 'fr'
+        ? 'Une méthodologie en 6 phases'
+        : 'A 6-Phase Methodology'
+      }
+    </h2>
+
+    <p class="architecture-intro">
+      {currentLocale === 'fr'
+        ? 'DocDriven structure l\'adoption des LLM à travers 6 phases où les humains contrôlent les décisions stratégiques et architecturales, tandis que l\'IA accélère l\'exécution tactique sous supervision continue.'
+        : 'DocDriven structures LLM adoption through 6 phases where humans control strategic and architectural decisions while AI accelerates tactical execution under continuous supervision.'
+      }
+    </p>
+
+    <div class="phases-grid">
+      {phases.map((phase) => (
+        <a href={phase.link} class="phase-card">
+          <div class="phase-header">
+            <span class="phase-number">Phase {phase.number}</span>
+            <div class="phase-balance">
+              <span class="balance-human" title={currentLocale === 'fr' ? 'Humain' : 'Human'}>
+                👤 {phase.human}%
+              </span>
+              <span class="balance-llm" title="LLM">
+                🤖 {phase.llm}%
+              </span>
+            </div>
+          </div>
+          <h3 class="phase-name">{phase.name}</h3>
+          <p class="phase-description">{phase.description}</p>
+          <span class="phase-link-text">
+            {currentLocale === 'fr' ? 'En savoir plus →' : 'Learn more →'}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .architecture {
+    background: var(--dd-neutral-light);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .architecture-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .architecture-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-3xl);
+    color: var(--dd-primary);
+    text-align: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .architecture-intro {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto var(--space-10);
+  }
+
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .phase-card {
+    background: var(--dd-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px var(--dd-shadow);
+  }
+
+  .phase-card:hover {
+    border-color: var(--dd-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--dd-shadow);
+  }
+
+  .phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .phase-number {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    color: var(--dd-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .phase-balance {
+    display: flex;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-heading);
+  }
+
+  .balance-human {
+    color: var(--dd-accent-positive);
+    font-weight: 600;
+  }
+
+  .balance-llm {
+    color: var(--dd-secondary);
+    font-weight: 600;
+  }
+
+  .phase-name {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .phase-description {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-4);
+    flex: 1;
+  }
+
+  .phase-link-text {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
+    color: var(--dd-secondary);
+    font-weight: 600;
+    transition: color var(--transition-base);
+  }
+
+  .phase-card:hover .phase-link-text {
+    color: var(--dd-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .architecture {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .architecture-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .phases-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,14 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/Homepage/HeroSection.astro';
+import ChallengeSection from '../../components/Homepage/ChallengeSection.astro';
+import ArchitectureSection from '../../components/Homepage/ArchitectureSection.astro';
+import ForWhoSection from '../../components/Homepage/ForWhoSection.astro';
+import CTASection from '../../components/Homepage/CTASection.astro';
 ---
 
-<BaseLayout title="DocDriven - Structured LLM Development" lang="en">
-  <main style="padding: 3rem 2rem; max-width: 800px; margin: 0 auto; flex: 1;">
-    <h1>DocDriven Website V1.0</h1>
-    <p>Site under construction with Astro 4.x</p>
-    <p>Framework: Astro | Performance Target: 98-100 Lighthouse</p>
-    <p style="margin-top: 2rem; padding: 1rem; background: var(--dd-neutral-light); border-left: 4px solid var(--dd-secondary);">
-      <strong>Progress:</strong> US1 ✅ US2 ✅ US3 ✅ US4 ✅ | Next step: US6 Homepage
-    </p>
-  </main>
+<BaseLayout
+  title="DocDriven - Structured LLM Development"
+  description="Structured methodology for LLM-assisted software development. 6 phases to transform LLMs into reliable development tools."
+  lang="en"
+>
+  <HeroSection />
+  <ChallengeSection />
+  <ArchitectureSection />
+  <ForWhoSection />
+  <CTASection />
 </BaseLayout>

@@ -1,0 +1,214 @@
+---
+import { getLocale } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+
+const profiles = currentLocale === 'fr' ? [
+  {
+    title: 'Organisations',
+    emoji: '🏢',
+    description: 'Vous adoptez les LLM en production et cherchez à structurer leur utilisation pour éviter la dette technique.',
+    criteria: [
+      'Équipes de 5+ développeurs',
+      'Projets critiques en production',
+      'Besoin de gouvernance IA',
+      'Culture qualité établie'
+    ]
+  },
+  {
+    title: 'Architectes & Tech Leads',
+    emoji: '🎯',
+    description: 'Vous guidez vos équipes dans l\'adoption d\'outils IA et cherchez un cadre méthodologique éprouvé.',
+    criteria: [
+      'Responsabilité architecture',
+      'Mentor d\'équipes techniques',
+      'Décisions technologiques',
+      'Qualité et maintenabilité'
+    ]
+  },
+  {
+    title: 'R&D & Innovation',
+    emoji: '🔬',
+    description: 'Vous explorez les méthodologies de développement assisté par IA et cherchez des approches structurées.',
+    criteria: [
+      'Recherche en ingénierie IA',
+      'Prototypage avancé',
+      'Contribution open source',
+      'Veille méthodologique'
+    ]
+  }
+] : [
+  {
+    title: 'Organizations',
+    emoji: '🏢',
+    description: 'You adopt LLMs in production and seek to structure their use to avoid technical debt.',
+    criteria: [
+      'Teams of 5+ developers',
+      'Critical production projects',
+      'Need for AI governance',
+      'Established quality culture'
+    ]
+  },
+  {
+    title: 'Architects & Tech Leads',
+    emoji: '🎯',
+    description: 'You guide your teams in AI tool adoption and seek a proven methodological framework.',
+    criteria: [
+      'Architecture responsibility',
+      'Technical team mentoring',
+      'Technology decisions',
+      'Quality and maintainability'
+    ]
+  },
+  {
+    title: 'R&D & Innovation',
+    emoji: '🔬',
+    description: 'You explore AI-assisted development methodologies and seek structured approaches.',
+    criteria: [
+      'AI engineering research',
+      'Advanced prototyping',
+      'Open source contribution',
+      'Methodological watch'
+    ]
+  }
+];
+---
+
+<section class="for-who">
+  <div class="for-who-container">
+    <h2 class="for-who-title">
+      {currentLocale === 'fr' ? 'Pour qui ?' : 'Who is it for?'}
+    </h2>
+
+    <p class="for-who-intro">
+      {currentLocale === 'fr'
+        ? 'DocDriven s\'adresse aux professionnels et organisations qui cherchent à structurer l\'adoption des LLM sans compromettre la qualité logicielle.'
+        : 'DocDriven is for professionals and organizations seeking to structure LLM adoption without compromising software quality.'
+      }
+    </p>
+
+    <div class="profiles-grid">
+      {profiles.map((profile) => (
+        <div class="profile-card">
+          <div class="profile-emoji">{profile.emoji}</div>
+          <h3 class="profile-title">{profile.title}</h3>
+          <p class="profile-description">{profile.description}</p>
+          <ul class="profile-criteria">
+            {profile.criteria.map((criterion) => (
+              <li>
+                <span class="criterion-check">✓</span>
+                {criterion}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .for-who {
+    background: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .for-who-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .for-who-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-3xl);
+    color: var(--dd-primary);
+    text-align: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .for-who-intro {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-10);
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .profile-card {
+    background: var(--dd-neutral-light);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    border-top: 6px solid var(--dd-secondary);
+    text-align: center;
+    transition: transform var(--transition-base);
+  }
+
+  .profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px var(--dd-shadow);
+  }
+
+  .profile-emoji {
+    font-size: 4rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .profile-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-2xl);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .profile-description {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-6);
+  }
+
+  .profile-criteria {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .profile-criteria li {
+    font-size: var(--font-size-base);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-3);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .criterion-check {
+    color: var(--dd-accent-positive);
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .for-who {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .for-who-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .profiles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

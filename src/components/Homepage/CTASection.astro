@@ -1,0 +1,193 @@
+---
+import { getLocale } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+const introLink = currentLocale === 'fr' ? '/intro' : '/en/intro';
+const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
+---
+
+<section class="cta">
+  <div class="cta-container">
+    <div class="cta-content">
+      <h2 class="cta-title">
+        {currentLocale === 'fr'
+          ? 'Prêt à structurer votre développement avec les LLM ?'
+          : 'Ready to structure your LLM development?'
+        }
+      </h2>
+
+      <p class="cta-message">
+        {currentLocale === 'fr'
+          ? 'DocDriven est une méthodologie open source, documentée et testée en conditions réelles. Commencez dès maintenant à explorer les 6 phases.'
+          : 'DocDriven is an open source methodology, documented and tested in real-world conditions. Start exploring the 6 phases now.'
+        }
+      </p>
+
+      <div class="cta-buttons">
+        <a href={introLink} class="cta-btn cta-btn-primary">
+          {currentLocale === 'fr'
+            ? 'Découvrir la méthodologie'
+            : 'Discover the methodology'
+          }
+        </a>
+        <a href={aboutLink} class="cta-btn cta-btn-secondary">
+          {currentLocale === 'fr'
+            ? 'À propos du projet'
+            : 'About the project'
+          }
+        </a>
+      </div>
+
+      <div class="cta-meta">
+        <div class="cta-meta-item">
+          <span class="meta-icon">📖</span>
+          <span class="meta-text">
+            {currentLocale === 'fr' ? '15K+ mots documentés' : '15K+ documented words'}
+          </span>
+        </div>
+        <div class="cta-meta-item">
+          <span class="meta-icon">🔓</span>
+          <span class="meta-text">
+            {currentLocale === 'fr' ? 'Licence CC BY-SA 4.0' : 'CC BY-SA 4.0 License'}
+          </span>
+        </div>
+        <div class="cta-meta-item">
+          <span class="meta-icon">✅</span>
+          <span class="meta-text">
+            {currentLocale === 'fr' ? 'Testé en production' : 'Production tested'}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    background: linear-gradient(135deg, var(--dd-secondary) 0%, var(--dd-primary) 100%);
+    color: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .cta-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .cta-content {
+    text-align: center;
+  }
+
+  .cta-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-3xl);
+    color: var(--dd-white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-message {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-10);
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+
+  .cta-btn-primary {
+    background: var(--dd-white);
+    color: var(--dd-primary);
+    border: 2px solid var(--dd-white);
+  }
+
+  .cta-btn-primary:hover {
+    background: transparent;
+    color: var(--dd-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-btn-secondary {
+    background: transparent;
+    color: var(--dd-white);
+    border: 2px solid var(--dd-white);
+  }
+
+  .cta-btn-secondary:hover {
+    background: var(--dd-white);
+    color: var(--dd-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .meta-icon {
+    font-size: var(--font-size-xl);
+  }
+
+  .meta-text {
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cta {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .cta-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .cta-meta {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>
