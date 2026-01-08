@@ -1,0 +1,34 @@
+---
+import { getLocale, getLocalizedPath } from '../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+const currentPath = Astro.url.pathname.replace(/^\/(en|fr)/, '') || '/';
+const otherLocale = currentLocale === 'fr' ? 'en' : 'fr';
+const otherPath = getLocalizedPath(currentPath, otherLocale);
+---
+
+<div class="language-switcher">
+  <a href={otherPath} aria-label={`Switch to ${otherLocale.toUpperCase()}`}>
+    {otherLocale.toUpperCase()}
+  </a>
+</div>
+
+<style>
+  .language-switcher {
+    display: inline-block;
+  }
+
+  .language-switcher a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    background: var(--dd-secondary, #2E86AB);
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .language-switcher a:hover {
+    background: var(--dd-primary, #1A2332);
+  }
+</style>
