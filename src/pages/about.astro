@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="À Propos - DocDriven"
+  description="Découvrez l'auteur de DocDriven et le contexte de création de cette méthodologie structurée."
+>
+  <main class="about">
+    <section class="about-hero">
+      <div class="container">
+        <h1>À Propos de DocDriven</h1>
+        <p class="hero-subtitle">
+          Méthodologie open source pour développement logiciel structuré avec les LLM
+        </p>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="main-content">
+            <h2>L'Auteur</h2>
+            <h3>Éric Gauthier</h3>
+            <p>
+              Architecte logiciel senior avec 30+ ans d'expérience en conception de systèmes complexes,
+              j'ai développé DocDriven pour répondre à un constat pragmatique : l'adoption ad-hoc des
+              Large Language Models en développement logiciel génère une dette technique invisible qui
+              ne se manifeste que des mois après l'implémentation.
+            </p>
+
+            <p>
+              Ma carrière m'a permis d'observer l'évolution des méthodologies de développement, de
+              Waterfall à Agile, de TDD à DevOps. L'émergence des LLM représente un changement aussi
+              fondamental que l'adoption des IDEs ou du refactoring automatisé. Cependant, sans cadre
+              méthodologique rigoureux, cet outil puissant devient un générateur de complexité accidentelle.
+            </p>
+
+            <h2>Genèse de DocDriven</h2>
+            <p>
+              DocDriven n'est pas une théorie académique. Cette méthodologie a été développée et testée
+              sur un projet réel de traitement de données complexe (Chef Jules), où chaque phase a été
+              validée empiriquement. Le résultat : 840 tests générés, zéro régression, et un score
+              Fagan de 85/100 en inspection finale.
+            </p>
+
+            <p>
+              La méthodologie structure l'adoption des LLM à travers 6 phases distinctes où les humains
+              contrôlent les décisions stratégiques et architecturales (Phases 1-2, Phase 6), tandis que
+              l'IA accélère l'exécution tactique sous supervision continue (Phases 3-5). Cette séparation
+              claire des responsabilités évite deux écueils : la sur-automatisation (tout déléguer à l'IA)
+              et la sous-utilisation (utiliser l'IA comme simple autocomplete).
+            </p>
+
+            <h2>Dissociation Auteur/Méthodologie</h2>
+            <p>
+              DocDriven est conçu comme une méthodologie open source plus grande que son créateur.
+              Elle appartient à la communauté des développeurs qui l'adoptent, la testent, et contribuent
+              à son évolution. Mon rôle est celui de contributeur principal, pas de "gourou" ou propriétaire
+              exclusif.
+            </p>
+
+            <p>
+              La licence CC BY-SA 4.0 garantit que DocDriven reste libre d'usage tout en préservant
+              l'attribution. Vous êtes encouragé à l'adapter à vos contextes spécifiques, à la critiquer,
+              et à proposer des améliorations.
+            </p>
+
+            <h2>Contact & Liens</h2>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/eric-gauthier" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="link-icon">🔗</span>
+                LinkedIn
+              </a>
+              <a href="https://github.com/egauthier" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="link-icon">💻</span>
+                GitHub
+              </a>
+              <a href="mailto:m.e.gauthier@gmail.com" class="contact-link">
+                <span class="link-icon">📧</span>
+                Email
+              </a>
+            </div>
+
+            <div class="about-footer-note">
+              <p>
+                <strong>Note :</strong> DocDriven est une méthodologie en développement actif (V1.0).
+                Votre feedback et vos contributions sont essentiels pour son amélioration. Consultez la
+                <a href="/licence">page Licence</a> pour connaître les conditions d'utilisation et de contribution.
+              </p>
+            </div>
+          </div>
+
+          <aside class="sidebar-info">
+            <div class="info-card">
+              <h3>Méthodologie DocDriven</h3>
+              <ul>
+                <li><strong>Version :</strong> 1.0</li>
+                <li><strong>Licence :</strong> CC BY-SA 4.0</li>
+                <li><strong>Documentation :</strong> 15K+ mots</li>
+                <li><strong>ADRs :</strong> 26 décisions</li>
+                <li><strong>Validation :</strong> Fagan 85/100</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Liens Rapides</h3>
+              <ul>
+                <li><a href="/intro">Introduction</a></li>
+                <li><a href="/phase1-architecture-strategique">Phase 1 : Architecture</a></li>
+                <li><a href="/roles-et-responsabilites">Rôles & Responsabilités</a></li>
+                <li><a href="/licence">Licence</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, var(--dd-primary) 0%, var(--dd-neutral-dark) 100%);
+    color: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-4xl);
+    color: var(--dd-white);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--dd-secondary);
+    font-weight: 600;
+  }
+
+  .about-content {
+    padding: var(--space-12) var(--space-6);
+    background: var(--dd-white);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .main-content h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-2xl);
+    color: var(--dd-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+    border-bottom: 3px solid var(--dd-secondary);
+    padding-bottom: var(--space-2);
+  }
+
+  .main-content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .main-content h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    color: var(--dd-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .main-content p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-links {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-6);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: var(--dd-secondary);
+    color: var(--dd-white);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all var(--transition-base);
+  }
+
+  .contact-link:hover {
+    background: var(--dd-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--dd-shadow);
+  }
+
+  .link-icon {
+    font-size: var(--font-size-xl);
+  }
+
+  .about-footer-note {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background: var(--dd-neutral-light);
+    border-left: 4px solid var(--dd-secondary);
+    border-radius: var(--radius-md);
+  }
+
+  .about-footer-note p {
+    margin: 0;
+    font-size: var(--font-size-base);
+  }
+
+  .about-footer-note a {
+    color: var(--dd-secondary);
+    font-weight: 600;
+  }
+
+  .sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .info-card {
+    background: var(--dd-neutral-light);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--dd-secondary);
+  }
+
+  .info-card h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    font-size: var(--font-size-base);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-3);
+    line-height: var(--line-height-normal);
+  }
+
+  .info-card a {
+    color: var(--dd-secondary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .info-card a:hover {
+    text-decoration: underline;
+    color: var(--dd-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .about-hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .about-content {
+      padding: var(--space-8) var(--space-4);
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+      flex-direction: column;
+    }
+
+    .contact-link {
+      justify-content: center;
+    }
+  }
+</style>
