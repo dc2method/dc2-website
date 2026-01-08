@@ -1,0 +1,327 @@
+/* ===================================
+   DocDriven Design System - Global Styles
+   Version: 1.0
+   Identity: Industrial Documentation
+   =================================== */
+
+/* CSS Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   Design Tokens - DocDriven Palette
+   =================================== */
+
+:root {
+  /* Primary Colors */
+  --dd-primary: #1A2332;        /* Dark blue-grey - Authority */
+  --dd-secondary: #2E86AB;      /* Industrial blue - Trust */
+
+  /* Accent Colors */
+  --dd-accent-positive: #06A77D; /* Technical green - Validation */
+  --dd-accent-warning: #D64933;  /* Technical red - Guards */
+
+  /* Neutral Colors */
+  --dd-neutral-light: #F0F4F8;   /* Bluish grey - Backgrounds */
+  --dd-neutral-dark: #2C3E50;    /* Slate grey - Text */
+  --dd-white: #FFFFFF;
+  --dd-black: #0A0A0A;
+
+  /* Semantic Colors */
+  --dd-code-bg: #282C34;         /* Code block background */
+  --dd-code-text: #61DAFB;       /* Code text (cyan) */
+  --dd-border: #E0E0E0;          /* Borders */
+  --dd-shadow: rgba(26, 35, 50, 0.1); /* Shadows */
+
+  /* Typography Scale */
+  --font-family-heading: 'JetBrains Mono', monospace;
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+
+  /* Border Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* ===================================
+   Base Typography
+   =================================== */
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--dd-neutral-dark);
+  background-color: var(--dd-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+  color: var(--dd-primary);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  margin-top: var(--space-8);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  margin-top: var(--space-8);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  margin-top: var(--space-6);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-5);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  margin-top: var(--space-4);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  margin-top: var(--space-4);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+/* Links */
+a {
+  color: var(--dd-secondary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--dd-primary);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--dd-secondary);
+  outline-offset: 2px;
+}
+
+/* Strong & Emphasis */
+strong, b {
+  font-weight: 600;
+  color: var(--dd-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* Code */
+code {
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-sm);
+  background: var(--dd-code-bg);
+  color: var(--dd-code-text);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-sm);
+  background: var(--dd-code-bg);
+  color: var(--dd-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-4) 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--dd-secondary);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--dd-neutral-dark);
+  background: var(--dd-neutral-light);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--dd-border);
+  margin: var(--space-8) 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+}
+
+th {
+  background: var(--dd-primary);
+  color: var(--dd-white);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+}
+
+td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--dd-border);
+}
+
+tr:hover {
+  background: var(--dd-neutral-light);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Selection */
+::selection {
+  background: var(--dd-secondary);
+  color: var(--dd-white);
+}
+
+/* Focus Visible (Accessibility) */
+:focus-visible {
+  outline: 2px solid var(--dd-secondary);
+  outline-offset: 2px;
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--dd-primary);
+}
+
+.text-secondary {
+  color: var(--dd-secondary);
+}
+
+.bg-light {
+  background-color: var(--dd-neutral-light);
+}
+
+.bg-dark {
+  background-color: var(--dd-primary);
+  color: var(--dd-white);
+}
+
+/* ===================================
+   Responsive Typography
+   =================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 1.875rem;  /* 30px */
+    --font-size-3xl: 1.5rem;    /* 24px */
+    --font-size-2xl: 1.25rem;   /* 20px */
+  }
+
+  body {
+    font-size: 0.9375rem; /* 15px on mobile */
+  }
+}
