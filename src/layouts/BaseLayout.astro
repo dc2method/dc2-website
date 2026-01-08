@@ -1,16 +1,22 @@
 ---
 import LanguageDetector from '../components/LanguageDetector.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
   description?: string;
   lang?: 'fr' | 'en';
+  showNavbar?: boolean;
+  showFooter?: boolean;
 }
 
 const {
   title,
   description = 'Structured LLM Development',
-  lang = 'fr'
+  lang = 'fr',
+  showNavbar = true,
+  showFooter = true
 } = Astro.props;
 ---
 
@@ -35,6 +41,16 @@ const {
     <LanguageDetector />
   </head>
   <body>
+    {showNavbar && <Navbar />}
     <slot />
+    {showFooter && <Footer />}
   </body>
 </html>
+
+<style is:global>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+</style>
