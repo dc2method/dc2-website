@@ -1,0 +1,52 @@
+---
+// Component to initialize Mermaid diagrams on the page
+---
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  // Initialize Mermaid with custom theme
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'default',
+    themeVariables: {
+      primaryColor: '#2E86AB',
+      primaryTextColor: '#fff',
+      primaryBorderColor: '#1A2332',
+      lineColor: '#2C3E50',
+      secondaryColor: '#F0F4F8',
+      tertiaryColor: '#fff'
+    }
+  });
+
+  // Convert code blocks with data-language="mermaid" to mermaid divs
+  function processMermaidBlocks() {
+    // Find all pre elements with data-language="mermaid"
+    const mermaidBlocks = document.querySelectorAll('pre[data-language="mermaid"]');
+
+    mermaidBlocks.forEach((preElement, index) => {
+      // Get the mermaid code content (strip HTML and get plain text)
+      const code = preElement.textContent;
+
+      // Create a new div with class mermaid
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = code;
+
+      // Replace the pre element with the mermaid div
+      preElement.parentNode.replaceChild(mermaidDiv, preElement);
+    });
+
+    // Run mermaid on all .mermaid elements
+    if (mermaidBlocks.length > 0) {
+      mermaid.run();
+    }
+  }
+
+  // Run when DOM is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', processMermaidBlocks);
+  } else {
+    processMermaidBlocks();
+  }
+</script>

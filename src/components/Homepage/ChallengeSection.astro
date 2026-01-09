@@ -16,7 +16,7 @@ const currentLocale = getLocale(Astro.url);
     <div class="challenge-content">
       <p class="challenge-intro">
         {currentLocale === 'fr'
-          ? "Les Large Language Models ont démontré des capacités remarquables en génération de code. Cependant, leur adoption en environnement professionnel révèle une limite critique :"
+          ? "Les Grands Modèles de Langage ont démontré des capacités remarquables en génération de code. Cependant, leur adoption en environnement professionnel révèle une limite critique :"
           : "Large Language Models have demonstrated remarkable capabilities in code generation. However, their adoption in professional environments reveals a critical limitation:"
         }
       </p>
@@ -24,8 +24,8 @@ const currentLocale = getLocale(Astro.url);
       <div class="challenge-problem">
         <p>
           {currentLocale === 'fr'
-            ? "Sans cadre méthodologique rigoureux, ils génèrent du code syntaxiquement correct mais architecturalement fragile, créant une dette technique invisible qui ne se manifeste que des mois plus tard."
-            : "Without a rigorous methodological framework, they generate syntactically correct but architecturally fragile code, creating invisible technical debt that only manifests months later."
+            ? "« Sans cadre méthodologique rigoureux, les LLM génèrent du code syntaxiquement correct mais architecturalement fragile, créant une dette technique invisible qui ne se manifeste que des mois plus tard. »"
+            : "\"Without a rigorous methodological framework, they generate syntactically correct but architecturally fragile code, creating invisible technical debt that only manifests months later.\""
           }
         </p>
       </div>
@@ -104,19 +104,18 @@ const currentLocale = getLocale(Astro.url);
   }
 
   .challenge-problem {
-    background: var(--dd-accent-warning);
-    color: var(--dd-white);
     padding: var(--space-6);
-    border-radius: var(--radius-md);
     margin-bottom: var(--space-10);
-    border-left: 6px solid var(--dd-primary);
+    text-align: center;
   }
 
   .challenge-problem p {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     line-height: var(--line-height-relaxed);
     margin: 0;
+    color: var(--dd-neutral-dark);
+    font-style: italic;
   }
 
   .challenge-points {

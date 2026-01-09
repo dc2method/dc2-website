@@ -41,7 +41,7 @@ Cette mécanique présente toutefois plusieurs limites structurelles pour le dé
 
 ## La solution: Une alliance structurée entre l'humain et l'IA
 
-C'est précisément pour combler ces failles que la méthodologie **Structured LLM Development** a été conçue. Il s'agit d'un workflow pragmatique qui organise la collaboration entre l'expertise stratégique humaine et l'automatisation tactique des LLM. Cette méthode n'essaie pas de "dompter" le LLM, mais de l'encadrer dans un processus où l'humain garde la maîtrise stratégique, et où la qualité est assurée par une combinaison structurée de documentation, de tests, et d'inspections systématiques. Le résultat : une utilisation du LLM qui amplifie les compétences humaines au lieu de les contourner.
+C'est précisément pour combler ces failles que la méthodologie **DocDriven** (Développement logiciel structuré assisté par LLM) a été conçue. Il s'agit d'un workflow pragmatique qui organise la collaboration entre l'expertise stratégique humaine et l'automatisation tactique des LLM. Cette méthode n'essaie pas de "dompter" le LLM, mais de l'encadrer dans un processus où l'humain garde la maîtrise stratégique, et où la qualité est assurée par une combinaison structurée de documentation, de tests, et d'inspections systématiques. Le résultat : une utilisation du LLM qui amplifie les compétences humaines au lieu de les contourner.
 
 ![Diagramme Structured LLM](/img/DocDriven.png)
 
@@ -121,9 +121,9 @@ Pour systèmes critiques : trois inspections automatisées par LLM détectent la
 **Durée** : 4-6 heures  
 **Ratio** : 40% Humain / 60% LLM
 
-## Pourquoi Structured LLM fonctionne
+## Pourquoi DocDriven fonctionne
 
-**Structured LLM Development ne combat pas les limites des LLM - il les compense systématiquement** :
+**DocDriven ne combat pas les limites des LLM - il les compense systématiquement** :
 
 - **Pas de représentation interne** → Phase 1 crée ADR + schémas explicites
 - **Pas de compréhension architecture** → Phase 1 documente le pourquoi, pas juste le quoi

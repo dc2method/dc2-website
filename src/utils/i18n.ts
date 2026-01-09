@@ -13,7 +13,7 @@ export const translations = {
   fr: {
     'nav.methodology': 'Méthodologie',
     'nav.about': 'À Propos',
-    'hero.tagline': 'Structured LLM Development',
+    'hero.tagline': 'Développement logiciel structuré assisté par LLM',
     'hero.message': 'La méthodologie qui transforme les LLM de générateurs statistiques en outils de développement structurés, testés et maintenables.',
     'hero.cta.primary': 'Découvrir la Méthodologie →',
     'hero.cta.secondary': 'Voir les 6 Phases',

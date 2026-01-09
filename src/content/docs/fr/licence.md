@@ -37,7 +37,7 @@ Le code source de ce site web (structure Astro, composants React, CSS) est égal
 
 Si vous utilisez ou adaptez DocDriven dans vos projets, voici une attribution recommandée :
 
-> **DocDriven - Structured LLM Development**
+> **DocDriven - Développement logiciel structuré assisté par LLM**
 > Méthodologie créée par Éric Gauthier
 > Licence : CC BY-SA 4.0
 > Source : [https://docdriven.dev](https://docdriven.dev)
