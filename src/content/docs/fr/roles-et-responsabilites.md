@@ -1,17 +1,17 @@
 ---
 title: "Rôles et Responsabilités"
-description: "Définition des rôles humains et IA dans DocDriven"
+description: "Définition des rôles humains et IA dans Développement par Contraintes Convergentes"
 sidebar_position: 8
 lang: fr
 ---
 
 # Rôles et Responsabilités
 
-Ce document définit les rôles clés dans la méthodologie Structured LLM et leurs responsabilités spécifiques à travers les 6 phases. Structured LLM est conçu pour s'adapter à différentes structures d'équipe, des startups aux grandes entreprises.
+Ce document définit les rôles clés dans la méthodologie Développement par Contraintes Convergentes (DC²) et leurs responsabilités spécifiques à travers les 6 phases. DC² est conçu pour s'adapter à différentes structures d'équipe, des startups aux grandes entreprises.
 
 ## Philosophie des Rôles
 
-**Structured LLM privilégie la flexibilité organisationnelle** : Les rôles décrits ici sont des **responsabilités**, pas des titres de poste rigides. Une même personne peut occuper plusieurs rôles, et un rôle peut être partagé entre plusieurs personnes selon la taille et la structure de votre équipe.
+**DC² privilégie la flexibilité organisationnelle** : Les rôles décrits ici sont des **responsabilités**, pas des titres de poste rigides. Une même personne peut occuper plusieurs rôles, et un rôle peut être partagé entre plusieurs personnes selon la taille et la structure de votre équipe.
 
 **Principe clé** : Ce qui importe n'est pas *qui* porte le titre, mais *qui* assume la responsabilité à chaque phase.
 
@@ -53,9 +53,9 @@ Ce document définit les rôles clés dans la méthodologie Structured LLM et le
 - Jugement sur scalabilité, performance, maintenabilité
 
 **Engagement temps** :
-- Phase 1 : 1-2 jours (rôle principal)
-- Phase 2 : 4-6 heures (génération + transfert critique)
-- Phases 3-6 : Disponibilité consultation (2-4 heures par phase)
+- Phase 1 : ⏱️⏱️⏱️ - Rôle principal
+- Phase 2 : ⏱️⏱️ - Génération + transfert critique
+- Phases 3-6 : ⏱️ - Disponibilité consultation 
 
 ### 2. Product Owner
 
@@ -79,9 +79,9 @@ Ce document définit les rôles clés dans la méthodologie Structured LLM et le
 - Vision produit et roadmap
 
 **Engagement temps** :
-- Phase 1 : 4-8 heures (validation continue)
-- Phase 2B : 2 heures (Transfert Critique)
-- Phase 6 : 1-2 heures (validation finale optionnelle)
+- Phase 1 : ⏱️⏱️ - Validation continue
+- Phase 2B : ⏱️ - Transfert Critique
+- Phase 6 : ⏱️ - Validation finale optionnelle
 
 ### 3. Développeur Senior
 
@@ -105,10 +105,10 @@ Ce document définit les rôles clés dans la méthodologie Structured LLM et le
 - Jugement sur maintenabilité et évolution long terme
 
 **Engagement temps** :
-- Phase 3 : 30-45 minutes (validation tests)
-- Phase 4 : 20-30 minutes (validation implémentation)
-- Phase 5 : 6-12 heures (guidance refactoring continue)
-- Phase 6 : 2-3 heures (validation inspections)
+- Phase 3 : ⏱️ - Validation tests
+- Phase 4 : ⏱️ - Validation implémentation
+- Phase 5 : ⏱️⏱️⏱️ - Guidance refactoring continue
+- Phase 6 : ⏱️ - Validation inspections
 
 ### 4. Équipe de Développement
 
@@ -131,11 +131,10 @@ Ce document définit les rôles clés dans la méthodologie Structured LLM et le
 - Pensée critique (challenger hypothèses)
 
 **Engagement temps** :
-- Phase 2A : 1-2 heures (pré-lecture plan tactique)
-- Phase 2B : 90-120 minutes (Transfert Critique)
-- Phase 3-4 : Observation/apprentissage optionnel
-- Phase 5 : 6-12 heures (travail refactoring actif)
-- Phase 6 : 2-3 heures (révision inspections)
+- Phase 2 : ⏱️⏱️ - Pré-lecture plan tactique et Transfert Critique
+- Phase 4 : ⏱️ - Génération
+- Phase 5 : ⏱️⏱️⏱️ - Travail refactoring actif
+- Phase 6 : ⏱️ - Révision inspections
 
 ## Dynamiques de Collaboration
 
@@ -209,20 +208,19 @@ graph TD
 - **Senior ne fait PAS tout le travail seul**
 - Senior identifie opportunités : "Ce module a de la duplication, qui veut l'extraire ?"
 - Équipe propose approches : "On pourrait utiliser pattern Strategy ici ?"
-- Senior guide : "Bonne idée, mais attention au sur-engineering. Commencez simple."
+- Senior guide : "Bonne idée, mais attention au sur-engineering."
 - Équipe implémente sous guidance
 - Senior révise et ajuste en continu
 
 **Bénéfices** :
-- Apprentissage par la pratique (équipe développe compétences)
+- Perfectionnement par la pratique (équipe développe compétences)
 - Scalabilité (plusieurs refactorings parallèles)
 - Ownership (équipe fière du résultat)
 - Senior multiplicateur de force (guide 3-4 personnes simultanément)
 
 **Anti-pattern à éviter** :
-- ❌ Senior fait tout, équipe regarde → Pas d'apprentissage, goulot d'étranglement
-- ❌ Équipe seule sans guidance → Risque sur-engineering ou sous-refactoring
-- ✅ **Équipe active sous guidance Senior → Scalable, apprenant, efficace**
+- Senior fait tout, équipe regarde → Pas d'apprentissage, goulot d'étranglement
+- Équipe seule sans guidance → Risque sur-engineering ou sous-refactoring
 
 ### Phase 6 : Triple Inspection (Optionnelle)
 
@@ -234,7 +232,7 @@ graph TD
     SVP --> DA[Décisions actions]
 ```
 
-**Dynamique** : Inspections automatisées, décisions humaines. Équipe apprend à lire et interpréter rapports d'inspection, Senior valide que priorisation est appropriée.
+**Dynamique** : Inspections automatisées, décisions humaines. L'équipe apprend à lire et interpréter rapports d'inspection, Le senior valide que la priorisation est appropriée.
 
 ## Adaptation Selon Taille d'Équipe
 
@@ -316,22 +314,6 @@ graph TD
 | **Mentorat** | Avancé | - | Expert | Variable |
 | **Trade-offs business** | Avancé | Expert | Intermédiaire | Base |
 
-### Progression Typique
-
-**Développeur → Dev Senior** :
-1. Maîtrise technique stack (2-3 ans)
-2. Expérience TDD profonde (1-2 ans pratique)
-3. Premiers refactorings guidés (6-12 mois)
-4. Mentorat junior développeurs (6+ mois)
-5. Validation code en autonomie
-
-**Dev Senior → Concepteur** :
-1. Vision système développée (3-5 ans)
-2. Expérience patterns architecturaux (2-3 ans)
-3. Trade-offs techniques/business (2+ ans)
-4. Communication stakeholders (1-2 ans)
-5. Décisions architecturales autonomes
-
 ## Pièges Courants
 
 ### 1. Concepteur Isolé
@@ -356,21 +338,19 @@ graph TD
 
 ## Indicateurs Santé Rôles
 
-:::tip[Signaux Positifs]
--  Équipe pose 10+ questions au Transfert Critique
+### Signaux Positifs
+-  Équipe pose plusieur questions lors du Transfert Critique
 -  Estimations Concepteur vs Équipe divergent < 20%
--  Juniors contribuent idées refactoring Phase 5
--  Senior guide 3+ personnes simultanément Phase 5
+-  Juniors contribuent aux idées de refactoring Phase 5
 -  Product Owner valide sans surprise Phase 2B
-:::
 
-:::danger[Signaux Négatif]
+### Signaux Négatif
 -  Équipe silencieuse au Transfert Critique
 -  Estimations divergent >50%
--  Senior code 90%+ du refactoring seul
--  Product Owner découvre solution Phase 6
+-  Senior code la majorité du refactoring seul
+-  Product Owner découvre solution en Phase 6
 -  "C'est pas mon rôle" répété fréquemment
-:::
+
 ## Recommandations Finales
 
 1. **Flexibilité > Rigidité** : Adaptez les rôles à votre contexte organisationnel
@@ -379,4 +359,4 @@ graph TD
 4. **Apprentissage > Vitesse** : Phase 5 en équipe plus lente initialement mais ROI long terme
 5. **Ownership Collectif** : Équipe entière responsable qualité, pas juste Senior/Concepteur
 
-**SLLD fonctionne mieux quand les rôles sont des responsabilités partagées avec leadership clair, pas des silos étanches.**
+**DC² fonctionne mieux quand les rôles sont des responsabilités partagées avec leadership clair, pas des silos étanches.**

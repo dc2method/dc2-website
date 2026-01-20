@@ -26,7 +26,9 @@ lang: fr
   </span>
 </div>
 
-**En bref** : Transforme User Stories en plans d'implémentation techniques exhaustifs via LLM. L'équipe valide lors du Transfert Critique - la réunion la plus importante de DocDriven.
+---
+
+**En bref** : Transforme User Stories en plans d'implémentation techniques exhaustifs via LLM. L'équipe valide lors du Transfert Critique - la réunion la plus importante de DC².
 
 ---
 
@@ -46,25 +48,20 @@ Le Transfert Critique détecte et résout les incompréhensions AVANT le premier
 - **Dépendances sémantiques complexes** : LLM force l'explicitation complète des interfaces, séquences d'implémentation, et relations entre composants
 - **Pas de mémoire opérationnelle** : Plan tactique devient la "mémoire externe" persistante consultée dans phases suivantes
 
-**Impact mesuré** :
-- Temps Story Refinement : 2-3h → 90min (50% réduction)
-- Qualité décomposition technique : +40%
-- Refontes évitées en Phase 4-5 : -70%
-- Estimations : Variance réduite de 200% à 20%
 
 ### Lien avec Agile
 
-**Phase 2 = Story Refinement + Sprint Planning turbocompressé.**  
+**Phase 2 = Story Refinement + Sprint Planning.**  
 
-Au lieu de décomposer les User Stories de zéro lors du refinement, l'équipe part d'un plan technique détaillé pré-généré par le LLM qu'elle peut critiquer, améliorer et valider. Même qualité de décomposition, 50% moins de temps, plan plus exhaustif.
+Au lieu de décomposer les User Stories de zéro lors du refinement, l'équipe part d'un plan technique détaillé pré-généré par le LLM qu'elle peut critiquer, améliorer et valider. Même qualité de décomposition, beaucoup moins de temps, plan plus exhaustif.
 
 ```mermaid
 graph TD
     US[User Story du PO] --> P1[Phase 1: Vision Architecture]
     P1 --> P2A[Phase 2A: LLM genere Plan]
-    P2A --> C1[Composant 1: API Handler]
-    P2A --> C2[Composant 2: Business Logic]
-    P2A --> C3[Composant 3: Data Validator]
+    P2A --> C1[Composant 1]
+    P2A --> C2[Composant 2]
+    P2A --> C3[Composant 3]
     C1 --> P2B[Phase 2B: Transfert Critique]
     C2 --> P2B
     C3 --> P2B
@@ -75,7 +72,7 @@ graph TD
     style V fill:#10b981
 ```
 
-**Intégration Sprint typique** :
+**Exemple d'intégration dans un Sprint typique** :
 - Semaine avant : PO présente User Stories, Concepteur fait Phase 1
 - Jour 1 Sprint : Phase 2A (matin) + Équipe pré-lit (après-midi)
 - Jour 2 Sprint : Phase 2B (Transfert Critique) = Sprint Planning technique
@@ -95,39 +92,38 @@ graph TD
 - Exigences chronologie et dépendances externes
 - Standards qualité et test
 
-### Partie A : Génération Plan Tactique (30-40 min)
+### Partie A : Génération Plan Tactique ⏱️
 
-**1. Génération par LLM** (10 min - LLM 90%, Concepteur 10%)
+**1. Génération par LLM** (LLM 90%, Concepteur 10%)
 - LLM lit document architecture stratégique
 - Génère feuille de route d'implémentation détaillée
-- Décompose solution en 3-5 composants avec spécifications
+- Décompose solution en plus ou moins 3-5 composants avec spécifications
 - Concepteur valide alignement avec décisions Phase 1
 
-**2. Pré-lecture par Équipe** (1-2 jours avant Transfert Critique)
+**2. Pré-lecture par Équipe** 
 - Équipe reçoit plan tactique généré
-- Chaque membre lit individuellement (30-60 min)
+- Chaque membre lit individuellement
 - Note questions, préoccupations, risques identifiés
 - Prépare estimations préliminaires
 
-### Partie B : Transfert Critique (90-120 min)
+### Partie B : Transfert Critique ⏱️⏱️⏱️
 
-**3. Présentation** (20 min - Concepteur)
+**3. Présentation** (~20 min - Concepteur)
 - Concepteur présente vision architecturale
 - Explique décomposition en composants
 - Justifie choix techniques majeurs
 
-**4. Challenge Actif** (40-60 min - Équipe)
+**4. Challenge Actif** (~40-60 min - Équipe)
 - Équipe pose questions, challenge hypothèses
 - Identifie lacunes, dépendances manquantes, risques
 - Validation estimations d'effort
 - Discussion faisabilité technique
 
-**5. Révision Collaborative** (20 min - Équipe + LLM)
-- LLM prend notes de la discussion
-- Incorpore feedback dans plan révisé
+**5. Révision Collaborative** (~20 min - Équipe + LLM)
+- LLM Incorpore feedback dans plan révisé
 - Génère résumé des décisions
 
-**6. Validation Finale** (10 min - Concepteur + Équipe)
+**6. Validation Finale** (~10 min - Concepteur + Équipe)
 - Révision plan révisé
 - Approbation formelle pour passage Phase 3
 - Plan enregistré au contrôle de version
@@ -143,19 +139,13 @@ graph TD
 
 Cette phase est considérée terminée quand :
 
-1. Le plan tactique décompose la solution en 3-5 phases d'implémentation avec jalons clairs
+1. Le plan tactique décompose la solution en ~3-5 phases d'implémentation avec jalons clairs
 2. Chaque composant a une spécification détaillée (entrées, sorties, responsabilités, dépendances)
 3. La pile technique est définie avec justification des choix de frameworks et bibliothèques
 4. L'équipe dev a révisé le plan, et toutes les préoccupations sont documentées et résolues
 5. Les estimations d'effort sont alignées entre concepteur et équipe (écart < 20%)
 6. Toutes les dépendances externes sont identifiées (APIs, sources de données, systèmes tiers)
 7. Le concepteur et le Product Owner approuvent le plan final avant Phase 3
-
-**Estimation Temps Total** :
-- Génération plan (Phase 2A) : 30-40 minutes
-- Pré-lecture équipe : 30-60 minutes par personne (asynchrone)
-- Transfert Critique (Phase 2B) : 90-120 minutes
-- **Total temps équipe synchrone** : ~2 heures
 
 ---
 
@@ -244,7 +234,7 @@ explanation = confidence_explainer.explain(score, ...)
 display = confidence_presenter.format(score, explanation)
 ```
 
-#### Phase 2B : Transfert Critique - Discussion Réelle
+#### Phase 2B : Transfert Critique - Exemple de Discussion
 
 **Question Équipe (Dev Backend)** :  
 "Le calcul pénalité sera-t-il assez rapide en production ? On génère 1000+ recommandations par requête."
@@ -262,7 +252,7 @@ display = confidence_presenter.format(score, explanation)
 **Discussion Product Owner** :  
 "Intéressant. Pour MVP, affichons à tous. On peut A/B tester premium plus tard."
 
-**Révision Plan** : Aucune. Noted pour backlog futur.
+**Révision Plan** : Aucune. Pris en note pour backlog futur.
 
 ---
 
@@ -392,8 +382,6 @@ Logique : Gérer les utilisateurs et leurs données
 - **Poser questions directes** : "Dev Backend, que penses-tu de la gestion erreur API externe ?"
 - **Red flag si zéro questions** : Équipe silencieuse = problème. Creuser pourquoi.
 
-**Signal santé** : 10+ questions posées = équipe engagée
-
 ---
 
 #### 2. Plan Trop Détaillé (Over-Engineering)
@@ -466,9 +454,9 @@ PO pas présent. Équipe valide plan technique qui ne répond pas vraiment au be
 
 ### Relation avec Agile - Détails
 
-#### Mapping Précis Concepts Agile → DocDriven
+#### Mapping Précis Concepts Agile → DC²
 
-| Concept Agile | Équivalent DocDriven | Différence Clé |
+| Concept Agile | Équivalent DC² | Différence Clé |
 |---------------|---------------------|----------------|
 | **User Story** | Input Phase 1-2 | Story reste niveau fonctionnel utilisateur |
 | **Story Refinement** | Phase 2B (Transfert Critique) | Équipe révise plan pré-généré vs crée de zéro |

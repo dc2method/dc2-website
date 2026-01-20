@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import remarkHeadingId from 'remark-heading-id';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +20,7 @@ export default defineConfig({
     format: 'directory', // URLs propres sans .html
   },
   markdown: {
+    remarkPlugins: [remarkHeadingId],
     shikiConfig: {
       theme: 'github-dark',
       wrap: true,

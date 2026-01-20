@@ -14,7 +14,7 @@ const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
     <div class="footer-grid">
       <!-- Column 1: About -->
       <div class="footer-column">
-        <h3 class="footer-heading">DocDriven</h3>
+        <h3 class="footer-heading">DC²</h3>
         <p class="footer-description">
           {currentLocale === 'fr'
             ? 'Méthodologie structurée pour développement logiciel assisté par LLM'
@@ -45,9 +45,7 @@ const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
         <ul class="footer-links">
           <li><a href={aboutLink}>{t('footer.about', currentLocale)}</a></li>
           <li><a href={licenceLink}>{t('footer.license', currentLocale)}</a></li>
-          <li><a href="https://github.com/egauthier/docdriven" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a></li>
+
         </ul>
       </div>
     </div>

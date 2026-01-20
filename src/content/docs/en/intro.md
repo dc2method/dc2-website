@@ -1,5 +1,5 @@
 ---
-title: "Introduction to DocDriven"
+title: "Introduction to Development by Convergent Constraints"
 description: "Master software development with AI through a structured methodology"
 sidebar_position: 1
 lang: en
@@ -7,155 +7,198 @@ lang: en
 
 # Master Software Development with AI
 
-The integration of large language models (LLMs) into software development has moved beyond science fiction to become the daily reality for millions of engineers. Yet, behind this initial enthusiasm lies a fundamental question: how can we harness this technology without compromising the quality, security, and human expertise that form the essence of our profession?
+You've installed GitHub Copilot or Claude Code. The first few hours were magical: code wrote itself almost effortlessly. Three weeks later, you find yourself with duplicated functions, subtle bugs that pass tests but fail in production, and an architecture that looks like spaghetti code.
 
-## The AI Paradox in Software Engineering
+Even worse: during a code review, your team can no longer **justify its architectural choices**. *"Why this structure instead of another?"*
 
-Ad-hoc adoption of LLMs promises unprecedented velocity, but simultaneously introduces a risk zone that is often poorly understood. In reality, LLMs do not "understand" code: they learn statistical regularities from text and code present in their training data. Concretely, they analyze millions of program fragments, technical discussions, and documentation, then learn to predict the next sequence of words that most closely resembles what a human would write in a given context. This allows them to generate code that appears correct on the surface, where syntax is valid, familiar patterns are replicated, and comments appear coherent.
+**You're not alone.**
 
-However, this mechanism presents several structural limitations for software development:
+**Development by Convergent Constraints (DC²)** is a structured software engineering methodology that enables you to harness the power of LLMs without compromising quality, maintainability, or your expertise. It's a return to software engineering fundamentals (documentation, TDD, collaborative refactoring) **optimized for the era of intelligent automation**.
 
-- **No internal representation of the program.**
-    The LLM does not build a logical tree, does not track the internal state of a system, does not simulate execution, and does not analyze the consequences of its choices. Two generated functions can contradict each other without it "seeing" this contradiction.
+**This methodology rests on solid theoretical foundations**: understanding the intrinsic limitations of LLMs, how Convergent Constraints guide their reasoning, and why Triple Inspection delivers 10-100x ROI on critical systems.
 
-- **No understanding of architecture's role.**
-    The model does not know why an interface exists, why a layer must be isolated, or why a design pattern is used. It merely reproduces frequent patterns, including poor ones.
+→ [**Explore the Theoretical Foundations**](./fondements-theoriques) to understand why DC² works
 
-- **Difficulty with complex semantic dependencies.**
-    When multiple modules interact, the subtle relationships between invariants, contracts, and responsibilities are not captured. The LLM therefore easily generates code that is locally plausible but globally incoherent.
+---
 
-- **Low reliability on edge cases.**
-    Edge cases are not a strong statistical pattern: they appear rarely in training data. The LLM thus tends to overlook them or handle them superficially.
+## Why DC2 Now? {#pourquoi-dc2}
 
-- **No operational memory.**
-    The context window is not a reasoning space; it is merely a range of visible text. The model maintains no stable trace between steps and can rewrite, cancel, or contradict its own decisions.
+### For Decision-Makers {#pour-decideurs}
 
-- **No internal verification.**
-    The LLM does not test its code, does not execute it, does not detect logical errors, and never validates whether a solution respects constraints defined elsewhere. All validation must come from an external methodological framework.
+Your teams use ChatGPT and GitHub Copilot. Initial velocity is impressive. But how can you ensure that generated code won't create **invisible technical debt** that will explode in 6-12 months?
 
-- **Production of "average internet code".**
-    The model was trained on both good and bad code. Without safeguards, it also replicates questionable practices: duplication, approximate error handling, unnecessary dependencies, SOLID violations, etc.
+**DC2 delivers the AI governance you're looking for**:
+- **Continuous audit**: Optional Triple Inspection detects issues before production (10-100x ROI)
+- **Measurable quality**: Exhaustive tests, up-to-date documentation, systematic refactoring
+- **Preserved skills**: Teams progress instead of stagnating as passive verifiers
+- **Sustained ROI**: Stable 3-5x acceleration over time (no -20%/year degradation)
 
-**Result:** LLMs excel at generating quick tactical fragments, but they possess neither global understanding nor systemic reasoning. They imitate solutions that "look like good code," but have no way to guarantee that the code is coherent, robust, secure, or aligned with a given architecture. This underscores the importance of a framework that places the human back at the center of structural decisions and uses the LLM as an accelerator, not as a designer.
+AI is a lever. DC2 ensures it remains a **strategic asset**, not a **technical liability**.
 
-## The Solution: A Structured Alliance Between Humans and AI
+---
 
-It is precisely to fill these gaps that the **Structured LLM Development** methodology was designed. It is a pragmatic workflow that organizes collaboration between human strategic expertise and tactical automation by LLMs. This method does not attempt to "tame" the LLM, but rather to frame it within a process where the human maintains strategic control, and quality is ensured through a structured combination of documentation, testing, and systematic inspections. The result: LLM usage that amplifies human capabilities instead of circumventing them.
+### For Architects {#pour-architectes}
 
-![Structured LLM Diagram](/img/DocDriven.png)
+LLMs are **probabilistic, non-deterministic, opaque by construction** components. Their naive integration into critical systems creates invisible architectural risks.
 
-## Built on Proven Engineering Principles
+**DC2 treats AI as a full-fledged architectural component**:
 
-- **Human strategic leadership**
-    Strategic phases are directed by the designer and development team, clearly defining the problem, architecture, constraints, and design choices. The designer can be an architect, technical analyst, tech lead, or senior developer with design talent.
+**Core principle**: *Externalize intelligence, internalize control*
+- Intelligence can be probabilistic
+- Control must never be
 
-- **Documentation as a single source of truth**
-    Every tactical or strategic decision is recorded. The method produces an up-to-date knowledge base that reduces dependence on tribal knowledge.
+**Architectural mechanisms**:
+- **Convergent constraints**: Specifications + tests + types guide the LLM toward a restricted solution space
+- **External validation**: The LLM never validates its own output
+- **External memory**: Documentation = source of truth (the LLM has no operational memory)
+- **Explicit checkpoints**: Critical Transfer = human alignment before the first line of code
 
-- **TDD as the quality foundation**
-    Tests are generated and verified before code is written, imposing clear and measurable expected behavior. These tests become the guidance system that directs the LLM and prevents derailments.
+DC2 isn't "a dev method with LLMs" — it's an **integration framework for non-deterministic AI components**.
 
-- **Collaborative refactoring under expert guidance**
-    The LLM proposes an initial functional implementation, then the development team, guided by a senior engineer, transforms it into production-quality code: structured, clean, and conforming to engineering principles. It is not the senior who does all the work—it is the team that learns and executes under their direction.
+→ [**Read the Architectural Foundations**](./fondements-theoriques#ia-comme-composant) to understand the underlying pattern
 
-- **Explicit checkpoints**
-    The "Critical Handoff" between design and development is a formal review meeting, ensuring team alignment before the first line of code is written. It is the decisive moment where the designer's vision meets the team's reality.
+---
 
-- **Triple systematic inspection (optional)**
-    For critical or long-lived systems, each delivery can be audited for:
+### For Developers {#pour-developpeurs}
 
-    1. **Code (Fagan)**: Quality, maintainability, technical debt
+The LLM writes the code. You verify. Three months later, you realize: you're no longer progressing, you're **verifying**.
 
-    2. **Tests**: Actual semantic coverage vs. empty metrics
+**The trap**: AI accelerates writing but erodes skills. Seniors become verifiers. Juniors are no longer engaged (they don't yet have the skills to judge generated code).
 
-    3. **Security**: Multi-vector vulnerabilities, compliance
+**DC2 restores learning through practice**:
 
-    This optional phase enables a higher level of excellence by investing 4-6 hours to avoid 40-80 hours of future rework. LLMs now make inspection techniques practical that were previously too costly (Fagan inspection decreasing from 30 hours in 1976 to 40 minutes today).
+**Structure before generation**:
+- Phase 1-2: You design architecture and plan (65% human)
+- Phase 3: You define ALL tests before code (with LLM assistant)
+- Phase 4: LLM generates implementation (you supervise)
+- **Phase 5: You refactor under senior guidance** (70% human)
 
-- **Explicit and controlled feedback loop**
-    Tests, documentation, and inspections replace the LLM's "pseudo-intelligence" with a realistic and verifiable validation loop.
+**Result**:
+- You **understand** the delivered code (not just verified)
+- You **progress** in skills (guided collaborative refactoring)
+- You **own** the system (collective ownership)
+- You **accelerate** without sacrificing quality (sustained 3-5x)
 
-- **Skill reinforcement rather than substitution**
-    The method places the development team, guided by senior expertise, at the center of critical phases. The team learns through practice, develops code ownership, and grows in competency. The senior becomes a force multiplier rather than a bottleneck.
+The LLM is a **tactical accelerator**, not a substitute. You remain the architect of your code.
 
-## The 6 Phases of Structured LLM
+---
 
-The methodology is structured around six complementary phases:
+## The Problem Without Structure
+
+LLMs generate code based on statistical patterns. They don't truly "understand"—they imitate what is statistically probable. Without a rigorous framework, you get:
+
+- **Invisible duplication**: Two functions do the same thing with different names
+- **Incoherent architecture**: Each component follows a different style depending on the LLM's mood
+- **Subtle bugs**: Code passes basic tests but fails on forgotten edge cases
+- **Explosive technical debt**: Invisible for 3-6 months, then unexpected major refactoring
+- **Expertise erosion**: The team becomes a spectator rather than an actor, progressively losing the ability to solve complex problems without assistance
+
+**Result**: You ship faster initially, then slow down dramatically when technical debt catches up with the team. Worse: your team no longer knows **why** the code works this way.
+
+---
+
+## The DC² Solution
+
+DC² structures LLM adoption through 6 complementary phases where **humans maintain strategic control** and LLMs accelerate tactical execution.
+
+### Founding Principles
+
+**Documentation as the single source of truth**
+Every architectural decision is explicitly documented. The LLM cannot improvise—it follows your detailed plan.
+
+**TDD as the quality foundation**
+Exhaustive tests are generated BEFORE any implementation. The LLM then generates code that MUST pass all these tests.
+
+**Collaborative refactoring under expert guidance**
+The development team transforms functional code into elegant code. **The team improves through practice**.
+
+**Convergent Constraints**
+The combination (tactical specifications + exhaustive tests + type hints) guides the LLM toward a restricted solution space where only correct implementations survive. The LLM then converges toward the most natural solution for the language used.
+
+---
+
+## The 6 Phases of DC²
+
+![Diagram of the 6 phases](/img/overview_a.png)
 
 ### Phase 1: Strategic Architecture
-The designer and Product Owner define the architectural vision, document major decisions (ADRs), and establish technical and business constraints. This phase creates the explicit "mental map" that the LLM naturally lacks.
+**⏱️⏱️⏱️ | 65% Human / 35% LLM**
 
-**Duration**: 1-2 days
-**Ratio**: 65% Human / 35% LLM
+The architect and Product Owner define the architectural vision, document major decisions (ADR), and establish technical and business constraints. This phase creates the explicit "mental map" that the LLM naturally lacks.
 
-### Phase 2: Tactical Plan + Critical Handoff
-The LLM generates a detailed implementation plan that the team reviews during the Critical Handoff—the most important meeting in the methodology. The team actively challenges the plan, identifies risks, and validates feasibility before any coding begins.
+### Phase 2: Tactical Plan + Critical Transfer
+**⏱️⏱️ | 45% Human / 55% LLM**
 
-**Agile Connection**: Phase 2 is the turbo-charged equivalent of Story Refinement and Sprint Planning. Instead of decomposing User Stories from scratch, the team starts with a detailed technical plan pre-generated by the LLM that it can critique and improve. One User Story becomes 3-5 components with exhaustive specifications. The Critical Handoff replaces traditional technical Sprint Planning.
+The LLM generates a detailed implementation plan that the team reviews during **Critical Transfer**—the most important meeting in DC². The team actively challenges the plan, identifies risks, and validates feasibility before any coding begins.
 
-**Duration**: 4-6 hours
-**Ratio**: 45% Human / 55% LLM
+**Link to Agile**: Equivalent to Story Refinement and Sprint Planning. A User Story becomes 3-5 components with exhaustive specifications.
 
-### Phase 3: TDD RED—Test Generation
-The LLM generates a comprehensive test suite (95%+ coverage) BEFORE any implementation. These tests become the "rails" that guide the LLM in Phase 4 and prevent derailments. The tests force systematic articulation of all edge cases.
+### Phase 3: TDD RED - Test Generation
+**⏱️ | 30% Human / 70% LLM**
 
-**Duration**: 1.5 hours
-**Ratio**: 30% Human / 70% LLM
+The LLM generates an exhaustive test suite (95%+ coverage) BEFORE any implementation. These tests become the "rails" that guide the LLM in Phase 4 and prevent derailments.
 
-### Phase 4: TDD GREEN—Implementation
-The LLM generates the minimal code to pass all tests. Thanks to the "Spec Sandwich" (tactical specifications + comprehensive tests + type hints), there is only one valid solution. Result: correct code on the first attempt in 90%+ of cases.
+### Phase 4: TDD GREEN - Implementation
+**⏱️ | 25% Human / 75% LLM**
 
-**Duration**: 45 minutes
-**Ratio**: 25% Human / 75% LLM
+The LLM generates minimal code to pass all tests. Thanks to Convergent Constraints (specifications + tests + types), the code is correct on the first try in the majority of cases.
 
-### Phase 5: REFACTOR—Production Quality
-The development team, guided by a senior engineer, transforms functional code into production-quality code. The senior identifies opportunities, the team executes refactoring in parallel across different areas, the senior reviews continuously. Learning by doing, scalability, collective ownership.
+### Phase 5: REFACTOR - Collaborative Improvement
+**⏱️⏱️⏱️ | 70% Human / 30% LLM**
 
-**Duration**: 6-12 hours
-**Ratio**: 70% Human / 30% LLM
+The development team transforms functional code into production-quality code. The senior identifies opportunities, the team executes refactoring in parallel, the senior continuously reviews. **Improvement through practice, scalability, collective ownership.**
 
 ### Phase 6: Triple Inspection (Optional)
-For critical systems: three LLM-automated inspections detect future technical debt (Fagan), hidden weak tests (Tests), and multi-vector vulnerabilities (Security). 4-6 hour investment avoids 40-80 hours of rework plus costly incidents.
+**⏱️ | 40% Human / 60% LLM**
 
-**Duration**: 4-6 hours
-**Ratio**: 40% Human / 60% LLM
+For critical systems: three automated inspections detect future technical debt (Fagan), hidden weak tests (Tests), and multi-vector vulnerabilities (Security). An investment that prevents costly refactoring or incidents later.
 
-## Why Structured LLM Works
+---
 
-**Structured LLM Development does not combat LLM limitations—it systematically compensates for them**:
+## Why DC² Works
 
-- **No internal representation** → Phase 1 creates ADRs + explicit schemas
-- **No architecture understanding** → Phase 1 documents the why, not just the what
-- **Complex dependency difficulties** → Phase 2 forces complete articulation
-- **No operational memory** → Documentation = persistent external memory
+DC² doesn't fight LLM limitations—**it systematically compensates for them**:
+
+- **No internal representation** → Phase 1 creates ADR + explicit schemas
+- **No architectural understanding** → Phase 1 documents the why, not just the what
 - **Forgets edge cases** → Phase 3 forces exhaustive tests including edge cases
-- **No internal verification** → Phases 3-4: tests validate everything
-- **"Average internet" code** → Phase 5: team transforms into production quality
+- **No internal verification** → Phase 3-4: tests validate everything
+- **"Average internet code"** → Phase 5: team transforms into production quality
 
-**The result**: A method that produces superior code quality while training the team and maintaining high velocity long-term. It is not "faster now, problems later"—it is "structured investment now, stable velocity forever."
+**The result**: A methodology that produces superior code quality while training the team and maintaining high velocity over the long term.
 
-## Who SLLD Is For
+---
 
-**Structured LLM is particularly suited for**:
+## Who DC² Is For
+
+**DC² is particularly suitable for**:
 - Teams wanting to adopt LLMs without sacrificing quality
 - Organizations where maintenance represents 80%+ of total cost
-- Critical projects (finance, healthcare, infrastructure)
-- Teams wanting to develop their engineers, not replace them
+- Critical projects (finance, health, infrastructure)
+- Teams wanting to train their developers, not replace them
 - Long-lived systems (>2 years of planned evolution)
 
-**Structured LLM may not suit you if**:
-- You are building throwaway prototypes
-- Short-term speed trumps everything else
-- You lack access to an experienced designer or senior engineer
+**DC² might not be suitable if**:
+- You're building throwaway prototypes
+- Short-term speed trumps everything
+- You don't have access to an experienced architect or senior developer
 - Your team resists structured processes
 
-## Next Steps
+---
 
-The six phases that follow detail precisely how to apply Structured LLM in your context. Each phase includes:
-- Contextual badges (Agile equivalent, duration, roles, ratios)
-- Explanation of "context engineering" (which LLM limitations are compensated)
-- Definition of Done (7 numbered criteria for validation)
-- Concrete prompt examples and reports
-- Common pitfalls to avoid
+## Begin Your Adoption
 
-**Start with Phase 1: Strategic Architecture** to see how to transform a business vision into documented architecture that guides the entire implementation.
+**Two entry points depending on your needs**:
+
+### You want to implement now
+→ [**Start with Phase 1: Strategic Architecture**](./phase1-architecture-strategique)
+
+### You want to understand the whole picture first
+→ [**Read the Complete Overview**](./survol-complet) (6-phase details, examples, estimates)
+
+### You want to understand why DC² works
+→ [**Explore the Theoretical Foundations**](./fondements-theoriques)
+
+---
+
+**The methodology works with or without LLMs.** LLMs simply accelerate it 3 to 5 times.

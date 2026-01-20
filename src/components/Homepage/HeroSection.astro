@@ -10,10 +10,12 @@ const architectureLink = currentLocale === 'fr' ? '/phase1-architecture-strategi
   <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title">
-        {currentLocale === 'fr'
-          ? 'DocDriven'
-          : 'DocDriven'
-        }
+        <span class="logo-text">
+          {currentLocale === 'fr'
+            ? 'Développement par Contraintes Convergentes (DC²)'
+            : 'Development by Convergent Constraints (DC²)'
+          }
+        </span>
       </h1>
       <p class="hero-tagline">{t('hero.tagline', currentLocale)}</p>
 
@@ -89,6 +91,23 @@ const architectureLink = currentLocale === 'fr' ? '/phase1-architecture-strategi
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: var(--space-6);
+  }
+
+  .hero-badge {
+    background-color: var(--dd-secondary);
+    color: var(--dd-white);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    display: inline-block;
+  }
+
+  .logo-separator {
+    color: var(--dd-secondary);
+    margin: 0 2px;
   }
 
   .btn {

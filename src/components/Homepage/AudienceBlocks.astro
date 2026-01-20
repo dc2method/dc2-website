@@ -1,0 +1,296 @@
+---
+import { getLocale } from '../../utils/i18n';
+
+const currentLocale = getLocale(Astro.url);
+---
+
+<section class="audience-blocks-section">
+  <div class="audience-blocks-container">
+    <div class="audience-blocks-grid">
+
+      <!-- Bloc 1: Décideurs -->
+      <div class="audience-block">
+        <div class="audience-icon">🎯</div>
+        <h3 class="audience-title">
+          {currentLocale === 'fr'
+            ? 'Intégrez l\'IA sans hypothéquer votre avenir technique'
+            : 'Integrate AI Without Mortgaging Your Technical Future'
+          }
+        </h3>
+        <div class="audience-description">
+          <p>
+            {currentLocale === 'fr'
+              ? 'Vos équipes utilisent ChatGPT et GitHub Copilot. Mais comment garantir que le code généré ne créera pas une dette technique invisible ?'
+              : 'Your teams use ChatGPT and GitHub Copilot. But how can you ensure generated code won\'t create invisible technical debt?'
+            }
+          </p>
+          <ul class="audience-benefits">
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Gouvernance IA sans tuer la vélocité'
+                : '✓ AI governance without killing velocity'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Qualité mesurable long terme'
+                : '✓ Measurable long-term quality'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Audit et conformité intégrés'
+                : '✓ Integrated audit and compliance'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ ROI : 3-5x accélération maintenue'
+                : '✓ ROI: Sustained 3-5x acceleration'
+              }
+            </li>
+          </ul>
+        </div>
+        <a href={currentLocale === 'fr' ? '/intro#pour-decideurs' : '/en/intro#pour-decideurs'}
+           class="audience-cta">
+          {currentLocale === 'fr'
+            ? 'Lire pour décideurs →'
+            : 'Read for decision-makers →'
+          }
+        </a>
+      </div>
+
+      <!-- Bloc 2: Architectes -->
+      <div class="audience-block">
+        <div class="audience-icon">🏗️</div>
+        <h3 class="audience-title">
+          {currentLocale === 'fr'
+            ? 'Architecturez l\'IA comme un composant gouvernable'
+            : 'Architect AI as a Governable Component'
+          }
+        </h3>
+        <div class="audience-description">
+          <p>
+            {currentLocale === 'fr'
+              ? 'Les LLM sont probabilistes, non déterministes, opaques. Comment les intégrer sans perdre le contrôle architectural ?'
+              : 'LLMs are probabilistic, non-deterministic, opaque. How to integrate them without losing architectural control?'
+            }
+          </p>
+          <ul class="audience-benefits">
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Contraintes convergentes (guident l\'IA)'
+                : '✓ Convergent constraints (guide AI)'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Validation automatisée externe'
+                : '✓ External automated validation'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Intelligence encadrée, pas débridée'
+                : '✓ Framed intelligence, not unbridled'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Principes architecturaux éprouvés'
+                : '✓ Proven architectural principles'
+              }
+            </li>
+          </ul>
+        </div>
+        <a href={currentLocale === 'fr' ? '/fondements-theoriques#ia-comme-composant' : '/en/fondements-theoriques#ia-comme-composant'}
+           class="audience-cta">
+          {currentLocale === 'fr'
+            ? 'Voir les fondements architecturaux →'
+            : 'See architectural foundations →'
+          }
+        </a>
+      </div>
+
+      <!-- Bloc 3: Développeurs -->
+      <div class="audience-block">
+        <div class="audience-icon">⚙️</div>
+        <h3 class="audience-title">
+          {currentLocale === 'fr'
+            ? 'Développez avec l\'IA sans perdre vos compétences'
+            : 'Develop with AI Without Losing Your Skills'
+          }
+        </h3>
+        <div class="audience-description">
+          <p>
+            {currentLocale === 'fr'
+              ? 'Le LLM écrit le code, vous vérifiez. Mais comment progresser plutôt que stagner ? Comment éviter de devenir spectateur ?'
+              : 'The LLM writes code, you verify. But how to progress rather than stagnate? How to avoid becoming a spectator?'
+            }
+          </p>
+          <ul class="audience-benefits">
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Tests d\'abord (vous contrôlez comportement)'
+                : '✓ Tests first (you control behavior)'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Refactoring guidé senior (apprentissage)'
+                : '✓ Senior-guided refactoring (learning)'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Code maintenable (ownership collectif)'
+                : '✓ Maintainable code (collective ownership)'
+              }
+            </li>
+            <li>
+              {currentLocale === 'fr'
+                ? '✓ Compétences renforcées (pas érodées)'
+                : '✓ Reinforced skills (not eroded)'
+              }
+            </li>
+          </ul>
+        </div>
+        <a href={currentLocale === 'fr' ? '/intro#pour-developpeurs' : '/en/intro#pour-developpeurs'}
+           class="audience-cta">
+          {currentLocale === 'fr'
+            ? 'Découvrir la méthode pratique →'
+            : 'Discover the practical method →'
+          }
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience-blocks-section {
+    background: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .audience-blocks-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .audience-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .audience-block {
+    background: var(--dd-neutral-light);
+    padding: var(--space-8);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--dd-neutral-light);
+    border-top: 4px solid var(--dd-secondary);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .audience-block:hover {
+    border-color: var(--dd-secondary);
+    box-shadow: 0 4px 12px rgba(46, 134, 171, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .audience-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .audience-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-4);
+    line-height: var(--line-height-tight);
+    text-align: center;
+    min-height: 3.5rem;
+  }
+
+  .audience-description {
+    flex-grow: 1;
+    margin-bottom: var(--space-6);
+  }
+
+  .audience-description p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-4);
+  }
+
+  .audience-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .audience-benefits li {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-2);
+  }
+
+  .audience-cta {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    background: transparent;
+    border: 2px solid var(--dd-secondary);
+    color: var(--dd-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .audience-cta:hover {
+    background: var(--dd-secondary);
+    color: var(--dd-white);
+    transform: translateX(4px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .audience-blocks-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .audience-title {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .audience-blocks-section {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .audience-block {
+      padding: var(--space-6);
+    }
+
+    .audience-icon {
+      font-size: 2.5rem;
+    }
+
+    .audience-title {
+      font-size: var(--font-size-lg);
+    }
+  }
+</style>

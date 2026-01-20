@@ -14,55 +14,27 @@ const currentLocale = getLocale(Astro.url);
     </h2>
 
     <div class="challenge-content">
-      <p class="challenge-intro">
-        {currentLocale === 'fr'
-          ? "Les Grands Modèles de Langage ont démontré des capacités remarquables en génération de code. Cependant, leur adoption en environnement professionnel révèle une limite critique :"
-          : "Large Language Models have demonstrated remarkable capabilities in code generation. However, their adoption in professional environments reveals a critical limitation:"
-        }
-      </p>
-
-      <div class="challenge-problem">
-        <p>
-          {currentLocale === 'fr'
-            ? "« Sans cadre méthodologique rigoureux, les LLM génèrent du code syntaxiquement correct mais architecturalement fragile, créant une dette technique invisible qui ne se manifeste que des mois plus tard. »"
-            : "\"Without a rigorous methodological framework, they generate syntactically correct but architecturally fragile code, creating invisible technical debt that only manifests months later.\""
-          }
-        </p>
-      </div>
-
       <div class="challenge-points">
         <div class="challenge-point">
           <h3>
-            {currentLocale === 'fr' ? 'Le Paradoxe' : 'The Paradox'}
+            {currentLocale === 'fr' ? 'Le Défi de l\'Intégration IA' : 'The AI Integration Challenge'}
           </h3>
           <p>
             {currentLocale === 'fr'
-              ? "Les LLM apprennent les régularités statistiques du code, pas la compréhension architecturale. Ils excellent dans le 'comment' mais échouent sur le 'pourquoi'."
-              : "LLMs learn statistical regularities of code, not architectural understanding. They excel at 'how' but fail at 'why'."
+              ? 'Les LLM sont des composants logiciels fondamentalement différents : probabilistes, non déterministes, opaques par construction. Leur intégration naïve dans des systèmes critiques crée des risques architecturaux invisibles qui se manifestent en production. Sans cadre structuré, l\'IA devient une dépendance incontrôlable plutôt qu\'un composant gouvernable.'
+              : 'LLMs are fundamentally different software components: probabilistic, non-deterministic, opaque by design. Their naive integration into critical systems creates invisible architectural risks that manifest in production. Without a structured framework, AI becomes an uncontrollable dependency rather than a governable component.'
             }
           </p>
         </div>
 
         <div class="challenge-point">
           <h3>
-            {currentLocale === 'fr' ? 'Le Risque' : 'The Risk'}
+            {currentLocale === 'fr' ? 'Le Principe Central' : 'The Core Principle'}
           </h3>
           <p>
             {currentLocale === 'fr'
-              ? "L'adoption ad-hoc des LLM promet une vélocité sans précédent, mais introduit une zone de risque souvent mal comprise : la dette technique invisible."
-              : "Ad-hoc LLM adoption promises unprecedented velocity, but introduces a poorly understood risk zone: invisible technical debt."
-            }
-          </p>
-        </div>
-
-        <div class="challenge-point">
-          <h3>
-            {currentLocale === 'fr' ? 'La Solution' : 'The Solution'}
-          </h3>
-          <p>
-            {currentLocale === 'fr'
-              ? "DocDriven structure l'adoption des LLM à travers 6 phases où les humains contrôlent les décisions stratégiques, tandis que l'IA accélère l'exécution tactique."
-              : "DocDriven structures LLM adoption through 6 phases where humans control strategic decisions while AI accelerates tactical execution."
+              ? 'Externaliser l\'intelligence, internaliser le contrôle. L\'intelligence peut être probabiliste, le contrôle ne doit jamais l\'être. DC² encapsule chaque interaction IA par des contrats explicites, des contraintes vérifiables, et des points de validation externes.'
+              : 'Externalize intelligence, internalize control. Intelligence can be probabilistic, control must never be. DC² encapsulates each AI interaction with explicit contracts, verifiable constraints, and external validation points.'
             }
           </p>
         </div>

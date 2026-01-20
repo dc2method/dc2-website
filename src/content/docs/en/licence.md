@@ -1,7 +1,7 @@
 ---
 title: "License and Usage"
 description: "Creative Commons CC BY-SA 4.0 License"
-sidebar_position: 9
+sidebar_position: 10
 lang: en
 ---
 
@@ -9,7 +9,7 @@ lang: en
 
 ## Content License
 
-The DocDriven methodology content is published under the **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)** license.
+The Development by Convergent Constraints (DC²) methodology content is published under the **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)** license.
 
 ### You are free to:
 
@@ -35,13 +35,13 @@ The source code of this website (Astro structure, React components, CSS) is also
 
 ## Recommended Attribution
 
-If you use or adapt DocDriven in your projects, here is a recommended attribution:
+If you use or adapt DC² in your projects, here is a recommended attribution:
 
-> **DocDriven - Structured LLM Development**
+> **DC² - Development by Convergent Constraints**
 > Methodology created by Eric Gauthier
 > License: CC BY-SA 4.0
-> Source: [https://docdriven.dev](https://docdriven.dev)
+> Source: [https://dc².dev](https://dc².dev)
 
 ## Questions and Contact
 
-For any questions regarding the use of DocDriven or this license, see the [About page](/en/about) for contact information.
+For any questions regarding the use of DC² or this license, see the [About page](/en/about) for contact information.

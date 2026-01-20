@@ -26,6 +26,8 @@ lang: fr
   </span>
 </div>
 
+---
+
 **En bref** : Crée la vision architecturale documentée (ADR + schémas) qui donne au LLM la "carte mentale" qu'il n'a pas naturellement. Décisions stratégiques prises par humains, alternatives explorées avec aide LLM.
 
 ---
@@ -47,39 +49,10 @@ Document d'Architecture Stratégique crée représentation explicite du système
 - **Pas de compréhension rôle architecture** : Documentation explique pourquoi composant existe, quel problème business résout, quels compromis architecturaux
 
 **Impact mesuré** :
-- Refontes architecturales évitées : -80% (décisions validées avant codage)
-- Temps onboarding nouveaux devs : 4 semaines → 10 jours (doc à jour)
-- Qualité génération code phases suivantes : +60% (contexte clair)
-- Dette technique évitée : Décisions documentées ≠ "connaissance tribale"
-
-### La Fondation de Tout DocDriven
-
-Phase 1 est la **seule phase 100% stratégique humaine**. Les phases suivantes s'appuient sur ce socle :
-
-```mermaid
-graph TD
-    P1[Phase 1: Architecture Strategique] --> P2[Phase 2: Plans Tactiques]
-    P1 --> P3[Phase 3: Tests]
-    P1 --> P4[Phase 4: Implementation]
-    P2 --> P3
-    P2 --> P4
-    
-    P1 --> ADR[ADR: Pourquoi decisions]
-    P1 --> SCH[Schemas: Comment s'assemble]
-    P1 --> CON[Contraintes: Limites respecter]
-    
-    ADR --> LLM[LLM comprend contexte]
-    SCH --> LLM
-    CON --> LLM
-    LLM --> CODE[Code coherent avec vision]
-    
-    style P1 fill:#ef4444
-    style LLM fill:#10b981
-    style CODE fill:#3b82f6
-```
-
-**Sans Phase 1 solide** : LLM vole aveugle, génère code générique incohérent  
-**Avec Phase 1 solide** : LLM guidé par vision claire, code aligné architecture
+- Refontes architecturales évitées grace aux décisions validées avant codage
+- Temps onboarding nouveaux devs plus rapide
+- Qualité de la génération de code
+- Dette technique évitée : Les décisions documentées évitent la "connaissance tribale"
 
 ---
 
@@ -96,7 +69,7 @@ graph TD
 - Priorités parties prenantes
 - Documentation système existant (si refactoring/extension)
 
-### 1. Cristallisation du Problème (2-3 heures)
+### 1. Cristallisation du Problème ⏱️⏱️
 
 **Concepteur 80%, LLM 20%**
 
@@ -107,7 +80,7 @@ graph TD
 
 **Sortie** : Énoncé problème précis avec métriques succès
 
-### 2. Cartographie des Contraintes (1-2 heures)
+### 2. Cartographie des Contraintes ⏱️
 
 **Concepteur 60%, LLM 40%**
 
@@ -118,7 +91,7 @@ graph TD
 
 **Sortie** : Liste contraintes priorisées (techniques + orga)
 
-### 3. Génération de Solutions (3-4 heures)
+### 3. Génération de Solutions ⏱️⏱️
 
 **Concepteur 50%, LLM 50%**
 
@@ -129,7 +102,7 @@ graph TD
 
 **Sortie** : 3-4 approches solution avec diagrammes C4
 
-### 4. Analyse des Compromis (2-3 heures)
+### 4. Analyse des Compromis ⏱️⏱️
 
 **Concepteur 70%, LLM 30%**
 
@@ -140,7 +113,7 @@ graph TD
 
 **Sortie** : Matrice compromis + décision justifiée
 
-### 5. Validation Parties Prenantes (2-4 heures)
+### 5. Validation Parties Prenantes ⏱️⏱️
 
 **Humain 90%, LLM 10%**
 
@@ -156,7 +129,7 @@ graph TD
 **Taille** : 2,000-4,000 mots
 
 **Sections** :
-1. **Résumé Exécutif** (200 mots) : Problème + solution recommandée
+1. **Résumé Exécutif** (~200 mots) : Problème + solution recommandée
 2. **Définition du Problème** : Analyse cause racine, critères de succès
 3. **Contraintes** : Techniques, organisationnelles, chronologie, budget
 4. **Approches de Solution** : 2-4 approches avec diagrammes C4 niveaux 1-2
@@ -176,12 +149,6 @@ Cette phase est considérée terminée quand :
 5. La solution choisie inclut une justification claire des compromis vs alternatives
 6. Les risques architecturaux principaux sont documentés avec stratégies d'atténuation
 7. Le Product Owner valide que la solution proposée répond aux besoins business
-
-**Estimation Temps Total** :
-- Brouillon initial : 4-6 heures (Concepteur + LLM)
-- Révision parties prenantes : 2-4 heures (1-2 cycles possibles)
-- Approbation finale : 1-2 heures
-- **Total temps écoulé** : 1-2 jours
 
 ---
 
@@ -403,7 +370,7 @@ Architecture :
 **ADR-001 : Utiliser pgvector pour recherche similarité**
 
 **Statut** : Accepté  
-**Date** : 2024-12-28  
+**Date** : 2025-12-28  
 **Décideurs** : Concepteur + Product Owner
 
 **Contexte** :  
@@ -429,7 +396,7 @@ Utiliser extension pgvector dans PostgreSQL existant pour recherche vectorielle 
 **ADR-002 : Générer embeddings via sentence-transformers local**
 
 **Statut** : Accepté  
-**Date** : 2024-12-28
+**Date** : 2025-12-28
 
 **Contexte** :  
 Besoin générer embeddings pour 10M aliments + profiles utilisateurs. Choix : API externe (OpenAI) vs modèle local.
@@ -454,7 +421,7 @@ Utiliser `sentence-transformers` (modèle `all-MiniLM-L6-v2`) localement.
 **ADR-003 : Filtrage dur allergies AVANT recherche vectorielle**
 
 **Statut** : Accepté  
-**Date** : 2024-12-28
+**Date** : 2025-12-28
 
 **Contexte** :  
 Utilisateurs avec allergies (arachides, gluten, lactose) NE DOIVENT JAMAIS recevoir recommandations dangereuses, même si similarité vectorielle élevée.

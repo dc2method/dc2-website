@@ -1,6 +1,6 @@
 ---
 title: "Phase 6 : Triple Inspection - Validation Multi-Perspective"
-description: "Inspection technique, business et contenu pour garantir la qualité"
+description: "Inspection technique, affaire et contenu pour garantir la qualité"
 sidebar_position: 7
 lang: fr
 ---
@@ -29,7 +29,9 @@ lang: fr
   </span>
 </div>
 
-**En bref** : 3 inspections automatisées LLM (Fagan/Tests/Sécurité) détectent défauts latents avant production. Philosophie "investir 4-6h évite 40-80h refonte + incidents". Résurrection Fagan : 30h (1976) → 40min (2024). OPTIONNELLE mais ROI 10-100x sur systèmes critiques.
+---
+
+**En bref** : 3 inspections automatisées LLM (Fagan/Tests/Sécurité) détectent défauts latents avant production. Philosophie "investir 4-6h évite 40-80h refonte + incidents". Résurrection Fagan : 30h (1976) → 40min (2026). OPTIONNELLE mais ROI 10-100x sur systèmes critiques.
 
 ---
 
@@ -43,20 +45,14 @@ lang: fr
 Code entre production avec défauts latents invisibles. Dette technique s'accumule silencieusement 6-12 mois. Tests faibles (95% couverture mais assertions vides) créent fausse sécurité. Vulnérabilités détectées production = catastrophe (30-100x coût vs développement). Refonte majeure imprévue + incidents coûteux.
 
 **La solution apportée** :  
-3 inspections spécialisées LLM détectent patterns à risque AVANT merge. Fagan révèle dette architecturale, Tests distingue couverture code vs couverture sémantique, Sécurité détecte 6 vecteurs attaque (injection, auth, données, infra, logique, monitoring). Assurance qualité préventive transforme coûts futurs imprévisibles en investissement contrôlé.
+3 inspections spécialisées LLM détectent patterns à risque AVANT merge. **Fagan** révèle la dette architecturale, **Tests** distingue couverture code vs couverture sémantique, **Sécurité** détecte 6 vecteurs attaque OWASP (injection, auth, données, infra, logique, monitoring). C'est une assurance qualité préventive qui transforme les coûts futurs imprévisibles en investissement contrôlé.
 
 **Avantages LLM sur inspection humaine** :
-- **Exhaustivité sans fatigue** : LLM vérifie 100% checklist avec rigueur identique. Humain fatigue après 30min, survole, oublie items
-- **Pas de biais cognitifs** : LLM évalue objectivement. Humain biais confirmation, hésite critiquer senior
-- **Mémoire parfaite standards** : LLM applique 100% règles, même rares. Humain oublie règles obscures critiques
-- **Scalabilité expertise** : LLM inspecte 10 composants parallèle (2h). Senior seul = 2 semaines
-- **Amélioration continue** : Nouvelle règle ajoutée → toutes inspections futures automatiques. Former équipe = semaines
-
-**Impact mesuré** :
-- Défauts détectés pré-merge : +60-90% (Fagan retrouve taux 1976)
-- Coût vulnérabilité : 15min (Phase 6) vs 50-500h (production, ROI 25-250x)
-- Dette technique évitée : Investissement 4-6h évite refonte 40-80h (ROI 7-13x)
-- Temps inspection : 30h (1976 Fagan) → 40min (2024 LLM+humain, 97% réduction)
+- **Exhaustivité sans fatigue** : Le LLM vérifie 100% des cas avec une rigueur identique. L'humain se fatigue, survole, oublie des items
+- **Pas de biais cognitifs** : Le LLM évalue objectivement. L'humain peut avoir un biais de confirmation, peut hésiter à critiquer un senior
+- **Mémoire parfaite standards** : Le LLM applique 100% des règles, même rares. L'humain tend à oublier les règles obscures critiques
+- **Scalabilité expertise** : Les LLM peuvent inspecter 10 composants parallèle. L'humain seul, non
+- **Amélioration continue** : Nouvelle règle ajoutée → toutes inspections futures automatiques. Former l'équipe peut prendre des jours.
 
 ### La Résurrection de Fagan
 
@@ -84,20 +80,6 @@ graph TD
     style ABD fill:#ef4444
     style LLM fill:#10b981
     style PRAT fill:#10b981
-```
-
-**Transformation économique** :
-
-```
-Fagan 1976 (Humain Seul) :
-30h inspection × $100/h = $3,000
-Détecte 10 défauts × ROI 10x = $30,000 valeur
-→ ROI positif MAIS trop coûteux pratique
-
-Phase 6 DocDriven 2024 (LLM + Humain) :
-40min inspection × $100/h = $67
-Détecte 10 défauts × ROI 10x = $30,000 valeur
-→ ROI 450x ! Enfin praticable !
 ```
 
 **Les meilleures pratiques 1970 étaient CORRECTES - juste impossibles appliquer sans IA.**
@@ -144,16 +126,16 @@ vs $67 Phase 6
 
 ### Les 3 Inspections Spécialisées
 
-#### 1. Inspection Fagan - Code & Maintenabilité (1.5h)
+#### 1. Inspection Fagan - Code & Maintenabilité
 
 **Objectif** : Détecter dette technique future et patterns à risque maintenabilité
 
 **LLM 70%, Humain 30%**
 
-- LLM génère rapport inspection (10 min)
-- Humain révise rapport (30 min)
-- Équipe priorise corrections (30 min)
-- Corrections appliquées (30 min)
+- LLM génère rapport inspection
+- Humain révise rapport
+- Équipe priorise corrections
+- Les corrections retenues sont sont effectuées ou ajoutées au backlog
 
 **5 Dimensions évaluées (/20 chacune, cible ≥80/100)** :
 1. **Simplicité** : Pas sur-ingénierie, complexité < 10, abstractions appropriées
@@ -162,18 +144,18 @@ vs $67 Phase 6
 4. **Maintenabilité** : Évolution facilitée, couplage minimal, documentation
 5. **Performance** : Scalabilité, optimisations appropriées, pas goulots
 
-**Sortie** : Rapport scored avec items CRITIQUE/AMÉLIORATION
+**Sortie** : Rapport détaillé contenant les points forts, les points faibles ainsi que les items jugés CRITIQUE ou AMÉLIORATION.
 
-#### 2. Inspection Tests - Qualité Suite Tests (1.5h)
+#### 2. Inspection Tests - Qualité de la Suite de Tests
 
 **Objectif** : Distinguer "couverture code" vs "couverture sémantique"
 
 **LLM 70%, Humain 30%**
 
-- LLM analyse qualité tests (10 min)
-- Humain révise findings (30 min)
-- Équipe corrige tests faibles (30 min)
-- Re-validation (30 min)
+- LLM analyse qualité tests
+- Humain révise
+- Équipe corrige tests faibles
+- Re-validation
 
 **Détecte** :
 - Assertions vides (`assert result is not None` vs valeurs réelles)
@@ -181,25 +163,26 @@ vs $67 Phase 6
 - Cas limites manquants critiques
 - Faux sentiment sécurité (95% couverture mais tests faibles)
 
-**Sortie** : Tests renforcés, vraie confiance qualité
+**Sortie** : Tests renforcés, confiance dans la qualité des tests
 
-#### 3. Inspection Sécurité - Vulnérabilités (2h)
+#### 3. Inspection Sécurité - Vulnérabilités
 
-**Objectif** : Détecter 6 vecteurs attaque avant production
+**Objectif** : Détecter 6 vecteurs attaque avant production (OWASP)
 
 **LLM 80%, Humain 20%**
 
-- LLM audit multi-vecteurs (10 min)
-- Humain révise vulnérabilités (30 min)
-- Équipe corrige CRITIQUE (60 min)
-- Re-validation (20 min)
+- LLM audit multi-vecteurs
+- Humain révise les vulnérabilités
+- Équipe priorise corrections
+- Les corrections retenues sont effectuées ou ajoutées au backlog
+- Re-validation suite aux corrections
 
 **6 Vecteurs attaque OWASP** :
 1. **Injection** : SQL, commandes, XSS, LDAP
 2. **Authentification** : Sessions, tokens, MFA, mots passe
 3. **Données sensibles** : Chiffrement, logs, exposition
 4. **Infrastructure** : HTTPS, CORS, headers sécurité
-5. **Logique business** : Autorisation, validation, transactions
+5. **Logique affaire** : Autorisation, validation, transactions
 6. **Monitoring** : Logs, alertes, audit trail
 
 **Sortie** : Vulnérabilités CRITIQUE corrigées, AMÉLIORATION documentées
@@ -207,21 +190,21 @@ vs $67 Phase 6
 ### Workflow Intégré
 
 ```
-1. LLM exécute 3 inspections parallèle (30 min total)
-   ├─ Fagan : 10 min
-   ├─ Tests : 10 min
-   └─ Sécurité : 10 min
+1. LLM exécute 3 inspections parallèle
+   ├─ Fagan
+   ├─ Tests
+   └─ Sécurité
 
-2. Équipe révise 3 rapports (90 min)
+2. Équipe révise 3 rapports
    ├─ Priorise findings (CRITIQUE vs AMÉLIORATION)
    └─ Décide plan action
 
-3. Corrections appliquées (2-3h)
+3. Corrections appliquées
    ├─ CRITIQUE : Obligatoire avant merge
    ├─ AMÉLIORATION : Backlog ou accepter
    └─ Tests passent toujours
 
-4. Senior valide (30 min)
+4. Senior valide
    └─ Approuve qualité finale production
 ```
 
@@ -236,13 +219,6 @@ Cette phase est considérée terminée quand :
 5. Vulnérabilités sécurité CRITIQUE éliminées
 6. Items AMÉLIORATION documentés (backlog ou accept)
 7. Senior approuve rapport inspection final
-
-**Estimation Temps Total** :
-- Génération 3 rapports LLM : 30 min (parallèle)
-- Révision humaine rapports : 90 min
-- Corrections appliquées : 2-3h
-- Validation finale : 30 min
-- **Total** : 4-6 heures
 
 ---
 
@@ -294,8 +270,8 @@ SPÉCIFICATIONS :
 
 2. LOGIQUE BUSINESS (/20)
    Questions :
-   - Noms variables/fonctions reflètent domaine business ?
-   - Règles business claires et documentées ?
+   - Noms variables/fonctions reflètent domaine affaire ?
+   - Règles affaire claires et documentées ?
    - Gestion erreur contextuelle (messages explicites) ?
    - Code lisible par Product Owner ?
    
@@ -387,7 +363,7 @@ FORMAT RAPPORT :
 **Points forts** :
 - Constantes nommées (MIN_SAMPLE_FOR_STATISTICS = 3)
 - Noms fonctions descriptifs (_calculate_sample_coverage_penalty)
-- Docstrings expliquent formules business
+- Docstrings expliquent formules affaire
 - Messages erreur contextuels ("top_k_similar doit être > 0")
 
 **Points faibles** : Aucun
@@ -480,7 +456,7 @@ Après correction : qualité production validée.
 #### Actions Équipe
 
 ```
-1. Dev applique correction CRITIQUE #1 (5 min)
+1. Dev applique correction CRITIQUE #1
 2. Tests exécutés → Toujours 100% passent
 3. Senior valide correction
 4. Items AMÉLIORATION ajoutés backlog
@@ -489,7 +465,7 @@ Après correction : qualité production validée.
 
 ---
 
-### Inspection 2 : Tests - Exemple Findings
+### Inspection 2 : Tests - Exemple
 
 #### Suite Tests Analysée
 
@@ -511,30 +487,30 @@ CODE TESTÉ :
 ÉVALUE QUALITÉ SELON 5 CRITÈRES :
 
 1. ASSERTIONS SIGNIFICATIVES
-   - Assertions vérifient VALEURS précises (pas juste `is not None`) ?
-   - Chaque assertion a MESSAGE explicite contexte ?
-   - Assertions couvrent comportement business (pas juste techniques) ?
+   - Assertions vérifient VALEURS précises (pas seulement `is not None`) ?
+   - Chaque assertion a MESSAGE explicite et contexte ?
+   - Assertions couvrent comportement affaire (pas seulement techniques) ?
    
    Identifie TOUS tests assertions faibles.
 
 2. ROBUSTESSE TESTS
-   - Tests pas fragiles (couplés détails implémentation) ?
+   - Tests pas fragiles (couplés aux détails d'implémentation) ?
    - Tests survivent refactoring sans modifications ?
-   - Tests isolés (pas dépendances ordre exécution) ?
+   - Tests isolés (pas de dépendances sur l'ordre d'exécution) ?
    
    Identifie TOUS tests fragiles.
 
 3. CAS LIMITES CRITIQUE
-   - Tous cas limites business testés ?
+   - Tous cas limites affaire testés ?
    - Scénarios erreur couverts ?
    - Valeurs limites (min/max/zéro) testées ?
    
    Identifie TOUS cas limites manquants.
 
 4. COUVERTURE SÉMANTIQUE
-   - Tests valident COMPORTEMENTS business (pas juste code exécuté) ?
-   - Chaque règle business a test dédié ?
-   - Tests documentation exécutable logique business ?
+   - Tests valident les COMPORTEMENTS affaire (pas seulement le code exécuté) ?
+   - Chaque règle affaire a un test dédié ?
+   - Tests sont la documentation exécutable de la logique affaire ?
    
    Identifie lacunes couverture sémantique.
 
@@ -587,7 +563,7 @@ top_k = 0 exception : ✓
 **MANQUANT** : weighted_presence > total_similarity (invalide mathématiquement)
 
 ### 4. Couverture Sémantique : 5/5
-Chaque règle business testée
+Chaque règle affaire testée
 Tests = documentation comportement
 Exemples concrets docstrings
 
@@ -636,11 +612,11 @@ def test_calculate_confidence_weighted_exceeds_total_returns_zero():
 
 Suite tests déjà excellente (4.5/5). Un seul cas limite manquant identifié
 (cohérent finding Fagan). Après ajout test : qualité 5/5.
-```
+
 
 ---
 
-### Inspection 3 : Sécurité - Exemple Findings
+### Inspection 3 : Sécurité - Exemple
 
 #### Prompt Inspection Sécurité
 
@@ -680,7 +656,7 @@ AUDITE 6 VECTEURS :
 
 5. LOGIQUE BUSINESS
    - Autorisation vérifiée (pas juste auth) ?
-   - Validation business rules côté serveur ?
+   - Validation affaire rules côté serveur ?
    - Transactions atomiques (pas race conditions) ?
    - Rate limiting API ?
 
@@ -766,7 +742,7 @@ Recommandation : BLOQUER / CORRIGER / APPROUVER
 
 ### 5. Logique Business : PASS
 **Analyse** :
-- Validation business rules (n >= 0, top_k > 0)
+- Validation affaire rules (n >= 0, top_k > 0)
 - Pas de race conditions (fonction pure)
 - Logique déterministe
 
@@ -807,7 +783,7 @@ Sinon → Backlog acceptable.
 
 ---
 
-### ROI Phase 6 - Calculs Détaillés
+### ROI Phase 6 - Exemple de Calculs
 
 #### Scénario 1 : Module Standard
 
@@ -896,4 +872,4 @@ ROI = ($20,000 - $600) / $600 = 3,233%
 
 **Phase finale complétée !**
 
-**Félicitations** : Vous avez maintenant la méthodologie complète DocDriven en 6 phases pour développement logiciel de qualité production avec l'IA ! 
+**Félicitations** : Vous avez maintenant la méthodologie complète DC² en 6 phases pour développement logiciel de qualité production avec l'IA ! 

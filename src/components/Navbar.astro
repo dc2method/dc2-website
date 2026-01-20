@@ -11,7 +11,12 @@ const homeLink = currentLocale === 'fr' ? '/' : '/en/';
 <nav class="navbar">
   <div class="navbar-container">
     <a href={homeLink} class="navbar-logo">
-      <span class="logo-text">DOC<span class="logo-separator">//</span>DRIVEN</span>
+      <span class="logo-text">DC<span class="logo-separator">²</span>
+        {currentLocale === 'fr'
+          ? 'Développement par Contraintes Convergentes'
+          : 'Development by Convergent Constraints'
+        }
+      </span>
       <span class="logo-tagline">{t('hero.tagline', currentLocale)}</span>
     </a>
 

@@ -26,7 +26,9 @@ lang: fr
   </span>
 </div>
 
-**En bref** : Le "Spec Sandwich" (specs + tests + types) contraint le LLM si précisément qu'il existe UNE seule solution valide. Résultat : code correct premier coup dans 90%+ des cas. Le debugging n'est pas "réduit" - il est "éliminé".
+---
+
+**En bref** : Les "Contraintes Convergentes" (specs + tests + types) contraint le LLM si précisément qu'il n'existe que quelques solutions valides. Résultat : code correct premier coup dans la majorité des cas. Le debugging n'est pas "réduit" - il est "éliminé".
 
 ---
 
@@ -40,26 +42,20 @@ lang: fr
 Développement traditionnel = 3-5 cycles implémentation-test-debug. LLM génère code "qui semble plausible" mais ne peut pas vérifier s'il fonctionne. Découvre bugs après exécution. Debugging imprévisible consomme 40% du temps développement.
 
 **La solution apportée** :  
-Spec Sandwich fournit vérification externe immédiate via tests. Chaque ligne code validée instantanément. Si tests échouent, LLM corrige immédiatement. Boucle feedback rapide transforme "estimation éduquée" en "validation itérative guidée". Un seul cycle suffit.
+Les Contraintes Convergentes fournissent une vérification externe immédiate via tests. Chaque ligne code validée instantanément. Si les tests échouent, le LLM corrige immédiatement. La boucle feedback rapide transforme "estimation éduquée" en "validation itérative guidée". Un seul cycle suffit souvent.
 
 **Limites LLM adressées** :
 - **Aucune vérification interne justesse** : Tests fournissent vérification externe exhaustive et immédiate
-- **Pas de mémoire opérationnelle** : Spec Sandwich met TOUTES contraintes dans prompt simultanément (tests = QUOI, specs = POURQUOI, types = COMMENT)
+- **Pas de mémoire opérationnelle** : Les Contraintes Convergentes mettent TOUTES le contraintes dans prompt simultanément (tests = QUOI, specs = POURQUOI, types = COMMENT)
 
-**Impact mesuré** :
-- Code correct premier coup : 40% (TDD manuel) → 90%+ (Spec Sandwich)
-- Cycles implémentation-debug : 3-5 → 1 (85% réduction)
-- Temps debugging : 2-3h → 20-30min (75-85% réduction)
-- Temps Phase 4 total : 6-12h (traditionnel) → 45min (DocDriven)
-
-### Le Phénomène "Premier Coup 90%+"
+### Le Phénomène "Du Premier Coup"
 
 **Ce n'est pas de la magie - c'est des mathématiques.**
 
 ```mermaid
 graph TD
-    P2[Phase 2: Spec Tactique] --> SS{Spec Sandwich}
-    P3[Phase 3: 20+ Tests] --> SS
+    P2[Phase 2: Spec Tactique] --> SS{Contraintes Convergentes}
+    P3[Phase 3: ~20+ Tests] --> SS
     TH[Type Hints] --> SS
     
     SS --> C1[Contrainte 1: QUOI<br/>Tests definissent comportement exact]
@@ -72,7 +68,7 @@ graph TD
     
     SOL --> ONE[UNE seule implementation<br/>satisfait TOUTES contraintes]
     ONE --> LLM[LLM resout systeme<br/>d'equations]
-    LLM --> CODE[Code correct 90%+]
+    LLM --> CODE[Code correct]
     
     style SS fill:#fbbf24
     style SOL fill:#ef4444
@@ -82,12 +78,12 @@ graph TD
 **Réduction mathématique espace solutions** :
 
 ```
-Sans contraintes : 1,000 implémentations possibles
-+ Specs (Phase 2) : 100 implémentations plausibles
-+ Tests (Phase 3) : 10 implémentations qui passent
-+ Type hints : 1 implémentation correcte
+**Sans contraintes** : Multitude d'implémentations possibles  
+**+ Spécifications (Phase 2)** : Réduction de l'espace d'implémentations plausibles  
+**+ Tests (Phase 3)** : Seulement quelques implémentations passent  
+**+ Type hints** : 3-5 implémentations correctes  
 
-→ Le LLM trouve la solution unique mécaniquement
+Le LLM trouve la solution parmi ces 3-5 options restantes.
 ```
 
 **Analogie système d'équations** :
@@ -105,8 +101,8 @@ Types : float → float                    [contrainte structure]
 → Solution unique satisfait les 20+ contraintes
 ```
 
-**Les 10% d'échecs restants** :  
-Ambiguïtés résiduelles dans specs OU cas limites non testés → rapidement identifiés et corrigés en < 30 min.
+**Les échecs restants** :  
+Ambiguïtés résiduelles dans specs OU cas limites non testés → rapidement identifiés et corrigés.
 
 ---
 
@@ -122,7 +118,7 @@ Ambiguïtés résiduelles dans specs OU cas limites non testés → rapidement i
 - Définitions interface et signatures types
 - Standards qualité code (linting, vérification types)
 
-### 1. Génération Code Minimal (15-20 min)
+### 1. Génération Code Minimal ⏱️
 
 **LLM 80%, Dev Senior 20%**
 
@@ -134,18 +130,18 @@ Ambiguïtés résiduelles dans specs OU cas limites non testés → rapidement i
 **Philosophie** : "Make it work, then make it good"  
 GREEN = fonctionnel, REFACTOR = élégant
 
-### 2. Exécution des Tests (15-20 min)
+### 2. Exécution des Tests ⏱️
 
 **LLM 70%, Humain 30%**
 
 - Exécuter suite tests (cible : 100% passent)
-- Déboguer tests échouants (rare avec Spec Sandwich)
+- Déboguer tests échouants (rare avec Contraintes Convergentes)
 - LLM corrige bugs implémentation
 - Humain valide corrections ne cassent pas autres tests
 
 **Résultat attendu** : Tous tests GREEN premier coup (90%+ cas)
 
-### 3. Portes Qualité Basiques (10-15 min)
+### 3. Portes Qualité Basiques ⏱️
 
 **Humain 50%, LLM 50%**
 
@@ -167,12 +163,6 @@ Cette phase est considérée terminée quand :
 5. Pas de vulnérabilités sécurité critiques (injection, XSS basique vérifié)
 6. Code correspond signatures interface spécifiées Phase 2
 7. Développeur approuve code implémente correctement specs tactiques
-
-**Estimation Temps Total** :
-- Génération code LLM : 15-20 minutes (premier coup 90%+)
-- Exécution tests + validation : 15-20 minutes
-- Validation portes qualité : 10-15 minutes
-- **Total** : ~45 minutes par composant (temps réel mesuré)
 
 ---
 
@@ -226,7 +216,7 @@ Génère code Python avec :
 C'est la phase GREEN - la perfection vient en Phase 5 REFACTOR.
 ```
 
-#### Code GREEN Généré (Premier Coup)
+#### Code GREEN Généré
 
 ```python
 """
@@ -691,7 +681,7 @@ def calculate_confidence(weighted, total, n, top_k):
 
 #### Piège 2 : Optimisation Prématurée
 
-**❌ Problème** :  
+**Problème** :  
 Dev optimise algorithme avant mesurer performance réelle. Perd temps sur optimisation inutile.
 
 **Exemple** :
@@ -819,7 +809,7 @@ Avant de valider Phase 4 terminée et passer Phase 5 :
 - [ ] **Dev senior approuve** : Validation fonctionnalité correcte
 - [ ] **Pas de feature creep** : Seulement ce qui est dans spec Phase 2
 
-**Si TOUTES coches ✓ → Phase 4 terminée, prêt pour Phase 5 REFACTOR ! 🎉**
+**Si TOUTES coches ✓ → Phase 4 terminée, prêt pour Phase 5 REFACTOR !**
 
 </details>
 

@@ -26,7 +26,9 @@ lang: fr
   </span>
 </div>
 
-**En bref** : LLM génère suite de tests exhaustive (95%+ couverture) AVANT toute implémentation. Tests deviennent les "rails" qui guident le LLM en Phase 4 et empêchent les égarements. Intentions vagues → attentes précises vérifiables.
+---
+
+**En bref** : LLM génère suite de tests exhaustive (95%+ couverture) AVANT toute implémentation. Tests deviennent les "rails" qui guident le LLM en Phase 4 et empêchent les égarements. Passe d'intentions vagues à des attentes précises et vérifiables.
 
 ---
 
@@ -37,20 +39,15 @@ lang: fr
 ## Pourquoi Cette Phase Est Critique
 
 **Le problème sans Phase 3** :  
-LLM code basé uniquement sur specs textuelles (ambiguës). Oublie cas limites, conditions erreur, validations. Implémente le "chemin heureux" en ignorant 40% des scénarios réels. Bugs découverts en intégration ou production.
+LLM code basé uniquement sur specs textuelles (ambiguës). Oublie cas limites, conditions erreur, validations. Implémente le "chemin heureux" en ignorant une grande partie des scénarios réels. Les bugs sont découverts en intégration ou production.
 
 **La solution apportée** :  
-Tests créent spécification exécutable du comportement attendu. Chaque cas limite (null, liste vide, division zéro, dépassement) = test qui DOIT passer. Le LLM ne peut plus oublier - code ne compile/passe pas si incomplet.
+Les tests créent les spécification exécutable du comportement attendu. Chaque cas limite (null, liste vide, division zéro, dépassement) = test qui DOIT passer. Le LLM ne peut plus oublier car code ne compile/passe pas si incomplet.
 
 **Limites LLM adressées** :
 - **Pas de représentation interne** : Tests créent représentation sous forme spécifications exécutables (entrées concrètes → sorties attendues)
 - **Faible fiabilité cas limites** : Phase 3 force explicitation systématique TOUS cas (valeurs nulles, listes vides, erreurs) AVANT codage
 
-**Impact mesuré** :
-- Couverture code réelle : 60-70% (TDD pragmatique) → 95%+ (Phase 3)
-- Cas limites oubliés : 40% (humain seul) → < 5% (LLM exhaustif)
-- Bugs découverts production : -70% (détectés par tests avant merge)
-- Temps debugging Phase 4 : 2-3h → 20-30min (tests valident tout)
 
 ### Les Tests comme Système de Guidage GPS
 
@@ -99,7 +96,7 @@ Tests : SUCCÈS ✓
 ```
 
 **Les tests réduisent l'espace des solutions** :  
-Sans tests, 1000 façons d'implémenter une fonction (900 incorrectes). Avec 20 tests exhaustifs, il reste UNE seule implémentation valide. Le LLM ne peut pas se tromper - les tests acceptent seulement la bonne solution.
+Par exemple, sans tests, il peut y avoir 1000 façons d'implémenter une fonction (la majorité incorrectes). Avec 20 tests exhaustifs, il ne reste que quelques implémentations valides. Le LLM ne peut pas se tromper car les tests n'acceptent seulement que les bonnes solutions.
 
 ---
 
@@ -115,7 +112,7 @@ Sans tests, 1000 façons d'implémenter une fonction (900 incorrectes). Avec 20 
 - Standards qualité (cible 95%+ couverture)
 - Framework test (pytest, unittest, jest, etc.)
 
-### 1. Génération Suite de Tests (45-60 min)
+### 1. Génération Suite de Tests ⏱️⏱️
 
 **LLM 85%, Dev Senior 15%**
 
@@ -127,7 +124,7 @@ Sans tests, 1000 façons d'implémenter une fonction (900 incorrectes). Avec 20 
 
 **Sortie** : Suite tests complète (tous RED - échouent)
 
-### 2. Validation de Couverture (20-30 min)
+### 2. Validation de Couverture ⏱️
 
 **Humain 40%, LLM 60%**
 
@@ -138,7 +135,7 @@ Sans tests, 1000 façons d'implémenter une fonction (900 incorrectes). Avec 20 
 
 **Sortie** : Rapport couverture ≥95%
 
-### 3. Vérification État RED (15 min)
+### 3. Vérification État RED ⏱️
 
 **Humain 90%, LLM 10%**
 
@@ -160,12 +157,6 @@ Cette phase est considérée terminée quand :
 5. Chaque test a assertion claire validant comportement spécifique
 6. Dispositifs test (fixtures) en place pour préparation/nettoyage réutilisables
 7. Dev senior approuve qualité et complétude suite tests
-
-**Estimation Temps Total** :
-- Génération tests LLM : 45-60 minutes
-- Validation couverture : 20-30 minutes
-- Vérification état RED : 15 minutes
-- **Total** : ~1.5 heures (temps réel mesuré)
 
 ---
 
@@ -667,7 +658,7 @@ IMPORTANT :
 - Pas de tests fragiles (couplés aux détails implémentation)
 
 Génère code Python/JavaScript/Java complet prêt à exécuter.
-```
+
 
 #### Prompt 2 : Validation Cas Limites Manquants
 
@@ -765,7 +756,7 @@ Génère code tests intégration complets.
 
 ### Standards de Qualité
 
-#### Excellent Nommage de Tests
+#### Nommage de Tests Proposé
 
 **Pattern** : `test_<fonction>_<scénario>_<résultat_attendu>`
 

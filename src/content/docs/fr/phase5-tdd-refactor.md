@@ -26,6 +26,8 @@ lang: fr
   </span>
 </div>
 
+---
+
 **En bref** : Équipe transforme code GREEN (fonctionnel) en code production (élégant) sous guidance dev senior. L'équipe EXÉCUTE les refactorings, le senior GUIDE. Investissement apprentissage transforme équipe en multiplicateur de force, pas goulot d'étranglement.
 
 ---
@@ -40,18 +42,11 @@ lang: fr
 Code GREEN reste fonctionnel mais basique (duplication, algorithmes O(n²), magic numbers). Dette technique s'accumule silencieusement. Découverte 6-12 mois plus tard → refonte majeure. OU senior fait tout seul refactoring → goulot d'étranglement, équipe stagne, burnout.
 
 **La solution apportée** :  
-Refactoring systématique AVANT merge élimine dette technique. Code production = maintenable, performant, documenté. CRITIQUE : Équipe exécute sous guidance senior (pas senior solo). Senior devient multiplicateur : guide 3-4 devs simultanément qui apprennent par pratique.
+Refactoring systématique AVANT le merge élimine pratiquement la dette technique. Code production = maintenable, performant, documenté. CRITIQUE : Équipe exécute sous guidance senior (pas senior solo). Senior devient multiplicateur : guide 3-4 devs simultanément qui grandissent par pratique.
 
 **Limites LLM adressées** :
 - **Pas de jugement architectural élégance** : Senior identifie opportunités refactoring (code smells, patterns applicables), LLM assiste transformations mécaniques
 - **Pas d'optimisation performance profonde** : Senior profile code, identifie goulots, choisit algorithmes. LLM génère code optimisé sous direction
-
-**Impact mesuré** :
-- Dette technique 6 mois : -70% (refactor systématique pré-merge)
-- Coût maintenance long terme : -40-60% (code maintenable)
-- Vélocité stable : Pas de dégradation -20%/an (qualité soutenue)
-- Progression équipe : +60% compétence an 1 (apprentissage pratique)
-- Rétention senior : ↑ (pas burnout, rôle multiplicateur)
 
 ### L'Équipe Qui Apprend vs Le Senior Qui S'Épuise
 
@@ -82,7 +77,7 @@ graph TD
 
 ---
 
-**Pattern DocDriven (Équipe Guidée)** :
+**Pattern DC² (Équipe Guidée)** :
 
 ```mermaid
 graph TD
@@ -114,46 +109,6 @@ graph TD
 - Scalable (senior guide, pas exécute)
 - Vélocité croissante (équipe autonome)
 
-**Transformation Rôle Senior** :
-
-```
-Sprint 1 :
-Senior : 90% exécution, 10% guidance
-Équipe : Observe, questions
-
-Sprint 3 :
-Senior : 50% exécution, 50% guidance
-Équipe : Exécute avec support
-
-Sprint 6 :
-Senior : 20% exécution, 80% guidance
-Équipe : Exécute autonome, senior valide
-
-Sprint 10+ :
-Senior : 10% exécution, 90% architecture stratégique
-Équipe : Auto-suffisante refactoring quotidien
-```
-
-**ROI Investissement Apprentissage** :
-
-```
-Temps Phase 5 initial :
-Senior solo : 6h par composant
-Équipe guidée : 10h par composant (+67%)
-
-Breakeven : Sprint 3-4
-
-Sprint 10 :
-Senior solo : 6h × 10 = 60h cumulatif
-Équipe guidée : 10h + 8h + 7h + 6h × 7 = 67h
-→ Comparable, MAIS équipe compétente ↑↑
-
-Sprint 20+ :
-Senior solo : Toujours 6h (burnout croissant)
-Équipe guidée : 4-5h (équipe autonome, senior multiplicateur)
-→ Gain 20-30% + senior libéré architecture
-```
-
 ---
 
 <!-- ========================================= -->
@@ -168,7 +123,7 @@ Senior solo : Toujours 6h (burnout croissant)
 - Standards qualité (complexité < 10, métriques couplage)
 - Exigences performance (latence, débit, mémoire)
 
-### 1. Identification Opportunités Refactoring (2-3h)
+### 1. Identification Opportunités Refactoring ⏱️⏱️
 
 **Dev Senior 90%, LLM 10%**
 
@@ -184,7 +139,7 @@ Senior solo : Toujours 6h (burnout croissant)
 
 **Sortie** : Liste priorisée refactorings (critique → nice-to-have)
 
-### 2. Session Revue Équipe (1-2h)
+### 2. Session Revue Équipe ⏱️
 
 **Dev Senior 80%, Équipe 20%**
 
@@ -196,7 +151,7 @@ Senior solo : Toujours 6h (burnout croissant)
 
 **Objectif** : Équipe comprend vision qualité avant exécuter
 
-### 3. Exécution Refactorings Parallèles (4-8h)
+### 3. Exécution Refactorings Parallèles ⏱️⏱️⏱️
 
 **Équipe 60%, Dev Senior 30%, LLM 10%**
 
@@ -217,7 +172,7 @@ Senior solo : Toujours 6h (burnout croissant)
 
 **CRITIQUE** : Refactorings en PARALLÈLE (3-4 devs simultanés)
 
-### 4. Amélioration Documentation (2-3h)
+### 4. Amélioration Documentation ⏱️⏱️
 
 **Équipe 40%, LLM 60%**
 
@@ -228,7 +183,7 @@ Senior solo : Toujours 6h (burnout croissant)
 
 **Focus** : Pourquoi code fonctionne ainsi (pas juste quoi)
 
-### 5. Revue + Validation Senior (2-3h)
+### 5. Revue + Validation Senior ⏱️⏱️
 
 **Dev Senior 70%, Équipe 30%**
 
@@ -257,14 +212,6 @@ Cette phase est considérée terminée quand :
 6. Documentation complète et précise (docstrings + commentaires)
 7. Dev senior approuve qualité production
 8. **Équipe a appris** : Peut expliquer refactorings effectués
-
-**Estimation Temps Total** :
-- Identification opportunités : 2-3h (senior)
-- Session revue équipe : 1-2h
-- Exécution refactorings : 4-8h (équipe parallèle)
-- Amélioration documentation : 2-3h
-- Revue + validation : 2-3h (senior)
-- **Total** : 11-19h (temps écoulé effectif 6-12h grâce parallélisme)
 
 ---
 
@@ -657,7 +604,7 @@ Code REFACTOR = 5x plus lignes, MAIS 3x plus maintenable.
 
 ### Patterns Refactoring Courants
 
-#### Pattern 1 : Extract Function (Le Plus Fréquent)
+#### Pattern 1 : Extract Function
 
 **Quand utiliser** :
 - Fonction > 50 lignes
@@ -930,7 +877,7 @@ Avant d'approuver code REFACTOR, senior vérifie :
 #### Piège 1 : Sur-Refactoring (Over-Engineering)
 
 **Problème** :  
-Dev abstraie trop, perd clarté. Code devient labyrinth design patterns.
+Trop abstrait, perd en clarté. Le code devient un labyrinthe de design patterns.
 
 **Exemple mauvais** :
 ```python
@@ -966,20 +913,20 @@ def _calculate_penalty(n, top_k):
     return min(n / top_k, 1.0)
 ```
 
-**Règle d'or** : Si lecteur comprend pas après 30 secondes, trop abstrait.
+**Règle d'or** : Si un lecteur ne comprend pas après 30 secondes, c'est trop abstrait.
 
 ---
 
 #### Piège 2 : Casser les Tests Pendant Refactor
 
 **Problème** :  
-Refactoring change comportement, pas juste structure. Tests échouent.
+Refactoring change le comportement et non la structure. Tests échouent.
 
 **Pourquoi dangereux** :
 ```
 GREEN : Tests 100% passent
 REFACTOR : Change logique accidentellement
-Tests échouent : Quelle ligne cassée ? Impossible savoir (100 lignes changées)
+Tests échouent
 
 vs
 
@@ -1014,7 +961,7 @@ Si test échoue, on sait EXACTEMENT quel refactor cassé (le dernier).
 #### Piège 3 : Abstraction Prématurée
 
 **Problème** :  
-"Je vais créer interface maintenant, au cas où on aurait besoin de 2+ implémentations plus tard."
+"Je vais créer cette interface maintenant, dans le cas où nous en aurions besoin plus tard."
 
 **Exemple** :
 ```python
@@ -1077,7 +1024,7 @@ def calculate_price(item):
         round_to_cents
     )
 
-# WTF est TPS 5% ? Rabais 10% ? Business logic cachée !
+# La logique d'affaire est cachée !
 ```
 
 **Solution** :  
@@ -1101,14 +1048,14 @@ def _calculate_premium_discount(price, customer):
     return price * 0.1 if customer.is_premium else 0
 ```
 
-**Règle** : Code métier doit être lisible par Product Owner, pas juste devs.
+**Règle** : Le code métier doit être lisible par le Product Owner, pas seulement par les devs.
 
 ---
 
-#### Piège 5 : Paralysie Refactoring (Perfection Infinie)
+#### Piège 5 : Paralysie du Refactoring (Perfection Infinie)
 
 **Problème** :  
-"Je pourrais encore améliorer ce nommage... et extraire cette sous-fonction... et ajouter ce pattern..."  
+"Je pourrais encore extraire cette sous-fonction... et ajouter ce pattern..."  
 → 3 jours de refactor, jamais livré.
 
 **Solution** :  

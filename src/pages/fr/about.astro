@@ -1,0 +1,360 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="À Propos - DC²"
+  description="Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes."
+  lang="fr"
+>
+  <main class="about">
+    <section class="about-hero">
+      <div class="container">
+        <h1>À Propos de Développement par Contraintes Convergentes (DC²)</h1>
+        <p class="hero-subtitle">
+          Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes
+        </p>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="main-content">
+            <h2>Architecture de Gouvernance du Probabilisme</h2>
+            <p>
+                DC² est un <strong>cadre architectural</strong> conçu pour intégrer et gouverner des composants probabilistes — notamment les Grands Modèles de Langage (LLM) — au sein de systèmes déterministes.
+            </p>
+            <p>
+                Le principe fondateur est simple mais puissant :
+                <blockquote>
+                    <strong>« L'intelligence peut être probabiliste. Le contrôle ne doit jamais l'être. »</strong>
+                </blockquote>
+            </p>
+            <p>
+                Cette architecture ne se limite pas au développement logiciel. Elle s'applique à tout système où l'on doit encapsuler de l'intelligence probabiliste : analyse de données, aide à la décision, agents conversationnels, pipelines de traitement sémantique, ou systèmes d'inspection automatisée.
+            </p>
+            <p>
+                DC² traite les LLM comme des <strong>composants logiciels non fiables</strong> dont l'intelligence doit être canalisée par une structure déterministe rigoureuse.
+            </p>
+
+            <h2>Le Problème Architectural</h2>
+            <p>
+                L'émergence des Grands Modèles de Langage représente un changement aussi fondamental que l'adoption des IDEs ou du refactoring automatisé. Cependant, leur nature probabiliste les rend fondamentalement différents de tout composant logiciel traditionnel :
+                <ul>
+                    <li><strong>Probabilistes</strong> : Aucune garantie de cohérence entre deux invocations identiques</li>
+                    <li><strong>Opaques</strong> : Impossible de tracer la logique interne qui mène à un résultat</li>
+                    <li><strong>Non déterministes</strong> : La même entrée peut produire des sorties différentes</li>
+                    <li><strong>Sensibles au contexte</strong> : Les résultats dépendent de l'historique et de la formulation</li>
+                </ul>
+            </p>
+            <p>
+                L'adoption ad-hoc des LLM en production génère une <strong>dette technique invisible</strong> qui ne se manifeste que des mois après l'implémentation. Sans cadre méthodologique rigoureux, ces outils puissants deviennent des générateurs de complexité accidentelle.
+            </p>
+            <p>
+                Les approches traditionnelles échouent parce qu'elles tentent d'appliquer des méthodes conçues pour des systèmes déterministes à des composants probabilistes. Optimiser les prompts ne suffit pas — il faut une <strong>architecture de contraintes</strong> qui compense structurellement les limites des LLM.
+            </p>
+
+            <h2>La Solution DC²</h2>
+            <p>
+              Développement par Contraintes Convergentes propose une architecture en <strong>contraintes convergentes</strong> qui encapsule l'intelligence probabiliste dans un système de contrôle déterministe. Cette approche repose sur quatre piliers fondamentaux :
+            </p>
+            <h3>1. Externalisation de l'Intelligence, Internalisation du Contrôle</h3>
+            <p>
+              L'IA est traitée comme un <strong>sous-système génératif non fiable</strong> comparable à une source de données externe contenant du bruit. Toute interaction avec l'IA doit être encapsulée par :
+              <ul>
+                <li>Des <strong>contrats explicites</strong> (documentation structurée)</li>
+                <li>Des <strong>contraintes vérifiables</strong> (tests exhaustifs)</li>
+                <li>Des <strong>points de validation humains</strong> (inspection multi-niveaux)</li>
+              </ul>
+            </p>
+            <h3>2. Pilotage Stratégique Humain vs Exécution Tactique IA</h3>
+            <p>
+              L'architecture impose une séparation nette des responsabilités :
+              <ul>
+                <li><strong>L'humain garde le contrôle stratégique</strong> : architecture, invariants système, choix de conception</li>
+                <li><strong>L'IA assure l'accélération tactique</strong> : génération de tests, inspection de code, documentation technique</li>
+                <li>L'objectif est d'utiliser l'IA comme <strong>accélérateur</strong>, jamais comme concepteur autonome</li>
+              </ul>
+            </p>
+            <h3>3. Compensation Systématique des Limites</h3>
+            <p>
+              Plutôt que de nier les faiblesses des LLM, DC² les compense par la structure :
+                <ul>
+                    <li>La <strong>documentation</strong> sert de mémoire externe persistante</li>
+                    <li>Le <strong>TDD et les tests exhaustifs</strong> servent de rails pour prévenir les dérives</li>
+                    <li>Les <strong>contraintes convergentes</strong> réduisent mathématiquement l'espace des solutions possibles</li>
+                </ul>
+            </p>
+            <h3>4. Transposabilité Architecturale</h3>
+            <p>
+            Le cadre DC² s'applique à toute situation nécessitant la gouvernance d'un composant probabiliste :
+                <ul>
+                    <li><strong>Développement logiciel</strong> : génération de code sous contraintes strictes</li>
+                    <li><strong>Analyse de données</strong> : enrichissement sémantique avec validation déterministe</li>
+                    <li><strong>Aide à la décision</strong> : suggestions IA avec contrôle humain final</li>
+                    <li><strong>Pipelines de traitement</strong> : transformations probabilistes dans un flux déterministe</li>
+                </ul>
+            </p>
+            <h2>Maturation et Licence</h2>
+            <p>
+                DC² est une méthodologie en développement actif, actuellement en <strong>version 1.0</strong>. Elle a été conçue non pas comme théorie académique, mais comme réponse pragmatique à un constat observé sur le terrain : l'adoption non structurée de l'IA en production génère une dette technique exponentielle.
+            </p>
+            <p>
+                La méthodologie est publiée sous <strong>licence CC BY-SA 4.0</strong>, garantissant qu'elle reste libre d'usage tout en préservant l'attribution. Vous êtes encouragé à l'adapter à vos contextes spécifiques, à la critiquer, et à proposer des améliorations.
+            </p>
+            <h2>Le Contributeur Principal</h2>
+            <h3>Éric Gauthier</h3>
+            <p>
+                <strong>Éric Gauthier</strong> est architecte TI avec plus de 30 ans d'expérience en conception de systèmes complexes. Sa carrière lui a permis d'observer l'évolution des méthodologies de développement, de Waterfall à Agile, de TDD à DevOps.
+            </p>
+            <p>
+                L'émergence des LLM a représenté pour lui un nouveau palier d'évolution méthodologique, un changement fondamental dans la nature des composants avec lesquels nous construisons des systèmes.
+            </p>
+            <p>
+                En travaillant avec les LLM en production, il a identifié un <strong>pattern architectural émergent</strong> : la nécessité de gouverner le probabilisme au sein de systèmes déterministes. DC² est la formalisation de ce pattern.
+            </p>
+            <p>
+                Son rôle est celui de <strong>contributeur principal</strong>, pas de propriétaire exclusif. DC² est conçu comme une méthodologie appartenant à la communauté des architectes, développeurs et praticiens qui l'adoptent, la testent, et contribuent à son évolution.
+            </p>
+            <h2>Engagement Open Source</h2>
+            <p>
+                DC² appartient à la communauté des praticiens qui choisissent de l'utiliser. Elle est offerte comme contribution au corpus des connaissances en ingénierie logicielle et en architecture de systèmes intelligents.
+            </p>
+            <p>
+                Votre feedback, vos critiques constructives et vos contributions sont essentiels pour son amélioration continue. La méthodologie évolue par l'usage et par le dialogue entre pairs.
+            </p>
+            <h2>Contact & Ressources</h2>
+            <div class="contact-links">
+              <a href="https://ca.linkedin.com/in/eric-gauthier-architecte-ti" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="link-icon">🔗</span>
+                LinkedIn
+              </a>
+              <a href="mailto:contact@dc2.dev" class="contact-link">
+                <span class="link-icon">📧</span>
+                Email
+              </a>
+            </div>
+
+            <div class="about-footer-note">
+              <p>
+                <strong>Note :</strong> DC² est une méthodologie en développement actif. Consultez la <a href="/licence">page Licence</a> pour connaître les conditions d'utilisation et de contribution.
+              </p>
+            </div>
+          </div>
+
+          <aside class="sidebar-info">
+            <div class="info-card">
+              <h3>Méthodologie DC²</h3>
+              <ul>
+                <li><strong>Version :</strong> 1.0</li>
+                <li><strong>Licence :</strong> CC BY-SA 4.0</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Liens Rapides</h3>
+              <ul>
+                <li><a href="/intro">Documentation complète</a></li>
+                <li><a href="/fondements">Philosophie de DC²</a></li>
+                <li><a href="/licence">Licence CC BY-SA 4.0</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, var(--dd-primary) 0%, var(--dd-neutral-dark) 100%);
+    color: var(--dd-white);
+    padding: var(--space-12) var(--space-6);
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-4xl);
+    color: var(--dd-white);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--dd-secondary);
+    font-weight: 600;
+  }
+
+  .about-content {
+    padding: var(--space-12) var(--space-6);
+    background: var(--dd-white);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .main-content h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-2xl);
+    color: var(--dd-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+    border-bottom: 3px solid var(--dd-secondary);
+    padding-bottom: var(--space-2);
+  }
+
+  .main-content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .main-content h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    color: var(--dd-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .main-content p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-4);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--dd-secondary);
+    padding-left: var(--space-4);
+    margin-left: 0;
+    font-style: italic;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-6);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: var(--dd-secondary);
+    color: var(--dd-white);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all var(--transition-base);
+  }
+
+  .contact-link:hover {
+    background: var(--dd-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--dd-shadow);
+  }
+
+  .link-icon {
+    font-size: var(--font-size-xl);
+  }
+
+  .about-footer-note {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background: var(--dd-neutral-light);
+    border-left: 4px solid var(--dd-secondary);
+    border-radius: var(--radius-md);
+  }
+
+  .about-footer-note p {
+    margin: 0;
+    font-size: var(--font-size-base);
+  }
+
+  .about-footer-note a {
+    color: var(--dd-secondary);
+    font-weight: 600;
+  }
+
+  .sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .info-card {
+    background: var(--dd-neutral-light);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--dd-secondary);
+  }
+
+  .info-card h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    color: var(--dd-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    font-size: var(--font-size-base);
+    color: var(--dd-neutral-dark);
+    margin-bottom: var(--space-3);
+    line-height: var(--line-height-normal);
+  }
+
+  .info-card a {
+    color: var(--dd-secondary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .info-card a:hover {
+    text-decoration: underline;
+    color: var(--dd-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .about-hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .about-content {
+      padding: var(--space-8) var(--space-4);
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+      flex-direction: column;
+    }
+
+    .contact-link {
+      justify-content: center;
+    }
+  }
+</style>

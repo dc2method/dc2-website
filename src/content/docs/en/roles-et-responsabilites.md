@@ -1,32 +1,32 @@
 ---
 title: "Roles and Responsibilities"
-description: "Definition of human and AI roles in DocDriven"
+description: "Definition of human and AI roles in Development by Convergent Constraints"
 sidebar_position: 8
 lang: en
 ---
 
 # Roles and Responsibilities
 
-This document defines the key roles in the Structured LLM methodology and their specific responsibilities across the 6 phases. Structured LLM is designed to adapt to different team structures, from startups to large enterprises.
+This document defines the key roles in the DC² methodology and their specific responsibilities across the 6 phases. DC² is designed to adapt to different team structures, from startups to large enterprises.
 
-## Role Philosophy
+## Philosophy of Roles
 
-**Structured LLM prioritizes organizational flexibility**: The roles described here are **responsibilities**, not rigid job titles. One person can hold multiple roles, and a role can be shared among multiple people depending on your team size and structure.
+**DC² prioritizes organizational flexibility**: The roles described here are **responsibilities**, not rigid job titles. One person can hold multiple roles, and a role can be shared among several people depending on your team's size and structure.
 
 **Key principle**: What matters is not *who* holds the title, but *who* assumes the responsibility at each phase.
 
-## Role Overview
+## Overview of Roles
 
-### Main Role per Phase
+### Primary Role by Phase
 
-| Phase | Primary Role | Supporting Roles | Human/LLM Ratio |
-|-------|--------------|-----------------|-----------------|
+| Phase | Primary Role | Support Roles | Human/LLM Ratio |
+|-------|--------------|---------------|-----------------|
 | Phase 1 | Designer | Product Owner | 65% / 35% |
 | Phase 2A | Designer + LLM | Dev Team (review) | 45% / 55% |
-| Phase 2B | Designer + Dev Team | — | 80% / 20% |
-| Phase 3 | Senior Dev + LLM | — | 30% / 70% |
-| Phase 4 | Dev + LLM | Senior Dev (validation) | 25% / 75% |
-| Phase 5 | Dev Team | Senior (guide) | 70% / 30% |
+| Phase 2B | Designer + Dev Team | - | 80% / 20% |
+| Phase 3 | Senior Developer + LLM | - | 30% / 70% |
+| Phase 4 | Developer + LLM | Senior Developer (validation) | 25% / 75% |
+| Phase 5 | Dev Team | Senior (guidance) | 70% / 30% |
 | Phase 6 | Team + LLM | Senior (validation) | 40% / 60% |
 
 ## Role Definitions
@@ -34,81 +34,81 @@ This document defines the key roles in the Structured LLM methodology and their 
 ### 1. Designer
 
 **Who can play this role**:
-- Software architect (ideal)
-- Senior technical analyst
-- Experienced tech lead
-- Senior developer with design talent
+- Software Architect (ideal)
+- Senior Technical Analyst
+- Experienced Tech Lead
+- Senior Developer with design talent
 
-**Primary responsibilities**:
+**Primary Responsibilities**:
 - Translate business needs into architectural decisions
 - Identify technical constraints and trade-offs
 - Create and document ADRs (Architecture Decision Records)
 - Validate that proposed solutions meet strategic objectives
-- Guide the team in understanding architectural vision
+- Guide the team in understanding the architectural vision
 
-**Required skills**:
+**Required Skills**:
 - Systems thinking (understanding how components interconnect)
 - Experience with architectural patterns and trade-offs
-- Ability to articulate technical decisions for business audience
-- Judgment on scalability, performance, maintainability
+- Ability to articulate technical decisions for business audiences
+- Judgment on scalability, performance, and maintainability
 
-**Time commitment**:
-- Phase 1: 1-2 days (primary role)
-- Phase 2: 4-6 hours (generation + critical handoff)
-- Phases 3-6: Consultation availability (2-4 hours per phase)
+**Time Commitment**:
+- Phase 1: ⏱️⏱️⏱️ - Primary role
+- Phase 2: ⏱️⏱️ - Generation + critical handoff
+- Phases 3-6: ⏱️ - Consultation availability
 
 ### 2. Product Owner
 
 **Who can play this role**:
 - Scrum/Agile Product Owner
 - Product Manager
-- Senior business analyst
-- Product lead
+- Senior Business Analyst
+- Product Lead
 
-**Primary responsibilities**:
+**Primary Responsibilities**:
 - Define business success criteria
 - Prioritize features and arbitrate trade-offs
-- Validate that solution meets business needs
-- Represent end users and stakeholders
-- Approve tactical plan before development
+- Validate that the solution meets business needs
+- Represent end-users and stakeholders
+- Approve the tactical plan before development
 
-**Required skills**:
-- Deep domain expertise
-- Prioritization and arbitration ability
-- Communication between technical and business
-- Product vision and roadmap
+**Required Skills**:
+- Deep knowledge of the business domain
+- Prioritization and arbitration capability
+- Communication between technical and business sides
+- Product vision and roadmap perspective
 
-**Time commitment**:
-- Phase 1: 4-8 hours (continuous validation)
-- Phase 2B: 2 hours (Critical Handoff)
-- Phase 6: 1-2 hours (optional final validation)
+**Time Commitment**:
+- Phase 1: ⏱️⏱️ - Continuous validation
+- Phase 2B: ⏱️ - Critical Handoff
+- Phase 6: ⏱️ - Optional final validation
 
 ### 3. Senior Developer
 
 **Who can play this role**:
 - Developer with 5+ years experience
-- Technical tech lead
-- Senior software engineer
+- Technical Tech Lead
+- Senior Software Engineer
 - Developer with specific domain expertise
 
-**Primary responsibilities**:
+**Primary Responsibilities**:
 - Validate test quality and completeness (Phase 3)
 - Validate implementation correctness (Phase 4)
 - **Guide the team in refactoring** (Phase 5)
 - Validate inspection results (Phase 6)
 - Technical mentor for less experienced developers
 
-**Required skills**:
-- Deep technical expertise in technology stack
+**Required Skills**:
+- Deep technical expertise in the technology stack
 - TDD and code quality experience
-- Mentoring and knowledge transfer ability
+- Mentoring capability and knowledge transfer
 - Judgment on maintainability and long-term evolution
 
-**Time commitment**:
-- Phase 3: 30-45 minutes (test validation)
-- Phase 4: 20-30 minutes (implementation validation)
-- Phase 5: 6-12 hours (continuous refactoring guidance)
-- Phase 6: 2-3 hours (inspection validation)
+**Time Commitment**:
+- Phase 3: ⏱️ - Test validation
+- Phase 4: ⏱️ - Implementation validation
+- Phase 5: ⏱️⏱️⏱️ - Continuous refactoring guidance
+- Phase 6: ⏱️ - Inspection validation
 
 ### 4. Development Team
 
@@ -117,25 +117,24 @@ This document defines the key roles in the Structured LLM methodology and their 
 - The complete team assigned to the project
 - Can include specialists (frontend, backend, data, etc.)
 
-**Primary responsibilities**:
+**Primary Responsibilities**:
 - **Review and challenge the tactical plan** (Phase 2B)
 - Identify technical risks and dependencies
 - **Execute refactoring under senior guidance** (Phase 5)
 - Review and approve inspections (Phase 6)
 - Develop collective code ownership
 
-**Required skills**:
-- Technical skills in project technology stack
-- Collaborative work ability
+**Required Skills**:
+- Technical skills in the project's stack
+- Collaborative working ability
 - Willingness to learn and improve
-- Critical thinking (challenge assumptions)
+- Critical thinking (challenging assumptions)
 
-**Time commitment**:
-- Phase 2A: 1-2 hours (pre-read tactical plan)
-- Phase 2B: 90-120 minutes (Critical Handoff)
-- Phase 3-4: Optional observation/learning
-- Phase 5: 6-12 hours (active refactoring work)
-- Phase 6: 2-3 hours (inspection review)
+**Time Commitment**:
+- Phase 2: ⏱️⏱️ - Pre-reading tactical plan and Critical Handoff
+- Phase 4: ⏱️ - Generation
+- Phase 5: ⏱️⏱️⏱️ - Active refactoring work
+- Phase 6: ⏱️ - Inspection review
 
 ## Collaboration Dynamics
 
@@ -143,12 +142,12 @@ This document defines the key roles in the Structured LLM methodology and their 
 
 ```mermaid
 graph LR
-    C[Designer leads] <--> PO[Product Owner]
-    C --> D[Documents ADRs + Schemas]
+    C[Designer lead] <--> PO[Product Owner]
+    C --> D[ADR Documents + Diagrams]
     D --> V[Joint validation]
 ```
 
-**Dynamic**: Iterative dialogue between technical vision and business needs. Designer proposes solutions, Product Owner validates business alignment.
+**Dynamic**: Iterative dialogue between technical vision and business needs. The Designer proposes solutions, the Product Owner validates business alignment.
 
 ### Phase 2A-2B: Tactical Plan + Critical Handoff
 
@@ -157,7 +156,7 @@ graph LR
 ```mermaid
 graph TD
     CL[Designer + LLM] --> PT[Tactical Plan]
-    PT --> ED[Dev Team pre-reads]
+    PT --> ED[Dev Team pre-reading]
 ```
 
 **Phase 2B: Critical Handoff**
@@ -166,39 +165,39 @@ graph TD
 graph TD
     CP[Designer presents] --> EDC[Dev Team challenges]
     EDC --> DC[Collective discussion]
-    DC --> PR[Plan revised approved]
+    DC --> PR[Plan revised and approved]
 ```
 
-**Key dynamic**: The Critical Handoff (Phase 2B) is the moment where the Designer's vision meets the team's reality. The team MUST actively challenge—a passive team signals a problem.
+**Key dynamic**: The Critical Handoff (Phase 2B) is where the Designer's vision meets team reality. The team MUST actively challenge—a passive team signals a problem.
 
 **Red flags**:
 - Silent team (no questions/concerns)
 - Rubber-stamp approval without discussion
-- Estimations diverge > 50% between Designer and Team
+- Estimation divergence > 50% between Designer and Team
 
 ### Phase 3-4: TDD RED-GREEN
 
 ```mermaid
 graph TD
-    DSL[Senior Dev + LLM] --> T[Phase 3 Tests]
+    DSL[Senior Developer + LLM] --> T[Tests Phase 3]
     T --> VS[Senior validation]
-    VS --> DLI[Dev + LLM → Phase 4 Implementation]
+    VS --> DLI[Developer + LLM → Implementation Phase 4]
     DLI --> VS2[Senior validation]
 ```
 
-**Dynamic**: Fast, highly automated phases. Senior validates but does not code directly. Focus on speed with quality guaranteed by tests.
+**Dynamic**: Fast phases, heavily automated. Senior validates but does not code directly. Focus on speed with quality guaranteed by tests.
 
 ### Phase 5: Refactoring (Central Dynamic)
 
 ```mermaid
 graph TD
-    DS[Senior Dev guides] --> DP[Defines priorities]
+    DS[Senior Developer guides] --> DP[Defines priorities]
     DP --> ED[Dev Team executes]
     LLM[LLM assists] --> ED
     ED --> D1[Dev1]
     ED --> D2[Dev2]
     ED --> D3[Dev3]
-    D1 --> RP[Parallel refactor]
+    D1 --> RP[Parallel refactoring]
     D2 --> RP
     D3 --> RP
     RP --> RC[Senior reviews continuously]
@@ -208,21 +207,20 @@ graph TD
 **Key dynamic**:
 - **Senior does NOT do all the work alone**
 - Senior identifies opportunities: "This module has duplication, who wants to extract it?"
-- Team proposes approaches: "Could we use Strategy pattern here?"
-- Senior guides: "Good idea, but watch for over-engineering. Start simple."
+- Team proposes approaches: "We could use the Strategy pattern here?"
+- Senior guides: "Good idea, but watch out for over-engineering."
 - Team implements under guidance
 - Senior reviews and adjusts continuously
 
 **Benefits**:
 - Learning through practice (team develops skills)
-- Scalability (multiple parallel refactorings)
+- Scalability (multiple refactorings in parallel)
 - Ownership (team proud of the result)
-- Senior is a force multiplier (guides 3-4 people simultaneously)
+- Senior force multiplier (guides 3-4 people simultaneously)
 
 **Anti-patterns to avoid**:
-- ❌ Senior does everything, team watches → No learning, bottleneck
-- ❌ Team alone without guidance → Risk of over-engineering or under-refactoring
-- ✅ **Active team under Senior guidance → Scalable, learning, efficient**
+- Senior does everything, team watches → No learning, bottleneck
+- Team alone without guidance → Risk of over-engineering or under-refactoring
 
 ### Phase 6: Triple Inspection (Optional)
 
@@ -231,37 +229,37 @@ graph TD
     LLM[LLM executes 3 inspections] --> R[Reports generated]
     R --> ERC[Team reviews collectively]
     ERC --> SVP[Senior validates prioritization]
-    SVP --> DA[Decisions actions]
+    SVP --> DA[Action decisions]
 ```
 
-**Dynamic**: Automated inspections, human decisions. Team learns to read and interpret inspection reports, Senior validates that prioritization is appropriate.
+**Dynamic**: Automated inspections, human decisions. The team learns to read and interpret inspection reports. The senior validates that prioritization is appropriate.
 
-## Scaling by Team Size
+## Adaptation by Team Size
 
 ### Startup / Small Team (2-4 people)
 
 **Typical mapping**:
-- **Tech Founder**: Designer + Senior Dev
-- **Dev 1-2**: Development Team
+- **Tech Founder**: Designer + Senior Developer
+- **Dev 1-2**: Dev Team
 - **Founder/PM**: Product Owner
 
 **Adjustments**:
 - Same person plays multiple roles
 - Critical Handoff less formal (team discussion)
-- Phase 5: Tech founder guides but also participates in refactoring
+- Phase 5: Tech Founder guides but also participates in refactoring
 - Faster decisions, less formal documentation
 
 **Concrete example**:
-- **Phase 1**: Tech founder (2h) defines architecture with PM
-- **Phase 2B**: Team discussion 60 min around table
-- **Phase 5**: Tech founder + Dev1 refactor together, pairing
+- **Phase 1**: Tech Founder (2h) defines architecture with PM
+- **Phase 2B**: Team discussion 60min around table
+- **Phase 5**: Tech Founder + Dev1 refactor together, pairing
 
 ### Medium Team (5-10 people)
 
 **Typical mapping**:
 - **Architect/Tech Lead**: Designer
-- **Senior Dev (2-3)**: Senior Dev (can share roles)
-- **Dev (3-5)**: Development Team
+- **Senior Dev (2-3)**: Senior Developer (can be shared)
+- **Dev (3-5)**: Dev Team
 - **Product Owner**: Product Owner
 
 **Adjustments**:
@@ -271,10 +269,10 @@ graph TD
 - Complete but pragmatic documentation
 
 **Concrete example**:
-- **Phase 2B**: Formal meeting 90 min, all present
+- **Phase 2B**: Formal 90-minute meeting, all present
 - **Phase 5**:
-  - Senior1 guides Dev1 + Dev2 on Module A
-  - Senior2 guides Dev3 + Dev4 on Module B
+  - Senior1 guides Dev1+Dev2 on Module A
+  - Senior2 guides Dev3+Dev4 on Module B
   - Common review end of day
 
 ### Large Team (10+ people)
@@ -282,8 +280,8 @@ graph TD
 **Typical mapping**:
 - **Principal Architect**: Designer
 - **Tech Leads (2-3)**: Assistant Designers
-- **Senior Dev (4-6)**: Senior Dev
-- **Dev (10+)**: Development Team
+- **Senior Dev (4-6)**: Senior Developer
+- **Dev (10+)**: Dev Team
 - **Product Manager + BAs**: Product Owner (collective)
 
 **Adjustments**:
@@ -295,42 +293,26 @@ graph TD
 **Concrete example**:
 - **Phase 1**: Principal Architect + 2 Tech Leads co-create
 - **Phase 2B**:
-  - 3 Handoff sessions (one per sub-team)
+  - 3 Critical Handoff sessions (one per sub-team)
   - Final consolidation session
 - **Phase 5**:
   - 4 parallel groups (Senior + 2-3 Devs each)
-  - Daily 30 min sync across all Seniors
+  - Daily 30-minute sync with all Seniors
 
 ## Skills Matrix
 
 ### Skills by Role
 
-| Skill | Designer | Product Owner | Senior Dev | Dev Team |
-|-------|----------|---------------|-----------|----------|
-| **Systems thinking** | Expert | Intermediate | Advanced | Base |
-| **Architectural patterns** | Expert | — | Advanced | Intermediate |
-| **Domain expertise** | Intermediate | Expert | Intermediate | Base |
-| **TDD/Testing** | Intermediate | — | Expert | Advanced |
-| **Refactoring** | Advanced | — | Expert | Intermediate+ |
+| Skill | Designer | Product Owner | Senior Developer | Dev Team |
+|-------|----------|---------------|------------------|----------|
+| **Systems thinking** | Expert | Intermediate | Advanced | Foundational |
+| **Architectural patterns** | Expert | - | Advanced | Intermediate |
+| **Business domain** | Intermediate | Expert | Intermediate | Foundational |
+| **TDD/Testing** | Intermediate | - | Expert | Advanced |
+| **Refactoring** | Advanced | - | Expert | Intermediate+ |
 | **Technical communication** | Expert | Expert | Advanced | Intermediate |
-| **Mentoring** | Advanced | — | Expert | Variable |
-| **Business trade-offs** | Advanced | Expert | Intermediate | Base |
-
-### Typical Progression
-
-**Developer → Senior Dev**:
-1. Master technology stack (2-3 years)
-2. Deep TDD experience (1-2 years practice)
-3. First guided refactorings (6-12 months)
-4. Mentoring junior developers (6+ months)
-5. Autonomous code validation
-
-**Senior Dev → Designer**:
-1. Systems thinking developed (3-5 years)
-2. Architectural patterns experience (2-3 years)
-3. Technical/business trade-offs (2+ years)
-4. Stakeholder communication (1-2 years)
-5. Autonomous architectural decisions
+| **Mentoring** | Advanced | - | Expert | Variable |
+| **Business trade-offs** | Advanced | Expert | Intermediate | Foundational |
 
 ## Common Pitfalls
 
@@ -339,12 +321,12 @@ graph TD
 **Solution**: Mandatory Critical Handoff (Phase 2B), team actively challenges
 
 ### 2. Senior Does Everything
-**Problem**: Senior codes all refactoring, team is passive
+**Problem**: Senior codes all refactoring, team passive
 **Solution**: Senior guides, team executes. Learning > short-term speed
 
 ### 3. Rigid Roles
-**Problem**: "I'm a Dev, not Senior, so I can't comment on architecture"
-**Solution**: Encourage contribution at all levels. Junior may have valuable insights.
+**Problem**: "I'm a Dev, not a Senior, so I can't comment on architecture"
+**Solution**: Encourage contribution from all levels. Juniors can have valuable insights.
 
 ### 4. Absent Product Owner
 **Problem**: PO not involved Phase 1-2, discovers result Phase 6
@@ -356,28 +338,25 @@ graph TD
 
 ## Role Health Indicators
 
-:::tip[Positive Signals]
-- Team asks 10+ questions at Critical Handoff
-- Designer vs Team estimations diverge < 20%
+### Positive Signals
+- Team asks multiple questions during Critical Handoff
+- Designer vs Team estimation divergence < 20%
 - Juniors contribute refactoring ideas Phase 5
-- Senior guides 3+ people simultaneously Phase 5
-- Product Owner validates without surprise Phase 2B
-:::
+- Product Owner validates without surprises Phase 2B
 
-:::danger[Negative Signals]
-- Team silent at Critical Handoff
-- Estimations diverge > 50%
-- Senior codes 90%+ of refactoring alone
-- Product Owner discovers solution Phase 6
+### Negative Signals
+- Team silent during Critical Handoff
+- Estimation divergence > 50%
+- Senior codes majority of refactoring alone
+- Product Owner discovers solution in Phase 6
 - "That's not my role" repeated frequently
-:::
 
 ## Final Recommendations
 
 1. **Flexibility > Rigidity**: Adapt roles to your organizational context
 2. **Responsibility > Title**: What matters is who does what, not business cards
-3. **Collaboration > Hierarchy**: Encourage contribution at all levels
-4. **Learning > Speed**: Phase 5 with team slower initially but better long-term ROI
+3. **Collaboration > Hierarchy**: Encourage contribution from all levels
+4. **Learning > Speed**: Phase 5 as a team slower initially but better long-term ROI
 5. **Collective Ownership**: Entire team responsible for quality, not just Senior/Designer
 
-**SLLD works best when roles are shared responsibilities with clear leadership, not isolated silos.**
+**DC² works best when roles are shared responsibilities with clear leadership, not airtight silos.**

@@ -3,15 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="À Propos - DocDriven"
-  description="Découvrez l'auteur de DocDriven et le contexte de création de cette méthodologie structurée."
+  title="À Propos - DC²"
+  description="Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes. Découvrez les fondements théoriques de DC²."
 >
   <main class="about">
     <section class="about-hero">
       <div class="container">
-        <h1>À Propos de DocDriven</h1>
+        <h1>À Propos du Développement par Contraintes Convergentes (DC²)</h1>
         <p class="hero-subtitle">
-          Méthodologie open source pour développement logiciel structuré avec les LLM
+          Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes
         </p>
       </div>
     </section>
@@ -20,63 +20,136 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="container">
         <div class="content-grid">
           <div class="main-content">
-            <h2>L'Auteur</h2>
+            <h2>Architecture de Gouvernance du Probabilisme</h2>
+            <p>
+              DC² est un <strong>cadre architectural</strong> conçu pour intégrer et gouverner des composants probabilistes — notamment les Grands Modèles de Langage (LLM) — au sein de systèmes déterministes.
+            </p>
+
+            <p>
+              Le principe fondateur est simple mais puissant :
+            </p>
+
+            <blockquote style="border-left: 4px solid var(--dd-secondary); padding-left: var(--space-4); margin: var(--space-6) 0; font-style: italic; color: var(--dd-primary); font-weight: 600;">
+              « L'intelligence peut être probabiliste. Le contrôle ne doit jamais l'être. »
+            </blockquote>
+
+            <p>
+              Cette architecture ne se limite pas au développement logiciel. Elle s'applique à tout système où l'on doit encapsuler de l'intelligence probabiliste : analyse de données, aide à la décision, agents conversationnels, pipelines de traitement sémantique, ou systèmes d'inspection automatisée.
+            </p>
+
+            <p>
+              DC² traite les LLM comme des <strong>composants logiciels non fiables</strong> dont l'intelligence doit être canalisée par une structure déterministe rigoureuse.
+            </p>
+
+            <h2>Le Problème Architectural</h2>
+            <p>
+              L'émergence des Grands Modèles de Langage représente un changement aussi fondamental que l'adoption des IDEs ou du refactoring automatisé. Cependant, leur nature probabiliste les rend fondamentalement différents de tout composant logiciel traditionnel :
+            </p>
+
+            <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
+              <li><strong>Probabilistes :</strong> Aucune garantie de cohérence entre deux invocations identiques</li>
+              <li><strong>Opaques :</strong> Impossible de tracer la logique interne qui mène à un résultat</li>
+              <li><strong>Non déterministes :</strong> La même entrée peut produire des sorties différentes</li>
+              <li><strong>Sensibles au contexte :</strong> Les résultats dépendent de l'historique et de la formulation</li>
+            </ul>
+
+            <p>
+              L'adoption ad-hoc des LLM en production génère une <strong>dette technique invisible</strong> qui ne se manifeste que des mois après l'implémentation. Sans cadre méthodologique rigoureux, ces outils puissants deviennent des générateurs de complexité accidentelle.
+            </p>
+
+            <p>
+              Les approches traditionnelles échouent parce qu'elles tentent d'appliquer des méthodes conçues pour des systèmes déterministes à des composants probabilistes. Optimiser les prompts ne suffit pas — il faut une <strong>architecture de contraintes</strong> qui compense structurellement les limites des LLM.
+            </p>
+
+            <h2>La Solution DC²</h2>
+            <p>
+              Développement par Contraintes Convergentes propose une architecture en <strong>contraintes convergentes</strong> qui encapsule l'intelligence probabiliste dans un système de contrôle déterministe. Cette approche repose sur quatre piliers fondamentaux :
+            </p>
+
+            <h3>1. Externalisation de l'Intelligence, Internalisation du Contrôle</h3>
+            <p>
+              L'IA est traitée comme un <strong>sous-système génératif non fiable</strong> comparable à une source de données externe contenant du bruit. Toute interaction avec l'IA doit être encapsulée par :
+            </p>
+            <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
+              <li>Des <strong>contrats explicites</strong> (documentation structurée)</li>
+              <li>Des <strong>contraintes vérifiables</strong> (tests exhaustifs)</li>
+              <li>Des <strong>points de validation humains</strong> (inspection multi-niveaux)</li>
+            </ul>
+
+            <h3>2. Pilotage Stratégique Humain vs Exécution Tactique IA</h3>
+            <p>
+              L'architecture impose une séparation nette des responsabilités :
+            </p>
+            <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
+              <li><strong>L'humain garde le contrôle stratégique :</strong> architecture, invariants système, choix de conception</li>
+              <li><strong>L'IA assure l'accélération tactique :</strong> génération de tests, inspection de code, documentation technique</li>
+              <li>L'objectif est d'utiliser l'IA comme <strong>accélérateur</strong>, jamais comme concepteur autonome</li>
+            </ul>
+
+            <h3>3. Compensation Systématique des Limites</h3>
+            <p>
+              Plutôt que de nier les faiblesses des LLM, DC² les compense par la structure :
+            </p>
+            <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
+              <li>La <strong>documentation</strong> sert de mémoire externe persistante</li>
+              <li>Le <strong>TDD et les tests exhaustifs</strong> servent de rails pour prévenir les dérives</li>
+              <li>Les <strong>contraintes convergentes</strong> réduisent mathématiquement l'espace des solutions possibles</li>
+            </ul>
+
+            <h3>4. Transposabilité Architecturale</h3>
+            <p>
+              Le cadre DC² s'applique à toute situation nécessitant la gouvernance d'un composant probabiliste :
+            </p>
+            <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
+              <li><strong>Développement logiciel :</strong> génération de code sous contraintes strictes</li>
+              <li><strong>Analyse de données :</strong> enrichissement sémantique avec validation déterministe</li>
+              <li><strong>Aide à la décision :</strong> suggestions IA avec contrôle humain final</li>
+              <li><strong>Pipelines de traitement :</strong> transformations probabilistes dans un flux déterministe</li>
+            </ul>
+
+            <h2>Maturation et Licence</h2>
+            <p>
+              DC² est une méthodologie en développement actif, actuellement en <strong>version 1.0</strong>. Elle a été conçue non pas comme théorie académique, mais comme réponse pragmatique à un constat observé sur le terrain : l'adoption non structurée de l'IA en production génère une dette technique exponentielle.
+            </p>
+
+            <p>
+              La méthodologie est publiée sous <strong>licence CC BY-SA 4.0</strong>, garantissant qu'elle reste libre d'usage tout en préservant l'attribution. Vous êtes encouragé à l'adapter à vos contextes spécifiques, à la critiquer, et à proposer des améliorations.
+            </p>
+
+            <h2>Le Contributeur Principal</h2>
             <h3>Éric Gauthier</h3>
             <p>
-              Architecte logiciel senior avec 30+ ans d'expérience en conception de systèmes complexes,
-              j'ai développé DocDriven pour répondre à un constat pragmatique : l'adoption ad-hoc des
-              Grands Modèles de Langage en développement logiciel génère une dette technique invisible qui
-              ne se manifeste que des mois après l'implémentation.
+              Architecte TI avec plus de 30 ans d'expérience en conception de systèmes complexes. Sa carrière lui a permis d'observer l'évolution des méthodologies de développement, de Waterfall à Agile, de TDD à DevOps.
             </p>
 
             <p>
-              Ma carrière m'a permis d'observer l'évolution des méthodologies de développement, de
-              Waterfall à Agile, de TDD à DevOps. L'émergence des LLM représente un changement aussi
-              fondamental que l'adoption des IDEs ou du refactoring automatisé. Cependant, sans cadre
-              méthodologique rigoureux, cet outil puissant devient un générateur de complexité accidentelle.
-            </p>
-
-            <h2>Genèse de DocDriven</h2>
-            <p>
-              DocDriven n'est pas une théorie académique. Cette méthodologie a été développée et testée
-              sur un projet réel de traitement de données complexe (Chef Jules), où chaque phase a été
-              validée empiriquement. Le résultat : 840 tests générés, zéro régression, et un score
-              Fagan de 85/100 en inspection finale.
+              L'émergence des LLM a représenté pour lui un nouveau palier d'évolution méthodologique, un changement fondamental dans la nature des composants avec lesquels nous construisons des systèmes.
             </p>
 
             <p>
-              La méthodologie structure l'adoption des LLM à travers 6 phases distinctes où les humains
-              contrôlent les décisions stratégiques et architecturales (Phases 1-2, Phase 6), tandis que
-              l'IA accélère l'exécution tactique sous supervision continue (Phases 3-5). Cette séparation
-              claire des responsabilités évite deux écueils : la sur-automatisation (tout déléguer à l'IA)
-              et la sous-utilisation (utiliser l'IA comme simple autocomplete).
-            </p>
-
-            <h2>Dissociation Auteur/Méthodologie</h2>
-            <p>
-              DocDriven est conçu comme une méthodologie open source plus grande que son créateur.
-              Elle appartient à la communauté des développeurs qui l'adoptent, la testent, et contribuent
-              à son évolution. Mon rôle est celui de contributeur principal, pas de "gourou" ou propriétaire
-              exclusif.
+              En travaillant avec les LLM en production, il a identifié un <strong>pattern architectural émergent</strong> : la nécessité de gouverner le probabilisme au sein de systèmes déterministes. DC² est la formalisation de ce pattern.
             </p>
 
             <p>
-              La licence CC BY-SA 4.0 garantit que DocDriven reste libre d'usage tout en préservant
-              l'attribution. Vous êtes encouragé à l'adapter à vos contextes spécifiques, à la critiquer,
-              et à proposer des améliorations.
+              Son rôle est celui de <strong>contributeur principal</strong>, pas de propriétaire exclusif. DC² est conçu comme une méthodologie appartenant à la communauté des architectes, développeurs et praticiens qui l'adoptent, la testent, et contribuent à son évolution.
             </p>
 
-            <h2>Contact & Liens</h2>
+            <h2>Engagement Open Source</h2>
+            <p>
+              DC² appartient à la communauté des praticiens qui choisissent de l'utiliser. Elle est offerte comme contribution au corpus des connaissances en ingénierie logicielle et en architecture de systèmes intelligents.
+            </p>
+
+            <p>
+              Votre feedback, vos critiques constructives et vos contributions sont essentiels pour son amélioration continue. La méthodologie évolue par l'usage et par le dialogue entre pairs.
+            </p>
+
+            <h2>Contact & Ressources</h2>
             <div class="contact-links">
-              <a href="https://www.linkedin.com/in/eric-gauthier" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <a href="https://ca.linkedin.com/in/eric-gauthier-architecte-ti" target="_blank" rel="noopener noreferrer" class="contact-link">
                 <span class="link-icon">🔗</span>
                 LinkedIn
               </a>
-              <a href="https://github.com/egauthier" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <span class="link-icon">💻</span>
-                GitHub
-              </a>
-              <a href="mailto:m.e.gauthier@gmail.com" class="contact-link">
+              <a href="mailto:contact@dc2.dev" class="contact-link">
                 <span class="link-icon">📧</span>
                 Email
               </a>
@@ -84,22 +157,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
             <div class="about-footer-note">
               <p>
-                <strong>Note :</strong> DocDriven est une méthodologie en développement actif (V1.0).
-                Votre feedback et vos contributions sont essentiels pour son amélioration. Consultez la
-                <a href="/licence">page Licence</a> pour connaître les conditions d'utilisation et de contribution.
+                <strong>Note :</strong> DC² est une méthodologie en développement actif (V1.0).
+                Consultez la <a href="/licence">page Licence</a> pour connaître les conditions d'utilisation et de contribution.
               </p>
             </div>
           </div>
 
           <aside class="sidebar-info">
             <div class="info-card">
-              <h3>Méthodologie DocDriven</h3>
+              <h3>Principe Fondateur</h3>
+              <p style="font-style: italic; color: var(--dd-primary); font-weight: 600; margin: 0;">
+                « L'intelligence peut être probabiliste. Le contrôle ne doit jamais l'être. »
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Méthodologie DC²</h3>
               <ul>
                 <li><strong>Version :</strong> 1.0</li>
                 <li><strong>Licence :</strong> CC BY-SA 4.0</li>
-                <li><strong>Documentation :</strong> 15K+ mots</li>
-                <li><strong>ADRs :</strong> 26 décisions</li>
-                <li><strong>Validation :</strong> Fagan 85/100</li>
+                <li><strong>Nature :</strong> Cadre architectural</li>
+                <li><strong>Application :</strong> Gouvernance du probabilisme</li>
               </ul>
             </div>
 
@@ -107,8 +185,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <h3>Liens Rapides</h3>
               <ul>
                 <li><a href="/intro">Introduction</a></li>
+                <li><a href="/fondements-theoriques">Fondements Théoriques</a></li>
                 <li><a href="/phase1-architecture-strategique">Phase 1 : Architecture</a></li>
-                <li><a href="/roles-et-responsabilites">Rôles & Responsabilités</a></li>
                 <li><a href="/licence">Licence</a></li>
               </ul>
             </div>
