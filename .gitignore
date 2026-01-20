@@ -26,3 +26,9 @@ pnpm-debug.log*
 # Local work directories (private, not for GitHub)
 documents-sources/
 specs/
+
+# IDE and local configuration (not for repo)
+.vscode/
+.claude/
+CLAUDE.md
+VALIDATION_CHECKLIST.md
