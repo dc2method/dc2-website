@@ -1083,6 +1083,6 @@ Code production = code maintenable qui marche
 
 ---
 
-**Prochaine étape** : [Phase 6 : Triple Inspection (Optionnelle) →](./phase6-triple-inspection)
+**Prochaine étape** : [Phase 6 : Triple Inspection (Optionnelle) →](/phase6-triple-inspection)
 
-**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](./roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.
+**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](/roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.

@@ -441,10 +441,10 @@ DC² ne promet pas "plus rapide maintenant", elle promet **"investissement struc
 **Vous avez maintenant compris les fondements théoriques de DC².**
 
 ### Vous voulez implémenter maintenant
-→ [**Commencer avec Phase 1 : Architecture Stratégique**](./phase1-architecture-strategique)
+→ [**Commencer avec Phase 1 : Architecture Stratégique**](/phase1-architecture-strategique)
 
 ### Retour à l'introduction
-→ [**Retour à l'introduction**](./intro)
+→ [**Retour à l'introduction**](/intro)
 
 ---
 

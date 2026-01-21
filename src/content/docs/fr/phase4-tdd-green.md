@@ -815,6 +815,6 @@ Avant de valider Phase 4 terminée et passer Phase 5 :
 
 ---
 
-**Prochaine étape** : [Phase 5 : REFACTOR - Amélioration Collaborative →](./phase5-tdd-refactor)
+**Prochaine étape** : [Phase 5 : REFACTOR - Amélioration Collaborative →](/phase5-tdd-refactor)
 
-**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](./roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.
+**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](/roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.

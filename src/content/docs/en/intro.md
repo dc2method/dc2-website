@@ -17,7 +17,7 @@ Even worse: during a code review, your team can no longer **justify its architec
 
 **This methodology rests on solid theoretical foundations**: understanding the intrinsic limitations of LLMs, how Convergent Constraints guide their reasoning, and why Triple Inspection delivers 10-100x ROI on critical systems.
 
-→ [**Explore the Theoretical Foundations**](./fondements-theoriques) to understand why DC² works
+→ [**Explore the Theoretical Foundations**](/fondements-theoriques) to understand why DC² works
 
 ---
 
@@ -55,7 +55,7 @@ LLMs are **probabilistic, non-deterministic, opaque by construction** components
 
 DC2 isn't "a dev method with LLMs" — it's an **integration framework for non-deterministic AI components**.
 
-→ [**Read the Architectural Foundations**](./fondements-theoriques#ia-comme-composant) to understand the underlying pattern
+→ [**Read the Architectural Foundations**](/fondements-theoriques#ia-comme-composant) to understand the underlying pattern
 
 ---
 
@@ -191,13 +191,13 @@ DC² doesn't fight LLM limitations—**it systematically compensates for them**:
 **Two entry points depending on your needs**:
 
 ### You want to implement now
-→ [**Start with Phase 1: Strategic Architecture**](./phase1-architecture-strategique)
+→ [**Start with Phase 1: Strategic Architecture**](/phase1-architecture-strategique)
 
 ### You want to understand the whole picture first
-→ [**Read the Complete Overview**](./survol-complet) (6-phase details, examples, estimates)
+→ [**Read the Complete Overview**](/survol-complet) (6-phase details, examples, estimates)
 
 ### You want to understand why DC² works
-→ [**Explore the Theoretical Foundations**](./fondements-theoriques)
+→ [**Explore the Theoretical Foundations**](/fondements-theoriques)
 
 ---
 

@@ -1083,6 +1083,6 @@ Production code = maintainable code that works
 
 ---
 
-**Next step**: [Phase 6: Triple Inspection (Optional) →](./phase6-triple-inspection)
+**Next step**: [Phase 6: Triple Inspection (Optional) →](/phase6-triple-inspection)
 
-**Need help?** Consult the [Roles and Responsibilities document](./roles-et-responsabilites) to clarify who does what in this phase.
+**Need help?** Consult the [Roles and Responsibilities document](/roles-et-responsabilites) to clarify who does what in this phase.
