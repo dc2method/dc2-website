@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import DocsLayout from '../layouts/DocsLayout.astro';
+import DocsLayout from '../../layouts/DocsLayout.astro';
 
 export async function getStaticPaths() {
-  const frDocs = await getCollection('docs', ({ data }) => data.lang === 'fr');
+  const enDocs = await getCollection('docs', ({ data }) => data.lang === 'en');
 
-  return frDocs.map((entry) => {
-    const slug = entry.slug.replace(/^fr\//, '');
+  return enDocs.map((entry) => {
+    const slug = entry.slug.replace(/^en\//, '');
     return {
       params: { slug },
       props: { entry },

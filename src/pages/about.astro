@@ -1,17 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="À Propos - DC²"
-  description="Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes. Découvrez les fondements théoriques de DC²."
+  title="About - DC²"
+  description="A governance architecture for integrating probabilistic intelligence into deterministic systems. Discover the theoretical foundations of DC²."
+  lang="en"
 >
   <main class="about">
     <section class="about-hero">
       <div class="container">
-        <h1>À Propos du Développement par Contraintes Convergentes (DC²)</h1>
+        <h1>About Development by Convergent Constraints (DC²)</h1>
         <p class="hero-subtitle">
-          Architecture de gouvernance pour intégrer l'intelligence probabiliste dans des systèmes déterministes
+          A governance architecture for integrating probabilistic intelligence into deterministic systems
         </p>
       </div>
     </section>
@@ -20,130 +21,130 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="container">
         <div class="content-grid">
           <div class="main-content">
-            <h2>Architecture de Gouvernance du Probabilisme</h2>
+            <h2>Governance Architecture for Probabilistic Systems</h2>
             <p>
-              DC² est un <strong>cadre architectural</strong> conçu pour intégrer et gouverner des composants probabilistes — notamment les Grands Modèles de Langage (LLM) — au sein de systèmes déterministes.
+              DC² is an <strong>architectural framework</strong> designed to integrate and govern probabilistic components — notably Large Language Models (LLMs) — within deterministic systems.
             </p>
 
             <p>
-              Le principe fondateur est simple mais puissant :
+              The founding principle is simple but uncompromising:
             </p>
 
             <blockquote style="border-left: 4px solid var(--dd-secondary); padding-left: var(--space-4); margin: var(--space-6) 0; font-style: italic; color: var(--dd-primary); font-weight: 600;">
-              « L'intelligence peut être probabiliste. Le contrôle ne doit jamais l'être. »
+              "Intelligence may be probabilistic. Control must never be."
             </blockquote>
 
             <p>
-              Cette architecture ne se limite pas au développement logiciel. Elle s'applique à tout système où l'on doit encapsuler de l'intelligence probabiliste : analyse de données, aide à la décision, agents conversationnels, pipelines de traitement sémantique, ou systèmes d'inspection automatisée.
+              This architecture is not limited to software development. It applies to any system that must encapsulate probabilistic intelligence: data analysis, decision support, conversational agents, semantic processing pipelines, or automated inspection systems.
             </p>
 
             <p>
-              DC² traite les LLM comme des <strong>composants logiciels non fiables</strong> dont l'intelligence doit être canalisée par une structure déterministe rigoureuse.
+              DC² treats LLMs as <strong>inherently unreliable software components</strong> whose intelligence must be constrained by a rigorous deterministic structure.
             </p>
 
-            <h2>Le Problème Architectural</h2>
+            <h2>The Architectural Problem</h2>
             <p>
-              L'émergence des Grands Modèles de Langage représente un changement aussi fondamental que l'adoption des IDEs ou du refactoring automatisé. Cependant, leur nature probabiliste les rend fondamentalement différents de tout composant logiciel traditionnel :
+              The emergence of Large Language Models represents a shift as fundamental as the adoption of IDEs or automated refactoring. However, their probabilistic nature makes them fundamentally different from any traditional software component:
             </p>
 
             <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
-              <li><strong>Probabilistes :</strong> Aucune garantie de cohérence entre deux invocations identiques</li>
-              <li><strong>Opaques :</strong> Impossible de tracer la logique interne qui mène à un résultat</li>
-              <li><strong>Non déterministes :</strong> La même entrée peut produire des sorties différentes</li>
-              <li><strong>Sensibles au contexte :</strong> Les résultats dépendent de l'historique et de la formulation</li>
+              <li><strong>Probabilistic:</strong> No guarantee of consistency between identical invocations</li>
+              <li><strong>Opaque:</strong> No ability to trace the internal logic leading to an output</li>
+              <li><strong>Non-deterministic:</strong> The same input may produce different outputs</li>
+              <li><strong>Context-sensitive:</strong> Results depend on history and formulation</li>
             </ul>
 
             <p>
-              L'adoption ad-hoc des LLM en production génère une <strong>dette technique invisible</strong> qui ne se manifeste que des mois après l'implémentation. Sans cadre méthodologique rigoureux, ces outils puissants deviennent des générateurs de complexité accidentelle.
+              Ad-hoc adoption of LLMs in production creates <strong>invisible technical debt</strong> that often surfaces months after implementation. Without a rigorous methodological framework, these powerful tools become generators of accidental complexity.
             </p>
 
             <p>
-              Les approches traditionnelles échouent parce qu'elles tentent d'appliquer des méthodes conçues pour des systèmes déterministes à des composants probabilistes. Optimiser les prompts ne suffit pas — il faut une <strong>architecture de contraintes</strong> qui compense structurellement les limites des LLM.
+              Traditional approaches fail because they attempt to apply methods designed for deterministic systems to probabilistic components. Prompt optimization is insufficient — what is required is an <strong>architecture of constraints</strong> that structurally compensates for the limitations of LLMs.
             </p>
 
-            <h2>La Solution DC²</h2>
+            <h2>The DC² Solution</h2>
             <p>
-              Développement par Contraintes Convergentes propose une architecture en <strong>contraintes convergentes</strong> qui encapsule l'intelligence probabiliste dans un système de contrôle déterministe. Cette approche repose sur quatre piliers fondamentaux :
+              Development by Convergent Constraints proposes an architecture of <strong>converging constraints</strong> that encapsulates probabilistic intelligence within a deterministic control system. This approach rests on four foundational pillars:
             </p>
 
-            <h3>1. Externalisation de l'Intelligence, Internalisation du Contrôle</h3>
+            <h3>1. Externalized Intelligence, Internalized Control</h3>
             <p>
-              L'IA est traitée comme un <strong>sous-système génératif non fiable</strong> comparable à une source de données externe contenant du bruit. Toute interaction avec l'IA doit être encapsulée par :
+              AI is treated as an <strong>unreliable generative subsystem</strong>, comparable to an external data source containing noise. Every interaction with AI must be encapsulated by:
             </p>
             <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
-              <li>Des <strong>contrats explicites</strong> (documentation structurée)</li>
-              <li>Des <strong>contraintes vérifiables</strong> (tests exhaustifs)</li>
-              <li>Des <strong>points de validation humains</strong> (inspection multi-niveaux)</li>
+              <li><strong>Explicit contracts</strong> (structured documentation)</li>
+              <li><strong>Verifiable constraints</strong> (exhaustive testing)</li>
+              <li><strong>Human validation points</strong> (multi-level inspection)</li>
             </ul>
 
-            <h3>2. Pilotage Stratégique Humain vs Exécution Tactique IA</h3>
+            <h3>2. Human Strategic Control vs AI Tactical Execution</h3>
             <p>
-              L'architecture impose une séparation nette des responsabilités :
+              The architecture enforces a strict separation of responsibilities:
             </p>
             <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
-              <li><strong>L'humain garde le contrôle stratégique :</strong> architecture, invariants système, choix de conception</li>
-              <li><strong>L'IA assure l'accélération tactique :</strong> génération de tests, inspection de code, documentation technique</li>
-              <li>L'objectif est d'utiliser l'IA comme <strong>accélérateur</strong>, jamais comme concepteur autonome</li>
+              <li><strong>Humans retain strategic control:</strong> architecture, system invariants, design decisions</li>
+              <li><strong>AI provides tactical acceleration:</strong> test generation, code inspection, technical documentation</li>
+              <li>The objective is to use AI as an <strong>accelerator</strong>, never as an autonomous designer</li>
             </ul>
 
-            <h3>3. Compensation Systématique des Limites</h3>
+            <h3>3. Systematic Compensation for Known Limitations</h3>
             <p>
-              Plutôt que de nier les faiblesses des LLM, DC² les compense par la structure :
+              Rather than denying LLM weaknesses, DC² compensates for them structurally:
             </p>
             <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
-              <li>La <strong>documentation</strong> sert de mémoire externe persistante</li>
-              <li>Le <strong>TDD et les tests exhaustifs</strong> servent de rails pour prévenir les dérives</li>
-              <li>Les <strong>contraintes convergentes</strong> réduisent mathématiquement l'espace des solutions possibles</li>
+              <li><strong>Documentation</strong> serves as persistent external memory</li>
+              <li><strong>TDD and exhaustive testing</strong> act as guardrails against drift</li>
+              <li><strong>Converging constraints</strong> mathematically reduce the solution space</li>
             </ul>
 
-            <h3>4. Transposabilité Architecturale</h3>
+            <h3>4. Architectural Transposability</h3>
             <p>
-              Le cadre DC² s'applique à toute situation nécessitant la gouvernance d'un composant probabiliste :
+              The DC² framework applies to any situation requiring governance of a probabilistic component:
             </p>
             <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4);">
-              <li><strong>Développement logiciel :</strong> génération de code sous contraintes strictes</li>
-              <li><strong>Analyse de données :</strong> enrichissement sémantique avec validation déterministe</li>
-              <li><strong>Aide à la décision :</strong> suggestions IA avec contrôle humain final</li>
-              <li><strong>Pipelines de traitement :</strong> transformations probabilistes dans un flux déterministe</li>
+              <li><strong>Software development:</strong> constrained code generation</li>
+              <li><strong>Data analysis:</strong> semantic enrichment with deterministic validation</li>
+              <li><strong>Decision support:</strong> AI suggestions with final human control</li>
+              <li><strong>Processing pipelines:</strong> probabilistic transformations within deterministic flows</li>
             </ul>
 
-            <h2>Maturation et Licence</h2>
+            <h2>Maturity and License</h2>
             <p>
-              DC² est une méthodologie en développement actif, actuellement en <strong>version 1.0</strong>. Elle a été conçue non pas comme théorie académique, mais comme réponse pragmatique à un constat observé sur le terrain : l'adoption non structurée de l'IA en production génère une dette technique exponentielle.
+              DC² is an actively evolving methodology, currently at <strong>version 1.0</strong>. It was designed not as an academic theory, but as a pragmatic response to an observed reality: unstructured AI adoption in production generates exponential technical debt.
             </p>
 
             <p>
-              La méthodologie est publiée sous <strong>licence CC BY-SA 4.0</strong>, garantissant qu'elle reste libre d'usage tout en préservant l'attribution. Vous êtes encouragé à l'adapter à vos contextes spécifiques, à la critiquer, et à proposer des améliorations.
+              The methodology is published under the <strong>CC BY-SA 4.0 license</strong>, ensuring freedom of use while preserving attribution. You are encouraged to adapt it to your specific contexts, to challenge it, and to propose improvements.
             </p>
 
-            <h2>Le Contributeur Principal</h2>
+            <h2>Lead Contributor</h2>
             <h3>Éric Gauthier</h3>
             <p>
-              Architecte TI avec plus de 30 ans d'expérience en conception de systèmes complexes. Sa carrière lui a permis d'observer l'évolution des méthodologies de développement, de Waterfall à Agile, de TDD à DevOps.
+              IT architect with over 30 years of experience designing complex systems. His career spans the evolution of development methodologies, from Waterfall to Agile, from TDD to DevOps.
             </p>
 
             <p>
-              L'émergence des LLM a représenté pour lui un nouveau palier d'évolution méthodologique, un changement fondamental dans la nature des composants avec lesquels nous construisons des systèmes.
+              The emergence of LLMs represented a new methodological threshold — a fundamental shift in the nature of the components used to build systems.
             </p>
 
             <p>
-              En travaillant avec les LLM en production, il a identifié un <strong>pattern architectural émergent</strong> : la nécessité de gouverner le probabilisme au sein de systèmes déterministes. DC² est la formalisation de ce pattern.
+              Through hands-on production use of LLMs, he identified an <strong>emerging architectural pattern</strong>: the necessity of governing probabilism within deterministic systems. DC² is the formalization of that pattern.
             </p>
 
             <p>
-              Son rôle est celui de <strong>contributeur principal</strong>, pas de propriétaire exclusif. DC² est conçu comme une méthodologie appartenant à la communauté des architectes, développeurs et praticiens qui l'adoptent, la testent, et contribuent à son évolution.
+              His role is that of <strong>lead contributor</strong>, not exclusive owner. DC² is intended as a methodology belonging to the community of architects, developers, and practitioners who adopt it, test it, and contribute to its evolution.
             </p>
 
-            <h2>Engagement Open Source</h2>
+            <h2>Open Source Commitment</h2>
             <p>
-              DC² appartient à la communauté des praticiens qui choisissent de l'utiliser. Elle est offerte comme contribution au corpus des connaissances en ingénierie logicielle et en architecture de systèmes intelligents.
+              DC² belongs to the practitioner community that chooses to use it. It is offered as a contribution to the body of knowledge in software engineering and intelligent system architecture.
             </p>
 
             <p>
-              Votre feedback, vos critiques constructives et vos contributions sont essentiels pour son amélioration continue. La méthodologie évolue par l'usage et par le dialogue entre pairs.
+              Your feedback, constructive criticism, and contributions are essential to its continuous improvement. The methodology evolves through use and through peer dialogue.
             </p>
 
-            <h2>Contact & Ressources</h2>
+            <h2>Contact & Resources</h2>
             <div class="contact-links">
               <a href="https://ca.linkedin.com/in/eric-gauthier-architecte-ti" target="_blank" rel="noopener noreferrer" class="contact-link">
                 <span class="link-icon">🔗</span>
@@ -157,37 +158,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
             <div class="about-footer-note">
               <p>
-                <strong>Note :</strong> DC² est une méthodologie en développement actif (V1.0).
-                Consultez la <a href="/licence">page Licence</a> pour connaître les conditions d'utilisation et de contribution.
+                <strong>Note:</strong> DC² is an actively evolving methodology (V1.0).
+                Please consult the <a href="/en/licence">License page</a> for usage and contribution terms.
               </p>
             </div>
           </div>
 
           <aside class="sidebar-info">
             <div class="info-card">
-              <h3>Principe Fondateur</h3>
+              <h3>Founding Principle</h3>
               <p style="font-style: italic; color: var(--dd-primary); font-weight: 600; margin: 0;">
-                « L'intelligence peut être probabiliste. Le contrôle ne doit jamais l'être. »
+                "Intelligence may be probabilistic. Control must never be."
               </p>
             </div>
 
             <div class="info-card">
-              <h3>Méthodologie DC²</h3>
+              <h3>DC² Methodology</h3>
               <ul>
-                <li><strong>Version :</strong> 1.0</li>
-                <li><strong>Licence :</strong> CC BY-SA 4.0</li>
-                <li><strong>Nature :</strong> Cadre architectural</li>
-                <li><strong>Application :</strong> Gouvernance du probabilisme</li>
+                <li><strong>Version:</strong> 1.0</li>
+                <li><strong>License:</strong> CC BY-SA 4.0</li>
+                <li><strong>Nature:</strong> Architectural framework</li>
+                <li><strong>Application:</strong> Governance of probabilism</li>
               </ul>
             </div>
 
             <div class="info-card">
-              <h3>Liens Rapides</h3>
+              <h3>Quick Links</h3>
               <ul>
-                <li><a href="/intro">Introduction</a></li>
-                <li><a href="/fondements-theoriques">Fondements Théoriques</a></li>
-                <li><a href="/phase1-architecture-strategique">Phase 1 : Architecture</a></li>
-                <li><a href="/licence">Licence</a></li>
+                <li><a href="/en/intro">Introduction</a></li>
+                <li><a href="/en/fondements-theoriques">Theoretical Foundations</a></li>
+                <li><a href="/en/phase1-architecture-strategique">Phase 1: Architecture</a></li>
+                <li><a href="/en/licence">License</a></li>
               </ul>
             </div>
           </aside>
