@@ -1,12 +1,12 @@
-export function getLocale(url: URL): 'fr' | 'en' {
+export function getLocale(url: URL): 'en' | 'fr' {
   const pathname = url.pathname;
-  if (pathname.startsWith('/en/') || pathname === '/en') return 'en';
-  return 'fr'; // default
+  if (pathname.startsWith('/fr/') || pathname === '/fr') return 'fr';
+  return 'en'; // default (English now)
 }
 
-export function getLocalizedPath(path: string, locale: 'fr' | 'en'): string {
-  if (locale === 'fr') return path;
-  return `/en${path}`;
+export function getLocalizedPath(path: string, locale: 'en' | 'fr'): string {
+  if (locale === 'en') return path;
+  return `/fr${path}`;
 }
 
 export const translations = {
@@ -38,6 +38,6 @@ export const translations = {
   },
 };
 
-export function t(key: string, locale: 'fr' | 'en'): string {
+export function t(key: string, locale: 'en' | 'fr'): string {
   return translations[locale][key as keyof typeof translations['fr']] || key;
 }
