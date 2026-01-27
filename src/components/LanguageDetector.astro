@@ -5,7 +5,7 @@
 <script is:inline>
   (function() {
     // Exécuter seulement sur page racine
-    if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/en')) return;
+    if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/fr')) return;
 
     const storedLang = localStorage.getItem('preferred-lang');
     if (storedLang) return; // Préférence déjà définie
@@ -13,12 +13,12 @@
     const browserLang = navigator.language.split('-')[0]; // 'fr-CA' -> 'fr'
     const currentPath = window.location.pathname;
 
-    if (browserLang === 'en' && !currentPath.startsWith('/en')) {
-      localStorage.setItem('preferred-lang', 'en');
-      window.location.href = '/en' + currentPath;
-    } else if (browserLang !== 'en' && currentPath.startsWith('/en')) {
+    if (browserLang === 'fr' && !currentPath.startsWith('/fr')) {
       localStorage.setItem('preferred-lang', 'fr');
-      window.location.href = currentPath.replace(/^\/en/, '');
+      window.location.href = '/fr' + currentPath;
+    } else if (browserLang !== 'fr' && currentPath.startsWith('/fr')) {
+      localStorage.setItem('preferred-lang', 'en');
+      window.location.href = currentPath.replace(/^\/fr/, '');
     }
   })();
 </script>
