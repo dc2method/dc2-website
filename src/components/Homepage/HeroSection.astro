@@ -2,8 +2,8 @@
 import { getLocale, t } from '../../utils/i18n';
 
 const currentLocale = getLocale(Astro.url);
-const methodologyLink = currentLocale === 'fr' ? '/intro' : '/en/intro';
-const architectureLink = currentLocale === 'fr' ? '/phase1-architecture-strategique' : '/en/phase1-architecture-strategique';
+const methodologyLink = currentLocale === 'fr' ? '/fr/intro' : '/intro';
+const architectureLink = currentLocale === 'fr' ? '/fr/phase1-architecture-strategique' : '/phase1-architecture-strategique';
 ---
 
 <section class="hero">
