@@ -7,7 +7,7 @@ import remarkHeadingId from 'remark-heading-id';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://docdriven.dev',
+  site: 'https://dc2method.dev',
   i18n: {
     defaultLocale: 'fr',
     locales: ['fr', 'en'],

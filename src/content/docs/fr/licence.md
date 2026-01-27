@@ -40,7 +40,7 @@ Si vous utilisez ou adaptez DC² dans vos projets, voici une attribution recomma
 > **DC² - Développement par Contraintes Convergentes**
 > Méthodologie créée par Éric Gauthier
 > Licence : CC BY-SA 4.0
-> Source : [https://docdriven.dev](https://docdriven.dev)
+> Source : [https://dc2method.dev](https://dc2method.dev)
 
 ## Questions et Contact
 
