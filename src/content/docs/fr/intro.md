@@ -193,9 +193,6 @@ DC² ne combat pas les limites des LLM - **il les compense systématiquement** :
 ### Vous voulez implémenter maintenant
 → [**Commencer avec Phase 1 : Architecture Stratégique**](/fr/phase1-architecture-strategique)
 
-### Vous voulez comprendre l'ensemble d'abord
-→ [**Lire le Survol Complet**](/survol-complet) (détails 6 phases, exemples, estimations)
-
 ### Vous voulez comprendre pourquoi DC² fonctionne
 → [**Explorer les Fondements Théoriques**](/fr/fondements-theoriques)
 
