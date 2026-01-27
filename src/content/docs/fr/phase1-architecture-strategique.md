@@ -783,6 +783,6 @@ Concepteur décide seul architecture. Présente "fait accompli" à Product Owner
 
 ---
 
-**Prochaine étape** : [Phase 2 : Plan Tactique + Transfert Critique →](/phase2-planification-tactique)
+**Prochaine étape** : [Phase 2 : Plan Tactique + Transfert Critique →](/fr/phase2-planification-tactique)
 
-**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](/roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.
+**Besoin d'aide ?** Consultez le [document Rôles et Responsabilités](/fr/roles-et-responsabilites) pour clarifier qui fait quoi dans cette phase.

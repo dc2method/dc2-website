@@ -44,4 +44,4 @@ If you use or adapt DC² in your projects, here is a recommended attribution:
 
 ## Questions and Contact
 
-For any questions regarding the use of DC² or this license, see the [About page](/en/about) for contact information.
+For any questions regarding the use of DC² or this license, see the [About page](/about) for contact information.

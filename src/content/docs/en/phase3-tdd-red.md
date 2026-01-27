@@ -956,6 +956,6 @@ Before validating Phase 3 complete:
 
 ---
 
-**Next step**: [Phase 4: TDD GREEN - Implementation →](/en/phase4-tdd-green)
+**Next step**: [Phase 4: TDD GREEN - Implementation →](/phase4-tdd-green)
 
-**Need help?** Consult the [Roles and Responsibilities](/en/roles-et-responsabilites) document to clarify who does what in this phase.
+**Need help?** Consult the [Roles and Responsibilities](/roles-et-responsabilites) document to clarify who does what in this phase.

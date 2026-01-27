@@ -17,7 +17,7 @@ Pire encore : lors d'une revue de code, votre équipe ne peut plus **justifier s
 
 **Cette méthode repose sur des fondements théoriques solides** : comprendre les limites intrinsèques des LLM, comment les Contraintes Convergentes guident leur raisonnement, et pourquoi la Triple Inspection offre un ROI de 10-100x sur les systèmes critiques.
 
-→ [**Explorer les Fondements Théoriques**](/fondements-theoriques) pour comprendre pourquoi DC² fonctionne
+→ [**Explorer les Fondements Théoriques**](/fr/fondements-theoriques) pour comprendre pourquoi DC² fonctionne
 
 ---
 
@@ -55,7 +55,7 @@ Les LLM sont des composants **probabilistes, non déterministes, opaques par con
 
 DC2 n'est pas "une méthode de dev avec LLM" — c'est un **framework d'intégration pour composants IA non-déterministes**.
 
-→ [**Lire les Fondements Architecturaux**](/fondements-theoriques#ia-comme-composant) pour comprendre le pattern sous-jacent
+→ [**Lire les Fondements Architecturaux**](/fr/fondements-theoriques#ia-comme-composant) pour comprendre le pattern sous-jacent
 
 ---
 
@@ -191,13 +191,13 @@ DC² ne combat pas les limites des LLM - **il les compense systématiquement** :
 **Deux portes d'entrée selon votre besoin** :
 
 ### Vous voulez implémenter maintenant
-→ [**Commencer avec Phase 1 : Architecture Stratégique**](/phase1-architecture-strategique)
+→ [**Commencer avec Phase 1 : Architecture Stratégique**](/fr/phase1-architecture-strategique)
 
 ### Vous voulez comprendre l'ensemble d'abord
 → [**Lire le Survol Complet**](/survol-complet) (détails 6 phases, exemples, estimations)
 
 ### Vous voulez comprendre pourquoi DC² fonctionne
-→ [**Explorer les Fondements Théoriques**](/fondements-theoriques)
+→ [**Explorer les Fondements Théoriques**](/fr/fondements-theoriques)
 
 ---
 

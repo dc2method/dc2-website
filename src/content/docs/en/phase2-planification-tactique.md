@@ -515,6 +515,6 @@ Attachments:
 
 ---
 
-**Next step**: [Phase 3: TDD RED - Test Generation →](/en/phase3-tdd-red)
+**Next step**: [Phase 3: TDD RED - Test Generation →](/phase3-tdd-red)
 
-**Need help?** Consult the [Roles and Responsibilities document](/en/roles-et-responsabilites) to clarify who does what in this phase.
+**Need help?** Consult the [Roles and Responsibilities document](/roles-et-responsabilites) to clarify who does what in this phase.

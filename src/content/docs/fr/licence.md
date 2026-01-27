@@ -44,4 +44,4 @@ Si vous utilisez ou adaptez DC² dans vos projets, voici une attribution recomma
 
 ## Questions et Contact
 
-Pour toute question concernant l'utilisation de DC² ou cette licence, consultez la [page À Propos](/about) pour les informations de contact.
+Pour toute question concernant l'utilisation de DC² ou cette licence, consultez la [page À Propos](/fr/about) pour les informations de contact.

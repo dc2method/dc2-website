@@ -815,6 +815,6 @@ Before validating Phase 4 complete and moving to Phase 5:
 
 ---
 
-**Next step**: [Phase 5: REFACTOR - Collaborative Improvement →](/en/phase5-tdd-refactor)
+**Next step**: [Phase 5: REFACTOR - Collaborative Improvement →](/phase5-tdd-refactor)
 
-**Need help?** See the [Roles and Responsibilities](/en/roles-et-responsabilites) document to clarify who does what in this phase.
+**Need help?** See the [Roles and Responsibilities](/roles-et-responsabilites) document to clarify who does what in this phase.

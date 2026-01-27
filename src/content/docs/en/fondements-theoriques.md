@@ -441,10 +441,10 @@ DC² does not promise "faster now"; it promises **"structured investment now, st
 **You now understand the theoretical foundations of DC².**
 
 ### You want to implement now
-→ [**Start with Phase 1: Strategic Architecture**](/en/phase1-architecture-strategique)
+→ [**Start with Phase 1: Strategic Architecture**](/phase1-architecture-strategique)
 
 ### Back to introduction
-→ [**Back to introduction**](/en/intro)
+→ [**Back to introduction**](/intro)
 
 ---
 

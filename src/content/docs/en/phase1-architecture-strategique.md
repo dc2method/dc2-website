@@ -783,6 +783,6 @@ Architect decides architecture alone. Presents "fait accompli" to Product Owner.
 
 ---
 
-**Next step**: [Phase 2: Tactical Planning + Critical Handoff →](/en/phase2-planification-tactique)
+**Next step**: [Phase 2: Tactical Planning + Critical Handoff →](/phase2-planification-tactique)
 
-**Need help?** See the [Roles and Responsibilities](/en/roles-et-responsabilites) document to clarify who does what in this phase.
+**Need help?** See the [Roles and Responsibilities](/roles-et-responsabilites) document to clarify who does what in this phase.
