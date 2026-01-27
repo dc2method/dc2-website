@@ -27,7 +27,7 @@ const sortedDocs = allDocs.sort((a, b) => {
   <div class="docs-layout">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <a href={currentLocale === 'fr' ? '/' : '/en/'} class="logo">
+        <a href={currentLocale === 'fr' ? '/fr/' : '/'} class="logo">
           DC²
         </a>
         <div class="language-switcher-container">
@@ -39,7 +39,7 @@ const sortedDocs = allDocs.sort((a, b) => {
           {sortedDocs.map((doc) => {
             const docSlug = doc.slug.replace(/^(fr|en)\//, '');
             const isActive = currentSlug === docSlug || currentSlug === doc.slug;
-            const href = currentLocale === 'fr' ? `/${docSlug}` : `/en/${docSlug}`;
+            const href = currentLocale === 'fr' ? `/fr/${docSlug}` : `/${docSlug}`;
 
             return (
               <li>

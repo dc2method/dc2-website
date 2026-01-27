@@ -3,9 +3,9 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import { getLocale, t } from '../utils/i18n';
 
 const currentLocale = getLocale(Astro.url);
-const methodologyLink = currentLocale === 'fr' ? '/intro' : '/en/intro';
-const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
-const homeLink = currentLocale === 'fr' ? '/' : '/en/';
+const methodologyLink = currentLocale === 'fr' ? '/fr/intro' : '/intro';
+const aboutLink = currentLocale === 'fr' ? '/fr/about' : '/about';
+const homeLink = currentLocale === 'fr' ? '/fr/' : '/';
 ---
 
 <nav class="navbar">

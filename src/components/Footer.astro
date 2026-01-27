@@ -4,9 +4,9 @@ import { getLocale, t } from '../utils/i18n';
 const currentLocale = getLocale(Astro.url);
 const currentYear = new Date().getFullYear();
 
-const introLink = currentLocale === 'fr' ? '/intro' : '/en/intro';
-const licenceLink = currentLocale === 'fr' ? '/licence' : '/en/licence';
-const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
+const introLink = currentLocale === 'fr' ? '/fr/intro' : '/intro';
+const licenceLink = currentLocale === 'fr' ? '/fr/licence' : '/licence';
+const aboutLink = currentLocale === 'fr' ? '/fr/about' : '/about';
 ---
 
 <footer class="footer">
@@ -30,10 +30,10 @@ const aboutLink = currentLocale === 'fr' ? '/about' : '/en/about';
           <li><a href={introLink}>
             {currentLocale === 'fr' ? 'Introduction' : 'Introduction'}
           </a></li>
-          <li><a href={currentLocale === 'fr' ? '/phase1-architecture-strategique' : '/en/phase1-architecture-strategique'}>
+          <li><a href={currentLocale === 'fr' ? '/fr/phase1-architecture-strategique' : '/phase1-architecture-strategique'}>
             {currentLocale === 'fr' ? 'Phase 1 : Architecture' : 'Phase 1: Architecture'}
           </a></li>
-          <li><a href={currentLocale === 'fr' ? '/phase3-tdd-red' : '/en/phase3-tdd-red'}>
+          <li><a href={currentLocale === 'fr' ? '/fr/phase3-tdd-red' : '/phase3-tdd-red'}>
             {currentLocale === 'fr' ? 'Phase 3 : TDD RED' : 'Phase 3: TDD RED'}
           </a></li>
         </ul>
