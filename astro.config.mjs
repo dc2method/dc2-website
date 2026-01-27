@@ -9,10 +9,10 @@ import remarkHeadingId from 'remark-heading-id';
 export default defineConfig({
   site: 'https://dc2method.dev',
   i18n: {
-    defaultLocale: 'fr',
-    locales: ['fr', 'en'],
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
     routing: {
-      prefixDefaultLocale: false, // /fr/page devient /page
+      prefixDefaultLocale: false, // /en/page devient /page
     },
   },
   integrations: [mdx(), react()],
