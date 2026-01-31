@@ -4,6 +4,9 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import remarkHeadingId from 'remark-heading-id';
+import rehypeSanitize from 'rehype-sanitize';
+
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,12 +18,13 @@ export default defineConfig({
       prefixDefaultLocale: false, // /en/page devient /page
     },
   },
-  integrations: [mdx(), react()],
+  integrations: [mdx(), react(), sitemap()],
   build: {
     format: 'directory', // URLs propres sans .html
   },
   markdown: {
     remarkPlugins: [remarkHeadingId],
+    rehypePlugins: [rehypeSanitize],
     shikiConfig: {
       theme: 'github-dark',
       wrap: true,

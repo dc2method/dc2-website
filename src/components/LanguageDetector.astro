@@ -8,17 +8,39 @@
     if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/fr')) return;
 
     const storedLang = localStorage.getItem('preferred-lang');
-    if (storedLang) return; // Préférence déjà définie
+    // Validate stored language value
+    if (storedLang && !['en', 'fr'].includes(storedLang)) {
+      localStorage.removeItem('preferred-lang');
+    } else if (storedLang) {
+      return; // Préférence déjà définie et valide
+    }
 
     const browserLang = navigator.language.split('-')[0]; // 'fr-CA' -> 'fr'
     const currentPath = window.location.pathname;
 
-    if (browserLang === 'fr' && !currentPath.startsWith('/fr')) {
+    // Validate path before redirect to prevent open redirect attacks
+    function isSafePath(path) {
+      // Must start with / and not contain protocol
+      if (!path.startsWith('/') || path.includes(':')) return false;
+
+      // Must not contain double slashes (except at start)
+      if (path.substring(1).includes('//')) return false;
+
+      // Must not contain URL-encoded newlines or protocol delimiters
+      if (path.includes('%0d') || path.includes('%0a') || path.includes('%0D') || path.includes('%0A')) return false;
+
+      return true;
+    }
+
+    const safePath = isSafePath(currentPath) ? currentPath : '/';
+
+    if (browserLang === 'fr' && !safePath.startsWith('/fr')) {
       localStorage.setItem('preferred-lang', 'fr');
-      window.location.href = '/fr' + currentPath;
-    } else if (browserLang !== 'fr' && currentPath.startsWith('/fr')) {
+      window.location.href = '/fr' + safePath;
+    } else if (browserLang !== 'fr' && safePath.startsWith('/fr')) {
       localStorage.setItem('preferred-lang', 'en');
-      window.location.href = currentPath.replace(/^\/fr/, '');
+      const newPath = safePath.replace(/^\/fr/, '') || '/';
+      window.location.href = isSafePath(newPath) ? newPath : '/';
     }
   })();
 </script>

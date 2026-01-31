@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Block .env files
+if git diff --cached --name-only | grep -qE "^\.env"; then
+  echo "❌ ERROR: Attempting to commit .env file!"
+  echo "Remove from staging: git reset .env"
+  exit 1
+fi
+
+# Check for exposed secrets (basic regex)
+if git diff --cached -U0 | grep -qE "(api[_-]?key|password|secret|token).*['\"]?[a-zA-Z0-9]{20,}"; then
+  echo "⚠️  WARNING: Potential secret detected in commit"
+  echo "Review changes carefully before proceeding"
+fi
+
+# Run npm audit (non-blocking warning)
+npm audit --audit-level=high || {
+  echo "⚠️  WARNING: High or critical vulnerabilities detected"
+  echo "Run 'npm audit' to review"
+}
