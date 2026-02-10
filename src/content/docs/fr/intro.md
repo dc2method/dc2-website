@@ -68,10 +68,10 @@ Le LLM écrit le code. Vous vérifiez. Trois mois plus tard, vous réalisez : vo
 **DC2 restaure l'apprentissage par la pratique** :
 
 **Structure avant génération** :
-- Phase 1-2 : Vous concevez architecture et plan (65% humain)
+- Phase 1-2 : Vous concevez architecture et plan (Humain décide, LLM explore)
 - Phase 3 : Vous définissez TOUS les tests avant code (avec LLM assistant)
 - Phase 4 : LLM génère implémentation (vous supervisez)
-- **Phase 5 : Vous refactorez sous guidance senior** (70% humain)
+- **Phase 5 : Vous refactorez sous guidance senior** (Humain transforme, LLM assiste)
 
 **Résultat** :
 - Vous **comprenez** le code livré (pas juste vérifié)

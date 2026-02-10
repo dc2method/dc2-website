@@ -68,10 +68,10 @@ The LLM writes the code. You verify. Three months later, you realize: you're no 
 **DC2 restores learning through practice**:
 
 **Structure before generation**:
-- Phase 1-2: You design architecture and plan (65% human)
+- Phase 1-2: You design architecture and plan (Human decides, LLM explores)
 - Phase 3: You define ALL tests before code (with LLM assistant)
 - Phase 4: LLM generates implementation (you supervise)
-- **Phase 5: You refactor under senior guidance** (70% human)
+- **Phase 5: You refactor under senior guidance** (Human transforms, LLM assists)
 
 **Result**:
 - You **understand** the delivered code (not just verified)
