@@ -17,17 +17,26 @@ Ce document définit les rôles clés dans la méthodologie Développement par C
 
 ## Vue d'Ensemble des Rôles
 
+### Note sur la Répartition du Travail
+
+Les descriptions "Humain décide, LLM génère" dans le tableau ci-dessous indiquent le **rôle dominant** de chaque partie dans la phase. **Elles ne sont pas des métriques à mesurer.**
+
+L'objectif est de produire les livrables de qualité requis par chaque phase, peu importe le temps que chaque partie y contribue. Une équipe qui passe 80% de son temps à guider le LLM en Phase 2A n'échoue pas — elle adapte simplement son approche à son contexte et à sa maturité.
+
+**Ce qui compte** : Les livrables de la phase respectent le Definition of Done.
+**Ce qui ne compte pas** : Le temps exact passé par le humain vs le LLM.
+
 ### Rôle Principal par Phase
 
-| Phase | Rôle Principal | Rôles Supports | Ratio Humain/LLM |
+| Phase | Rôle Principal | Rôles Supports | Répartition du travail |
 |-------|---------------|----------------|------------------|
-| Phase 1 | Concepteur | Product Owner | 65% / 35% |
-| Phase 2A | Concepteur + LLM | Équipe Dev (révision) | 45% / 55% |
-| Phase 2B | Concepteur + Équipe Dev | - | 80% / 20% |
-| Phase 3 | Dev Senior + LLM | - | 30% / 70% |
-| Phase 4 | Dev + LLM | Dev Senior (validation) | 25% / 75% |
-| Phase 5 | Équipe Dev | Senior (guide) | 70% / 30% |
-| Phase 6 | Équipe + LLM | Senior (validation) | 40% / 60% |
+| Phase 1 | Concepteur | Product Owner | Humain décide, LLM explore |
+| Phase 2A | Concepteur + LLM | Équipe Dev (révision) | Humain guide, LLM génère |
+| Phase 2B | Concepteur + Équipe Dev | - | Humain challenge (Humain seul) |
+| Phase 3 | Dev Senior + LLM | - | Humain valide, LLM génère |
+| Phase 4 | Dev + LLM | Dev Senior (validation) | Humain valide, LLM implémente |
+| Phase 5 | Équipe Dev | Senior (guide) | Humain transforme, LLM assiste |
+| Phase 6 | Équipe + LLM | Senior (validation) | Humain décide, LLM inspecte |
 
 ## Définition des Rôles
 

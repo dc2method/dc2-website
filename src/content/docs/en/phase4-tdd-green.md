@@ -18,11 +18,8 @@ lang: en
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Roles: Dev + LLM
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Human: 25%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM: 75%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Human validates, LLM implements
   </span>
 </div>
 
@@ -120,8 +117,6 @@ Residual ambiguities in specs OR untested edge cases → quickly identified and 
 
 ### 1. Minimal Code Generation ⏱️
 
-**LLM 80%, Senior Dev 20%**
-
 - LLM generates the simplest code to pass each test
 - Focus on CORRECTNESS, not elegance
 - Acceptable: duplication, simple algorithms, basic structure
@@ -132,8 +127,6 @@ GREEN = functional, REFACTOR = elegant
 
 ### 2. Test Execution ⏱️
 
-**LLM 70%, Human 30%**
-
 - Execute test suite (target: 100% pass)
 - Debug failing tests (rare with Convergent Constraints)
 - LLM corrects implementation bugs
@@ -142,8 +135,6 @@ GREEN = functional, REFACTOR = elegant
 **Expected result**: All tests GREEN on first try (90%+ cases)
 
 ### 3. Basic Quality Gates ⏱️
-
-**Human 50%, LLM 50%**
 
 - Run linter (fix style issues)
 - Run type checker (fix type errors)

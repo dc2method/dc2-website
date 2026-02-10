@@ -18,11 +18,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Concepteur + Équipe Dev
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 45%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 55%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain guide, LLM génère
   </span>
 </div>
 
@@ -94,7 +91,7 @@ graph TD
 
 ### Partie A : Génération Plan Tactique ⏱️
 
-**1. Génération par LLM** (LLM 90%, Concepteur 10%)
+**1. Génération par LLM**
 - LLM lit document architecture stratégique
 - Génère feuille de route d'implémentation détaillée
 - Décompose solution en plus ou moins 3-5 composants avec spécifications
@@ -108,22 +105,22 @@ graph TD
 
 ### Partie B : Transfert Critique ⏱️⏱️⏱️
 
-**3. Présentation** (~20 min - Concepteur)
+**3. Présentation** 
 - Concepteur présente vision architecturale
 - Explique décomposition en composants
 - Justifie choix techniques majeurs
 
-**4. Challenge Actif** (~40-60 min - Équipe)
+**4. Challenge Actif** 
 - Équipe pose questions, challenge hypothèses
 - Identifie lacunes, dépendances manquantes, risques
 - Validation estimations d'effort
 - Discussion faisabilité technique
 
-**5. Révision Collaborative** (~20 min - Équipe + LLM)
+**5. Révision Collaborative** 
 - LLM Incorpore feedback dans plan révisé
 - Génère résumé des décisions
 
-**6. Validation Finale** (~10 min - Concepteur + Équipe)
+**6. Validation Finale** 
 - Révision plan révisé
 - Approbation formelle pour passage Phase 3
 - Plan enregistré au contrôle de version
@@ -234,37 +231,7 @@ explanation = confidence_explainer.explain(score, ...)
 display = confidence_presenter.format(score, explanation)
 ```
 
-#### Phase 2B : Transfert Critique - Exemple de Discussion
-
-**Question Équipe (Dev Backend)** :  
-"Le calcul pénalité sera-t-il assez rapide en production ? On génère 1000+ recommandations par requête."
-
-**Réponse Concepteur** :  
-"Bonne question. Le calcul est O(1) - juste arithmétique simple. Pas d'I/O, pas de boucles. Devrait être < 1ms par calcul. On peut profiler en Phase 4 pour confirmer."
-
-**Révision Plan** : Ajouter benchmark performance dans tests Phase 3.
-
----
-
-**Question Équipe (Dev Frontend)** :  
-"Pour utilisateurs gratuits, doit-on cacher le score confiance ? Ça pourrait être feature premium."
-
-**Discussion Product Owner** :  
-"Intéressant. Pour MVP, affichons à tous. On peut A/B tester premium plus tard."
-
-**Révision Plan** : Aucune. Pris en note pour backlog futur.
-
----
-
-**Question Équipe (Dev Senior)** :  
-"Que se passe-t-il si l'API externe qui calcule similarité est down ? Le score confiance sera 0 ?"
-
-**Réponse Concepteur** :  
-"Exact. Si API down, pas de similarité → confidence_calculator retourne 0. On doit gérer ça upstream avec fallback ou cache."
-
-**Révision Plan** : Ajouter gestion erreur dans spec `confidence_calculator` - retourner 0.0 explicitement si total_similarity ≤ 0, avec logging warning.
-
----
+#### Phase 2B : Transfert Critique 
 
 **Estimations Finales** :
 - Concepteur : "3 modules simples, 6-8h total"

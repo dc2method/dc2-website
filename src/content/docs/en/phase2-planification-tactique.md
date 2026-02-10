@@ -18,11 +18,8 @@ lang: en
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Roles: Designer + Dev Team
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Human: 45%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM: 55%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Human guides, LLM generates
   </span>
 </div>
 
@@ -94,7 +91,7 @@ graph TD
 
 ### Part A: Tactical Plan Generation ⏱️
 
-**1. LLM Generation** (LLM 90%, Designer 10%)
+**1. LLM Generation**
 - LLM reads strategic architecture document
 - Generates detailed implementation roadmap
 - Decomposes solution into approximately 3-5 components with specifications
@@ -108,22 +105,22 @@ graph TD
 
 ### Part B: Critical Transfer ⏱️⏱️⏱️
 
-**3. Presentation** (~20 min - Designer)
+**3. Presentation**
 - Designer presents architectural vision
 - Explains decomposition into components
 - Justifies major technical choices
 
-**4. Active Challenge** (~40-60 min - Team)
+**4. Active Challenge**
 - Team asks questions, challenges assumptions
 - Identifies gaps, missing dependencies, risks
 - Validates effort estimates
 - Discussion of technical feasibility
 
-**5. Collaborative Revision** (~20 min - Team + LLM)
+**5. Collaborative Revision**
 - LLM incorporates feedback into revised plan
 - Generates summary of decisions
 
-**6. Final Validation** (~10 min - Designer + Team)
+**6. Final Validation**
 - Review revised plan
 - Formal approval for Phase 3 transition
 - Plan recorded in version control
@@ -234,37 +231,7 @@ explanation = confidence_explainer.explain(score, ...)
 display = confidence_presenter.format(score, explanation)
 ```
 
-#### Phase 2B: Critical Transfer - Discussion Example
-
-**Team Question (Backend Dev)**:
-"Will the penalty calculation be fast enough in production? We generate 1000+ recommendations per request."
-
-**Designer Response**:
-"Good question. The calculation is O(1)—just simple arithmetic. No I/O, no loops. Should be < 1ms per calculation. We can profile in Phase 4 to confirm."
-
-**Plan Revision**: Add performance benchmark to Phase 3 tests.
-
----
-
-**Team Question (Frontend Dev)**:
-"For free users, should we hide the confidence score? It could be a premium feature."
-
-**Product Owner Discussion**:
-"Interesting. For MVP, let's show it to everyone. We can A/B test premium later."
-
-**Plan Revision**: None. Noted for future backlog.
-
----
-
-**Team Question (Senior Dev)**:
-"What happens if the external API that calculates similarity is down? Will the confidence score be 0?"
-
-**Designer Response**:
-"Exactly. If API is down, no similarity → confidence_calculator returns 0. We need to handle this upstream with fallback or cache."
-
-**Plan Revision**: Add error handling to `confidence_calculator` spec—return 0.0 explicitly if total_similarity ≤ 0, with warning logging.
-
----
+#### Phase 2B: Critical Transfer
 
 **Final Estimates**:
 - Designer: "3 simple modules, 6-8h total"

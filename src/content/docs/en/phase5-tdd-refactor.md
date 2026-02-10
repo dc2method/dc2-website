@@ -18,11 +18,8 @@ lang: en
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Roles: Dev Team + Senior Dev
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Human: 70%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM: 30%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Human transforms, LLM assists
   </span>
 </div>
 
@@ -125,8 +122,6 @@ graph TD
 
 ### 1. Identify Refactoring Opportunities ⏱️⏱️
 
-**Senior Dev 90%, LLM 10%**
-
 **Senior reviews GREEN code and identifies**:
 - Code smells (duplication, long functions, deep nesting)
 - Potential performance bottlenecks (inefficient algorithms)
@@ -141,8 +136,6 @@ graph TD
 
 ### 2. Team Review Session ⏱️
 
-**Senior Dev 80%, Team 20%**
-
 - Senior presents identified opportunities
 - Explains WHY refactoring necessary (not just WHAT)
 - Demonstrates 1-2 refactorings live (pedagogy)
@@ -152,8 +145,6 @@ graph TD
 **Objective**: Team understands quality vision before executing
 
 ### 3. Execute Parallel Refactorings ⏱️⏱️⏱️
-
-**Team 60%, Senior Dev 30%, LLM 10%**
 
 **Team executes assigned refactorings**:
 - Extract functions (Single Responsibility)
@@ -174,8 +165,6 @@ graph TD
 
 ### 4. Documentation Improvement ⏱️⏱️
 
-**Team 40%, LLM 60%**
-
 - Senior defines what needs documentation
 - LLM generates detailed docstrings
 - Team adds inline comments for complex logic
@@ -184,8 +173,6 @@ graph TD
 **Focus**: Why code works this way (not just what)
 
 ### 5. Senior Review + Validation ⏱️⏱️
-
-**Senior Dev 70%, Team 30%**
 
 **For each refactoring**:
 - Senior reviews refactored code

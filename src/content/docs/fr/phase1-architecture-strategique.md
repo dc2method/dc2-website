@@ -18,11 +18,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Concepteur + Product Owner
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 65%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 35%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain décide, LLM explore
   </span>
 </div>
 
@@ -71,8 +68,6 @@ Document d'Architecture Stratégique crée représentation explicite du système
 
 ### 1. Cristallisation du Problème ⏱️⏱️
 
-**Concepteur 80%, LLM 20%**
-
 - Concepteur articule problème business clairement
 - LLM aide identifier hypothèses non formulées
 - Séparer symptômes vs causes racines
@@ -81,8 +76,6 @@ Document d'Architecture Stratégique crée représentation explicite du système
 **Sortie** : Énoncé problème précis avec métriques succès
 
 ### 2. Cartographie des Contraintes ⏱️
-
-**Concepteur 60%, LLM 40%**
 
 - Concepteur identifie contraintes depuis expérience
 - LLM génère checklist contraintes complète
@@ -93,8 +86,6 @@ Document d'Architecture Stratégique crée représentation explicite du système
 
 ### 3. Génération de Solutions ⏱️⏱️
 
-**Concepteur 50%, LLM 50%**
-
 - Concepteur fournit 1-2 directions solution initiales
 - LLM génère 2-3 approches alternatives
 - Assurer au moins une approche innovante/non conventionnelle
@@ -104,8 +95,6 @@ Document d'Architecture Stratégique crée représentation explicite du système
 
 ### 4. Analyse des Compromis ⏱️⏱️
 
-**Concepteur 70%, LLM 30%**
-
 - Concepteur évalue approches contre priorités business
 - LLM génère matrice comparaison compromis
 - Identifier risques et stratégies atténuation par approche
@@ -114,8 +103,6 @@ Document d'Architecture Stratégique crée représentation explicite du système
 **Sortie** : Matrice compromis + décision justifiée
 
 ### 5. Validation Parties Prenantes ⏱️⏱️
-
-**Humain 90%, LLM 10%**
 
 - Présentation recommandation à Product Owner
 - Discussion compromis, validation alignement business

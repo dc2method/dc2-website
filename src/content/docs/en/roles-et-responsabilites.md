@@ -17,17 +17,26 @@ This document defines the key roles in the DC² methodology and their specific r
 
 ## Overview of Roles
 
+### Note on Work Distribution
+
+The descriptions "Human decides, LLM generates" in the table below indicate the **dominant role** of each party in the phase. **They are not metrics to measure.**
+
+The goal is to produce the required quality deliverables for each phase, regardless of the time each party contributes. A team that spends 80% of its time guiding the LLM in Phase 2A is not failing—it's simply adapting its approach to its context and maturity.
+
+**What matters**: Phase deliverables meet the Definition of Done.
+**What doesn't matter**: The exact time spent by human vs LLM.
+
 ### Primary Role by Phase
 
-| Phase | Primary Role | Support Roles | Human/LLM Ratio |
+| Phase | Primary Role | Support Roles | Work distribution |
 |-------|--------------|---------------|-----------------|
-| Phase 1 | Designer | Product Owner | 65% / 35% |
-| Phase 2A | Designer + LLM | Dev Team (review) | 45% / 55% |
-| Phase 2B | Designer + Dev Team | - | 80% / 20% |
-| Phase 3 | Senior Developer + LLM | - | 30% / 70% |
-| Phase 4 | Developer + LLM | Senior Developer (validation) | 25% / 75% |
-| Phase 5 | Dev Team | Senior (guidance) | 70% / 30% |
-| Phase 6 | Team + LLM | Senior (validation) | 40% / 60% |
+| Phase 1 | Designer | Product Owner | Human decides, LLM explores |
+| Phase 2A | Designer + LLM | Dev Team (review) | Human guides, LLM generates |
+| Phase 2B | Designer + Dev Team | - | Human challenges (Human alone) |
+| Phase 3 | Senior Developer + LLM | - | Human validates, LLM generates |
+| Phase 4 | Developer + LLM | Senior Developer (validation) | Human validates, LLM implements |
+| Phase 5 | Dev Team | Senior (guidance) | Human transforms, LLM assists |
+| Phase 6 | Team + LLM | Senior (validation) | Human decides, LLM inspects |
 
 ## Role Definitions
 

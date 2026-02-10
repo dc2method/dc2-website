@@ -18,11 +18,8 @@ lang: en
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Roles: Architect + Product Owner
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Human: 65%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM: 35%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Human decides, LLM explores
   </span>
 </div>
 
@@ -71,8 +68,6 @@ Strategic Architecture Document creates explicit system representation: why each
 
 ### 1. Problem Crystallization ⏱️⏱️
 
-**Architect 80%, LLM 20%**
-
 - Architect articulates business problem clearly
 - LLM helps identify unstated assumptions
 - Separate symptoms from root causes
@@ -81,8 +76,6 @@ Strategic Architecture Document creates explicit system representation: why each
 **Output**: Precise problem statement with success metrics
 
 ### 2. Constraint Mapping ⏱️
-
-**Architect 60%, LLM 40%**
 
 - Architect identifies constraints from experience
 - LLM generates comprehensive constraint checklist
@@ -93,8 +86,6 @@ Strategic Architecture Document creates explicit system representation: why each
 
 ### 3. Solution Generation ⏱️⏱️
 
-**Architect 50%, LLM 50%**
-
 - Architect provides 1-2 initial solution directions
 - LLM generates 2-3 alternative approaches
 - Ensure at least one innovative/unconventional approach
@@ -104,8 +95,6 @@ Strategic Architecture Document creates explicit system representation: why each
 
 ### 4. Trade-off Analysis ⏱️⏱️
 
-**Architect 70%, LLM 30%**
-
 - Architect evaluates approaches against business priorities
 - LLM generates trade-off comparison matrix
 - Identify risks and mitigation strategies per approach
@@ -114,8 +103,6 @@ Strategic Architecture Document creates explicit system representation: why each
 **Output**: Trade-off matrix + justified decision
 
 ### 5. Stakeholder Validation ⏱️⏱️
-
-**Human 90%, LLM 10%**
 
 - Present recommendation to Product Owner
 - Discuss trade-offs, validate business alignment

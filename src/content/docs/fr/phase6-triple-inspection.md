@@ -5,15 +5,15 @@ sidebar_position: 7
 lang: fr
 ---
 
-# Phase 6 : Triple Inspection (Optionnelle)
+# Phase 6 : Triple Inspection (Obligatoire Graduée)
 
 <!-- ========================================= -->
 <!-- NIVEAU 1 : ESSENTIEL (5-10 secondes)     -->
 <!-- ========================================= -->
 
 <div style={{display: 'flex', gap: '10px', marginBottom: '25px', flexWrap: 'wrap'}}>
-  <span style={{background: '#f59e0b', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Statut : OPTIONNELLE (recommandée critique)
+  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Statut : OBLIGATOIRE (graduée selon risque)
   </span>
   <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Agile : Quality Gates / DoD
@@ -21,11 +21,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Équipe + LLM
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 40%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 60%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain décide, LLM inspecte
   </span>
 </div>
 
@@ -39,7 +36,7 @@ lang: fr
 <!-- NIVEAU 2 : IMPACT (30-60 secondes)       -->
 <!-- ========================================= -->
 
-## Pourquoi Cette Phase Est Critique (Si Appliquée)
+## Pourquoi Cette Phase Est Critique
 
 **Le problème sans Phase 6** :  
 Code entre production avec défauts latents invisibles. Dette technique s'accumule silencieusement 6-12 mois. Tests faibles (95% couverture mais assertions vides) créent fausse sécurité. Vulnérabilités détectées production = catastrophe (30-100x coût vs développement). Refonte majeure imprévue + incidents coûteux.
@@ -82,33 +79,76 @@ graph TD
     style PRAT fill:#10b981
 ```
 
-**Les meilleures pratiques 1970 étaient CORRECTES - juste impossibles appliquer sans IA.**
+**Les meilleures pratiques 1970 étaient CORRECTES - juste difficiles à appliquer sans IA.**
 
-### Quand Faire ou Sauter Phase 6
+### Graduation de Phase 6 Selon l'Impact
 
-**Faire Phase 6 si** :
-- Code critique (finance, santé, infrastructure)
-- Durée vie longue (>2 ans évolution)
-- Coût bugs production élevé (réputation, argent)
-- Conformité réglementaire stricte
-- Nombreux utilisateurs impactés
+Phase 6 exécute toujours les trois inspections complètes (Fagan + Tests + Sécurité). Ce qui varie, c'est le seuil d'acceptation des problèmes détectés, selon l'impact estimé d'un bug en production.
 
-**Possiblement sauter si** :
-- Prototypes, POC, code jetable
-- Composants simples, faible criticité
-- Équipe très senior, standards déjà excellents
-- Contraintes temps serrées JUSTIFIÉES
+**Principe de décision** : Évaluez l'impact d'un bug dans votre contexte spécifique. Les exemples ci-dessous vous aident à vous situer. En cas de doute, choisissez le niveau le plus strict.
 
-**Règle décision** :
-```
-Probabilité bug production × Coût incident > Coût Phase 6
-→ FAIRE Phase 6
+#### Niveau 1 : Impact Limité
 
-Exemple :
-10% prob × $50,000 incident = $5,000 espéré
-vs $67 Phase 6
-→ ROI 75x, faire Phase 6
-```
+**Exemples de contexte** :
+- Outil interne utilisé par votre équipe (5-20 personnes)
+- Bug = quelques heures perdues, facilement récupérable
+- Workaround simple existe (logs directs, processus manuel)
+- Aucune donnée sensible, aucun accès externe
+
+**Exemples concrets** :
+- Script d'automatisation de rapports internes
+- Dashboard de monitoring non critique
+- Outil de génération de documentation
+
+**Inspections exécutées** : Fagan + Tests + Sécurité (complètes, toutes trois)
+
+**Seuil d'acceptation** :
+- ✅ Items CRITIQUE : Correction obligatoire
+- ⚠️ Items AMÉLIORATION : Documentés, acceptés consciemment
+
+#### Niveau 2 : Impact Modéré
+
+**Exemples de contexte** :
+- Application interne (50-500 utilisateurs)
+- Bug = département ralenti, impact business mesurable
+- Processus de contournement existent mais coûteux
+- Données non sensibles ou PII limitée
+
+**Exemples concrets** :
+- Système de gestion interne (RH, inventaire, reporting)
+- API interne entre services
+- Application métier non publique
+
+**Inspections exécutées** : Fagan + Tests + Sécurité (complètes, toutes trois)
+
+**Seuil d'acceptation** :
+- ✅ Items CRITIQUE : Correction obligatoire
+- ✅ Items AMÉLIORATION priorité haute : Correction obligatoire
+- ⚠️ Items AMÉLIORATION priorité basse : Documentés, justifiés
+
+#### Niveau 3 : Impact Sévère
+
+**Exemples de contexte** :
+- Application client-facing (> 500 utilisateurs)
+- Bug = perte revenus, réputation compromise, clients bloqués
+- Aucun workaround acceptable
+- Données sensibles ou conformité réglementaire
+
+**Exemples concrets** :
+- Système de paiement / e-commerce
+- Application publique grand public
+- Systèmes santé/finance
+- Infrastructure critique
+
+**Inspections exécutées** : Fagan + Tests + Sécurité (complètes, toutes trois)
+
+**Seuil d'acceptation** :
+- ✅ Items CRITIQUE : Correction obligatoire, aucune exception
+- ✅ Items AMÉLIORATION : Correction obligatoire OU justification formelle approuvée
+
+#### Règle Absolue
+
+**Phase 6 est toujours exécutée avec les trois inspections complètes.** Le gradient porte sur le seuil d'acceptation des problèmes détectés, pas sur l'inspection elle-même. Les problèmes existent qu'on les corrige ou non — la décision consciente de les accepter est documentée et traçable.
 
 ---
 
@@ -130,7 +170,7 @@ vs $67 Phase 6
 
 **Objectif** : Détecter dette technique future et patterns à risque maintenabilité
 
-**LLM 70%, Humain 30%**
+**LLM inspecte, Humain décide**
 
 - LLM génère rapport inspection
 - Humain révise rapport
@@ -150,7 +190,7 @@ vs $67 Phase 6
 
 **Objectif** : Distinguer "couverture code" vs "couverture sémantique"
 
-**LLM 70%, Humain 30%**
+**LLM inspecte, Humain décide**
 
 - LLM analyse qualité tests
 - Humain révise
@@ -169,7 +209,7 @@ vs $67 Phase 6
 
 **Objectif** : Détecter 6 vecteurs attaque avant production (OWASP)
 
-**LLM 80%, Humain 20%**
+**LLM inspecte, Humain décide**
 
 - LLM audit multi-vecteurs
 - Humain révise les vulnérabilités
@@ -212,13 +252,19 @@ vs $67 Phase 6
 
 Cette phase est considérée terminée quand :
 
-1. Les 3 inspections exécutées (Fagan, Tests, Sécurité)
-2. Score Fagan ≥ 80/100 (ou justification acceptation < 80)
-3. Tous items CRITIQUE corrigés
-4. Tests renforcés si faiblesses détectées
-5. Vulnérabilités sécurité CRITIQUE éliminées
-6. Items AMÉLIORATION documentés (backlog ou accept)
-7. Senior approuve rapport inspection final
+1. **Niveau d'impact évalué** : Impact d'un bug évalué, niveau déterminé (Limité/Modéré/Sévère)
+2. **Trois inspections exécutées** : Fagan + Tests + Sécurité (complètes, toutes trois)
+3. **Pour tous niveaux** :
+   - Tous items CRITIQUE corrigés
+   - Rapport complet des 3 inspections généré
+4. **Pour Niveau 1 (Impact Limité)** :
+   - Items AMÉLIORATION documentés avec décision explicite d'acceptation
+5. **Pour Niveau 2 (Impact Modéré)** :
+   - Items AMÉLIORATION haute priorité corrigés
+   - Items AMÉLIORATION basse priorité : documentés avec justification ou corrigés
+6. **Pour Niveau 3 (Impact Sévère)** :
+   - Items AMÉLIORATION : 90%+ corrigés OU justification formelle documentée et signée
+7. **Décision finale** : Senior valide que niveau était approprié et seuil d'acceptation respecté
 
 ---
 

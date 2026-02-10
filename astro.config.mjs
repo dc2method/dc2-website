@@ -4,9 +4,20 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import remarkHeadingId from 'remark-heading-id';
-import rehypeSanitize from 'rehype-sanitize';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 
 import sitemap from '@astrojs/sitemap';
+
+// Schéma étendu pour préserver l'attribut data-language sur les <pre>
+// généré par Shiki, nécessaire pour que MermaidInit.astro détecte les blocs Mermaid.
+const sanitizeSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    pre: [...(defaultSchema.attributes?.pre ?? []), 'dataLanguage'],
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +35,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkHeadingId],
-    rehypePlugins: [rehypeSanitize],
+    rehypePlugins: [rehypeRaw, [rehypeSanitize, sanitizeSchema]],
     shikiConfig: {
       theme: 'github-dark',
       wrap: true,

@@ -18,11 +18,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Dev + LLM
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 25%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 75%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain valide, LLM implémente
   </span>
 </div>
 
@@ -120,8 +117,6 @@ Ambiguïtés résiduelles dans specs OU cas limites non testés → rapidement i
 
 ### 1. Génération Code Minimal ⏱️
 
-**LLM 80%, Dev Senior 20%**
-
 - LLM génère code le plus simple pour passer chaque test
 - Focus sur JUSTESSE, pas élégance
 - Acceptable : duplication, algorithmes simples, structure basique
@@ -132,8 +127,6 @@ GREEN = fonctionnel, REFACTOR = élégant
 
 ### 2. Exécution des Tests ⏱️
 
-**LLM 70%, Humain 30%**
-
 - Exécuter suite tests (cible : 100% passent)
 - Déboguer tests échouants (rare avec Contraintes Convergentes)
 - LLM corrige bugs implémentation
@@ -142,8 +135,6 @@ GREEN = fonctionnel, REFACTOR = élégant
 **Résultat attendu** : Tous tests GREEN premier coup (90%+ cas)
 
 ### 3. Portes Qualité Basiques ⏱️
-
-**Humain 50%, LLM 50%**
 
 - Exécuter linter (corriger problèmes style)
 - Exécuter vérificateur types (corriger erreurs type)

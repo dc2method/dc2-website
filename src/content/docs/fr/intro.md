@@ -122,36 +122,36 @@ La combinaison (spécifications tactiques + tests exhaustifs + type hints) guide
 ![Diagramme des 6 phases](/img/overview_a.png)
 
 ### Phase 1 : Architecture Stratégique
-**⏱️⏱️⏱️ | 65% Humain / 35% LLM**
+**⏱️⏱️⏱️ | Humain décide, LLM explore**
 
 Le concepteur et le Product Owner définissent la vision architecturale, documentent les décisions majeures (ADR), et établissent les contraintes techniques et business. Cette phase crée la "carte mentale" explicite que le LLM n'a pas naturellement.
 
 ### Phase 2 : Plan Tactique + Transfert Critique
-**⏱️⏱️ | 45% Humain / 55% LLM**
+**⏱️⏱️ | Humain guide, LLM génère**
 
 Le LLM génère un plan d'implémentation détaillé que l'équipe révise lors du **Transfert Critique** - la réunion la plus importante de DC². L'équipe challenge activement le plan, identifie les risques, et valide la faisabilité avant tout codage.
 
 **Lien avec Agile** : Équivalent du Story Refinement et Sprint Planning. Une User Story devient 3-5 composants avec spécifications exhaustives.
 
 ### Phase 3 : TDD RED - Génération de Tests
-**⏱️ | 30% Humain / 70% LLM**
+**⏱️ | Humain valide, LLM génère**
 
 Le LLM génère une suite de tests exhaustive (95%+ couverture) AVANT toute implémentation. Ces tests deviennent les "rails" qui guident le LLM en Phase 4 et empêchent les égarements.
 
 ### Phase 4 : TDD GREEN - Implémentation
-**⏱️ | 25% Humain / 75% LLM**
+**⏱️ | Humain valide, LLM implémente**
 
 Le LLM génère le code minimal pour passer tous les tests. Grâce aux Contraintes Convergentes (spécifications + tests + types), le code est correct du premier coup dans la majorité des cas.
 
 ### Phase 5 : REFACTOR - Amélioration Collaborative
-**⏱️⏱️⏱️ | 70% Humain / 30% LLM**
+**⏱️⏱️⏱️ | Humain transforme, LLM assiste**
 
 L'équipe de développement, transforme le code fonctionnel en code de qualité production. Le senior identifie les opportunités, l'équipe exécute le refactoring en parallèle, le senior révise en continu. **Perfectionnement par la pratique, scalabilité, ownership collectif.**
 
-### Phase 6 : Triple Inspection (Optionnelle)
-**⏱️ | 40% Humain / 60% LLM**
+### Phase 6 : Triple Inspection (Obligatoire Graduée)
+**⏱️ | Humain décide, LLM inspecte**
 
-Pour systèmes critiques : trois inspections automatisées détectent la dette technique future (Fagan), les tests faibles masqués (Tests), et les vulnérabilités multi-vecteurs (Sécurité). Un investissement qui évite une refonte ou des incidents coûteux plus tard.
+Inspection systématique avec trois analyses complètes (Fagan + Tests + Sécurité). Ce qui varie selon l'impact estimé d'un bug, c'est le seuil d'acceptation : quels problèmes doivent être corrigés vs documentés et acceptés consciemment. Garantit que le contrôle reste rigoureux là où l'échec a des conséquences, tout en restant pragmatique pour code à impact limité.
 
 ---
 

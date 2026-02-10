@@ -18,11 +18,8 @@ lang: en
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Roles: Senior Dev + LLM
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Human: 30%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM: 70%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Human validates, LLM generates
   </span>
 </div>
 
@@ -114,8 +111,6 @@ For example, without tests, there might be 1000 ways to implement a function (th
 
 ### 1. Generate Test Suite ⏱️⏱️
 
-**LLM 85%, Senior Dev 15%**
-
 - LLM generates complete test cases from tactical plan
 - Unit tests for each component/function
 - Integration tests for component interactions
@@ -126,8 +121,6 @@ For example, without tests, there might be 1000 ways to implement a function (th
 
 ### 2. Coverage Validation ⏱️
 
-**Human 40%, LLM 60%**
-
 - Run coverage analysis (target: 95%+)
 - Identify coverage gaps in tests
 - LLM generates additional tests for uncovered paths
@@ -136,8 +129,6 @@ For example, without tests, there might be 1000 ways to implement a function (th
 **Output**: Coverage report ≥95%
 
 ### 3. Verify RED State ⏱️
-
-**Human 90%, LLM 10%**
 
 - Execute test suite (ALL must fail)
 - Verify tests fail for right reasons (NotImplementedError, missing code)

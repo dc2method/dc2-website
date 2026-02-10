@@ -122,36 +122,36 @@ The combination (tactical specifications + exhaustive tests + type hints) guides
 ![Diagram of the 6 phases](/img/overview_a.png)
 
 ### Phase 1: Strategic Architecture
-**⏱️⏱️⏱️ | 65% Human / 35% LLM**
+**⏱️⏱️⏱️ | Human decides, LLM explores**
 
 The architect and Product Owner define the architectural vision, document major decisions (ADR), and establish technical and business constraints. This phase creates the explicit "mental map" that the LLM naturally lacks.
 
 ### Phase 2: Tactical Plan + Critical Transfer
-**⏱️⏱️ | 45% Human / 55% LLM**
+**⏱️⏱️ | Human guides, LLM generates**
 
 The LLM generates a detailed implementation plan that the team reviews during **Critical Transfer**—the most important meeting in DC². The team actively challenges the plan, identifies risks, and validates feasibility before any coding begins.
 
 **Link to Agile**: Equivalent to Story Refinement and Sprint Planning. A User Story becomes 3-5 components with exhaustive specifications.
 
 ### Phase 3: TDD RED - Test Generation
-**⏱️ | 30% Human / 70% LLM**
+**⏱️ | Human validates, LLM generates**
 
 The LLM generates an exhaustive test suite (95%+ coverage) BEFORE any implementation. These tests become the "rails" that guide the LLM in Phase 4 and prevent derailments.
 
 ### Phase 4: TDD GREEN - Implementation
-**⏱️ | 25% Human / 75% LLM**
+**⏱️ | Human validates, LLM implements**
 
 The LLM generates minimal code to pass all tests. Thanks to Convergent Constraints (specifications + tests + types), the code is correct on the first try in the majority of cases.
 
 ### Phase 5: REFACTOR - Collaborative Improvement
-**⏱️⏱️⏱️ | 70% Human / 30% LLM**
+**⏱️⏱️⏱️ | Human transforms, LLM assists**
 
 The development team transforms functional code into production-quality code. The senior identifies opportunities, the team executes refactoring in parallel, the senior continuously reviews. **Improvement through practice, scalability, collective ownership.**
 
-### Phase 6: Triple Inspection (Optional)
-**⏱️ | 40% Human / 60% LLM**
+### Phase 6: Triple Inspection (Mandatory Graded)
+**⏱️ | Human decides, LLM inspects**
 
-For critical systems: three automated inspections detect future technical debt (Fagan), hidden weak tests (Tests), and multi-vector vulnerabilities (Security). An investment that prevents costly refactoring or incidents later.
+Systematic inspection with three complete analyses (Fagan + Tests + Security). What varies based on the estimated impact of a bug is the acceptance threshold: which issues must be fixed vs documented and consciously accepted. Ensures control remains rigorous where failure has consequences, while staying pragmatic for limited-impact code.
 
 ---
 

@@ -18,11 +18,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Équipe Dev + Dev Senior
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 70%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 30%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain transforme, LLM assiste
   </span>
 </div>
 
@@ -125,8 +122,6 @@ graph TD
 
 ### 1. Identification Opportunités Refactoring ⏱️⏱️
 
-**Dev Senior 90%, LLM 10%**
-
 **Senior révise code GREEN et identifie** :
 - Code smells (duplication, fonctions longues, imbrication profonde)
 - Goulots performance potentiels (algorithmes inefficaces)
@@ -141,8 +136,6 @@ graph TD
 
 ### 2. Session Revue Équipe ⏱️
 
-**Dev Senior 80%, Équipe 20%**
-
 - Senior présente opportunités identifiées
 - Explique POURQUOI refactoring nécessaire (pas juste QUOI)
 - Démontre 1-2 refactorings en live (pédagogie)
@@ -152,8 +145,6 @@ graph TD
 **Objectif** : Équipe comprend vision qualité avant exécuter
 
 ### 3. Exécution Refactorings Parallèles ⏱️⏱️⏱️
-
-**Équipe 60%, Dev Senior 30%, LLM 10%**
 
 **Équipe exécute refactorings assignés** :
 - Extrait fonctions (Responsabilité Unique)
@@ -174,8 +165,6 @@ graph TD
 
 ### 4. Amélioration Documentation ⏱️⏱️
 
-**Équipe 40%, LLM 60%**
-
 - Senior définit ce qui nécessite documentation
 - LLM génère docstrings détaillées
 - Équipe ajoute commentaires inline logique complexe
@@ -184,8 +173,6 @@ graph TD
 **Focus** : Pourquoi code fonctionne ainsi (pas juste quoi)
 
 ### 5. Revue + Validation Senior ⏱️⏱️
-
-**Dev Senior 70%, Équipe 30%**
 
 **Pour chaque refactoring** :
 - Senior révise code refactorisé

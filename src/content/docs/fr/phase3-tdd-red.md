@@ -18,11 +18,8 @@ lang: fr
   <span style={{background: '#8b5cf6', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
     Rôles : Dev Senior + LLM
   </span>
-  <span style={{background: '#2563eb', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    Humain : 30%
-  </span>
-  <span style={{background: '#10b981', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
-    LLM : 70%
+  <span style={{background: '#6366f1', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: '600'}}>
+    Humain valide, LLM génère
   </span>
 </div>
 
@@ -114,8 +111,6 @@ Par exemple, sans tests, il peut y avoir 1000 façons d'implémenter une fonctio
 
 ### 1. Génération Suite de Tests ⏱️⏱️
 
-**LLM 85%, Dev Senior 15%**
-
 - LLM génère cas test complets depuis plan tactique
 - Tests unitaires pour chaque composant/fonction
 - Tests intégration pour interactions composants
@@ -126,8 +121,6 @@ Par exemple, sans tests, il peut y avoir 1000 façons d'implémenter une fonctio
 
 ### 2. Validation de Couverture ⏱️
 
-**Humain 40%, LLM 60%**
-
 - Exécuter analyse couverture (cible : 95%+)
 - Identifier lacunes couverture test
 - LLM génère tests additionnels pour chemins non couverts
@@ -136,8 +129,6 @@ Par exemple, sans tests, il peut y avoir 1000 façons d'implémenter une fonctio
 **Sortie** : Rapport couverture ≥95%
 
 ### 3. Vérification État RED ⏱️
-
-**Humain 90%, LLM 10%**
 
 - Exécuter suite tests (TOUS doivent échouer)
 - Vérifier tests échouent pour bonnes raisons (NotImplementedError, code manquant)
