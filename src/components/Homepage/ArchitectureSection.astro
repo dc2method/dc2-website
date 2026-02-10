@@ -7,48 +7,42 @@ const phases = currentLocale === 'fr' ? [
   {
     number: 1,
     name: 'Architecture Stratégique',
-    human: 65,
-    llm: 35,
+    role: 'Humain décide, LLM explore',
     description: 'Définir la vision architecturale, les décisions stratégiques et les contraintes du projet.',
     link: '/fr/phase1-architecture-strategique'
   },
   {
     number: 2,
     name: 'Planification Tactique',
-    human: 45,
-    llm: 55,
+    role: 'Humain guide, LLM génère',
     description: 'Décomposer le projet en User Stories et tâches concrètes avec critères de succès.',
     link: '/fr/phase2-planification-tactique'
   },
   {
     number: 3,
     name: 'TDD RED',
-    human: 30,
-    llm: 70,
+    role: 'Humain valide, LLM génère',
     description: 'Créer les tests et spécifications exécutables avant toute implémentation.',
     link: '/fr/phase3-tdd-red'
   },
   {
     number: 4,
     name: 'TDD GREEN',
-    human: 25,
-    llm: 75,
+    role: 'Humain valide, LLM implémente',
     description: 'Implémenter le code minimal pour faire passer les tests sous supervision.',
     link: '/fr/phase4-tdd-green'
   },
   {
     number: 5,
     name: 'TDD REFACTOR',
-    human: 70,
-    llm: 30,
+    role: 'Humain transforme, LLM assiste',
     description: 'Améliorer la qualité du code sans changer son comportement.',
     link: '/fr/phase5-tdd-refactor'
   },
   {
     number: 6,
     name: 'Triple Inspection',
-    human: 40,
-    llm: 60,
+    role: 'Humain décide, LLM inspecte',
     description: 'Validation technique, business et contenu pour garantir la qualité.',
     link: '/fr/phase6-triple-inspection'
   }
@@ -56,48 +50,42 @@ const phases = currentLocale === 'fr' ? [
   {
     number: 1,
     name: 'Strategic Architecture',
-    human: 65,
-    llm: 35,
+    role: 'Human decides, LLM explores',
     description: 'Define architectural vision, strategic decisions and project constraints.',
     link: '/phase1-architecture-strategique'
   },
   {
     number: 2,
     name: 'Tactical Planning',
-    human: 45,
-    llm: 55,
+    role: 'Human guides, LLM generates',
     description: 'Break down the project into User Stories and concrete tasks with success criteria.',
     link: '/phase2-planification-tactique'
   },
   {
     number: 3,
     name: 'TDD RED',
-    human: 30,
-    llm: 70,
+    role: 'Human validates, LLM generates',
     description: 'Create tests and executable specifications before any implementation.',
     link: '/phase3-tdd-red'
   },
   {
     number: 4,
     name: 'TDD GREEN',
-    human: 25,
-    llm: 75,
+    role: 'Human validates, LLM implements',
     description: 'Implement minimal code to pass tests under supervision.',
     link: '/phase4-tdd-green'
   },
   {
     number: 5,
     name: 'TDD REFACTOR',
-    human: 70,
-    llm: 30,
+    role: 'Human transforms, LLM assists',
     description: 'Improve code quality without changing behavior.',
     link: '/phase5-tdd-refactor'
   },
   {
     number: 6,
     name: 'Triple Inspection',
-    human: 40,
-    llm: 60,
+    role: 'Human decides, LLM inspects',
     description: 'Technical, business and content validation for quality assurance.',
     link: '/phase6-triple-inspection'
   }
@@ -125,14 +113,7 @@ const phases = currentLocale === 'fr' ? [
         <a href={phase.link} class="phase-card">
           <div class="phase-header">
             <span class="phase-number">Phase {phase.number}</span>
-            <div class="phase-balance">
-              <span class="balance-human" title={currentLocale === 'fr' ? 'Humain' : 'Human'}>
-                👤 {phase.human}%
-              </span>
-              <span class="balance-llm" title="LLM">
-                🤖 {phase.llm}%
-              </span>
-            </div>
+            <span class="phase-role">{phase.role}</span>
           </div>
           <h3 class="phase-name">{phase.name}</h3>
           <p class="phase-description">{phase.description}</p>
@@ -213,19 +194,9 @@ const phases = currentLocale === 'fr' ? [
     letter-spacing: 1px;
   }
 
-  .phase-balance {
-    display: flex;
-    gap: var(--space-3);
+  .phase-role {
     font-size: var(--font-size-sm);
     font-family: var(--font-family-heading);
-  }
-
-  .balance-human {
-    color: var(--dd-accent-positive);
-    font-weight: 600;
-  }
-
-  .balance-llm {
     color: var(--dd-secondary);
     font-weight: 600;
   }
