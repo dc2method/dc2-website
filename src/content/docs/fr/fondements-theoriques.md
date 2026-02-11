@@ -58,14 +58,14 @@ Le LLM propose une première implémentation fonctionnelle, puis l'équipe de d�
 **Points de passage explicites**  
 Le Transfert Critique entre la conception et le développement est une réunion de revue formelle, assurant l'alignement de l'équipe avant l'écriture de la première ligne de code. C'est le moment décisif où la vision du concepteur rencontre la réalité de l'équipe.
 
-**Triple inspection systématique (optionnelle)**  
-Pour les systèmes critiques ou à longue durée de vie, chaque livraison peut être auditée pour :
+**Triple inspection systématique**
+Chaque livraison est auditée selon trois inspections complètes :
 
 1. **Code (Fagan)** : Qualité, maintenabilité, dette technique
 2. **Tests** : Couverture sémantique réelle vs métriques vides
 3. **Sécurité** : Vulnérabilités multi-vecteurs, conformité
 
-Cette phase optionnelle permet d'atteindre un niveau d'excellence supérieur. Un investissement qui évite des heures de refonte future. Les LLM rendent maintenant praticables des techniques d'inspection qui étaient auparavant trop coûteuses.
+Ce qui varie selon l'impact estimé d'un bug en production, c'est le seuil d'acceptation des problèmes détectés — ce que l'équipe doit corriger vs documenter et accepter consciemment. Les LLM rendent maintenant praticables des techniques d'inspection qui étaient auparavant trop coûteuses.
 
 **Boucle de feedback explicite et contrôlée**  
 Les tests, la documentation et les inspections remplacent la "pseudo-intelligence" du LLM par une boucle de validation réaliste et vérifiable.
@@ -398,9 +398,9 @@ Les LLM peuvent exécuter exhaustivement une checklist d'inspection Fagan sans f
 
 **Les meilleures pratiques 1970 étaient CORRECTES, seulement impossibles à appliquer sans IA.**
 
-### Phase 6 : Triple Inspection (Optionnelle)
+### Phase 6 : Triple Inspection (Obligatoire Graduée)
 
-Pour systèmes critiques, Phase 6 offre trois inspections automatisées :
+Phase 6 exécute trois inspections automatisées complètes sur chaque livraison :
 
 1. **Fagan** : Qualité code, maintenabilité, dette technique
 2. **Tests** : Couverture sémantique réelle (pas métriques vides)

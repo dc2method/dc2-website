@@ -58,14 +58,14 @@ The LLM proposes an initial functional implementation, then the development team
 **Explicit Handoff Points**
 The Critical Transfer between design and development is a formal review meeting, ensuring team alignment before the first line of code is written. This is the decisive moment where the architect's vision meets the team's reality.
 
-**Systematic Triple Inspection (Optional)**
-For critical or long-lived systems, each delivery can be audited for:
+**Systematic Triple Inspection**
+Every delivery is audited across three complete inspections:
 
 1. **Code (Fagan)**: Quality, maintainability, technical debt
 2. **Tests**: Real semantic coverage versus empty metrics
 3. **Security**: Multi-vector vulnerabilities, compliance
 
-This optional phase enables a higher level of excellence. An investment that prevents hours of rework down the line. LLMs now make feasible inspection techniques that were previously too expensive.
+What varies based on the estimated impact of a production bug is the acceptance threshold for detected issues — what the team must fix versus consciously document and accept. LLMs now make feasible inspection techniques that were previously too expensive.
 
 **Explicit and Controlled Feedback Loop**
 Tests, documentation, and inspections replace the LLM's "pseudo-intelligence" with a realistic and verifiable validation loop.
@@ -398,9 +398,9 @@ LLMs can exhaustively execute a Fagan inspection checklist without fatigue, cogn
 
 **The best practices of the 1970s were CORRECT; they were simply impossible to apply without AI.**
 
-### Phase 6: Triple Inspection (Optional)
+### Phase 6: Triple Inspection (Mandatory Graded)
 
-For critical systems, Phase 6 offers three automated inspections:
+Phase 6 executes three complete automated inspections on every delivery:
 
 1. **Fagan**: Code quality, maintainability, technical debt
 2. **Tests**: Real semantic coverage (not empty metrics)
