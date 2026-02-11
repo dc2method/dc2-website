@@ -143,10 +143,10 @@ Le LLM génère une suite de tests exhaustive (95%+ couverture) AVANT toute impl
 
 Le LLM génère le code minimal pour passer tous les tests. Grâce aux Contraintes Convergentes (spécifications + tests + types), le code est correct du premier coup dans la majorité des cas.
 
-### Phase 5 : REFACTOR - Amélioration Collaborative
+### Phase 5 : REFACTOR - Transformation Qualité
 **⏱️⏱️⏱️ | Humain transforme, LLM assiste**
 
-L'équipe de développement, transforme le code fonctionnel en code de qualité production. Le senior identifie les opportunités, l'équipe exécute le refactoring en parallèle, le senior révise en continu. **Perfectionnement par la pratique, scalabilité, ownership collectif.**
+Transformez le code fonctionnel (Phase 4) en code de qualité industrielle selon vos pratiques établies de refactoring. Bénéficiez du filet de sécurité unique de DC² : tests exhaustifs (95%+ couverture) qui servent de documentation exécutable et permettent du refactoring agressif sans risque de régression.
 
 ### Phase 6 : Triple Inspection (Obligatoire Graduée)
 **⏱️ | Humain décide, LLM inspecte**

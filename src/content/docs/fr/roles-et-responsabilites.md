@@ -231,7 +231,7 @@ graph TD
 - Senior fait tout, équipe regarde → Pas d'apprentissage, goulot d'étranglement
 - Équipe seule sans guidance → Risque sur-engineering ou sous-refactoring
 
-### Phase 6 : Triple Inspection (Optionnelle)
+### Phase 6 : Triple Inspection
 
 ```mermaid
 graph TD
@@ -242,6 +242,48 @@ graph TD
 ```
 
 **Dynamique** : Inspections automatisées, décisions humaines. L'équipe apprend à lire et interpréter rapports d'inspection, Le senior valide que la priorisation est appropriée.
+
+## Exemple : Mode Collaboratif pour Phase 5
+
+Certaines équipes organisent Phase 5 selon un mode collaboratif qui combine scalabilité et apprentissage. Voici comment ce mode fonctionne :
+
+### Principe
+
+- Senior identifie les opportunités de refactoring
+- Équipe exécute les refactorings (en parallèle si plusieurs développeurs)
+- Senior reste disponible pour questions et revue continue
+- Focus sur apprentissage par la pratique
+
+### Avantages de ce mode
+
+- **Scalabilité** : Plusieurs refactorings en parallèle au lieu de séquentiel
+- **Apprentissage** : Équipe développe compétences par la pratique
+- **Ownership** : Équipe fière du résultat, pas juste exécutante
+- **Senior multiplicateur** : Guide plusieurs personnes simultanément au lieu de tout faire seul
+
+### Progression typique
+
+Sprint 1-2 : Senior investit temps (guidance intensive)
+Sprint 3-4 : Breakeven (temps comparable au senior solo)
+Sprint 10+ : ROI positif (équipe autonome, senior libéré pour architecture)
+
+### Quand considérer ce mode
+
+- Équipe de 3+ développeurs
+- Objectif d'apprentissage et montée en compétences
+- Projets avec durée de vie longue (>1 an)
+- Senior disponible pour guidance continue
+
+### Alternatives
+
+Ce mode n'est pas obligatoire. D'autres approches fonctionnent :
+- **Senior solo** : Rapide pour équipes <3 personnes ou refactorings simples
+- **Pairing** : Senior + 1 dev, transfert de connaissance intense
+- **Revue asynchrone** : Équipe propose, senior revoit, itération
+
+Choisissez l'approche qui correspond à votre contexte organisationnel.
+
+---
 
 ## Adaptation Selon Taille d'Équipe
 

@@ -231,7 +231,7 @@ graph TD
 - Senior does everything, team watches → No learning, bottleneck
 - Team alone without guidance → Risk of over-engineering or under-refactoring
 
-### Phase 6: Triple Inspection (Optional)
+### Phase 6: Triple Inspection
 
 ```mermaid
 graph TD
@@ -242,6 +242,48 @@ graph TD
 ```
 
 **Dynamic**: Automated inspections, human decisions. The team learns to read and interpret inspection reports. The senior validates that prioritization is appropriate.
+
+## Example: Collaborative Mode for Phase 5
+
+Some teams organize Phase 5 using a collaborative mode that combines scalability and learning. Here is how this mode works:
+
+### Principle
+
+- Senior identifies refactoring opportunities
+- Team executes refactorings (in parallel if multiple developers)
+- Senior remains available for questions and continuous review
+- Focus on learning through practice
+
+### Advantages of this mode
+
+- **Scalability**: Multiple refactorings in parallel instead of sequential
+- **Learning**: Team develops skills through practice
+- **Ownership**: Team proud of the result, not just executing
+- **Senior as multiplier**: Guides multiple people simultaneously instead of doing everything alone
+
+### Typical progression
+
+Sprints 1-2: Senior invests time (intensive guidance)
+Sprints 3-4: Breakeven (comparable time to solo senior)
+Sprints 10+: Positive ROI (autonomous team, senior freed for architecture)
+
+### When to consider this mode
+
+- Team of 3+ developers
+- Goal of learning and skill development
+- Projects with long lifespan (>1 year)
+- Senior available for continuous guidance
+
+### Alternatives
+
+This mode is not mandatory. Other approaches work:
+- **Senior solo**: Fast for teams <3 people or simple refactorings
+- **Pairing**: Senior + 1 dev, intensive knowledge transfer
+- **Async review**: Team proposes, senior reviews, iteration
+
+Choose the approach that fits your organizational context.
+
+---
 
 ## Adaptation by Team Size
 
