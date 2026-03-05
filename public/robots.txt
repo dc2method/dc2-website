@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dc2method.dev/sitemap-index.xml

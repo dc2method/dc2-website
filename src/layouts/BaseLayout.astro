@@ -26,6 +26,37 @@ const {
   showNavbar = true,
   showFooter = true
 } = Astro.props;
+
+const siteUrl = 'https://dc2method.dev';
+const currentPath = Astro.url.pathname;
+const canonicalUrl = `${siteUrl}${currentPath}`;
+const isFrench = lang === 'fr';
+const alternatePath = isFrench
+  ? currentPath.replace(/^\/fr/, '') || '/'
+  : `/fr${currentPath}`;
+const alternateUrl = `${siteUrl}${alternatePath}`;
+const enUrl = isFrench ? alternateUrl : canonicalUrl;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'DC²',
+      url: siteUrl,
+      logo: `${siteUrl}/favicon.png`,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'DC² — Développement par Contraintes Convergentes',
+      publisher: { '@id': `${siteUrl}/#organization` },
+      inLanguage: ['fr', 'en'],
+    },
+  ],
+};
 ---
 
 <!DOCTYPE html>
@@ -38,19 +69,30 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
 
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+    <link rel="alternate" hreflang={isFrench ? 'en' : 'fr'} href={alternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://dc2method.dev/img/og-image.png" />
+    <meta property="og:image" content={`${siteUrl}/img/og-image.png`} />
+    <meta property="og:locale" content={isFrench ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={isFrench ? 'en_US' : 'fr_FR'} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="https://dc2method.dev/img/og-image.png" />
+    <meta property="twitter:image" content={`${siteUrl}/img/og-image.png`} />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <LanguageDetector />
   </head>
