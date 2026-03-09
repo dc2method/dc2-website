@@ -1,5 +1,4 @@
 ---
-import LanguageDetector from '../components/LanguageDetector.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -93,8 +92,6 @@ const jsonLd = {
 
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-    <LanguageDetector />
   </head>
   <body>
     {showNavbar && <Navbar />}
